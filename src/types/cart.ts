@@ -1,6 +1,5 @@
 export interface CartItem {
-  variantId: string
-  productId: string
+  id: string
   name: string
   price: number
   quantity: number
@@ -13,10 +12,12 @@ export interface CartState {
 
 export interface CartActions {
   addItem: (item: Omit<CartItem, 'quantity'>) => void
-  removeItem: (variantId: string) => void
-  updateQuantity: (variantId: string, quantity: number) => void
+  removeItem: (id: string) => void
+  updateQuantity: (id: string, quantity: number) => void
   clearCart: () => void
   getTotal: () => number
 }
 
-export interface CartStore extends CartState, CartActions {} 
+export interface CartStore extends CartState, CartActions {
+  total: number
+} 

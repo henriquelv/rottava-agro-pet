@@ -1,0 +1,141 @@
+[1mdiff --git a/src/app/page.tsx b/src/app/page.tsx[m
+[1mindex 2dfb2d0..ac5baa2 100644[m
+[1m--- a/src/app/page.tsx[m
+[1m+++ b/src/app/page.tsx[m
+[36m@@ -1,40 +1,126 @@[m
+ 'use client'[m
+ [m
+ import React from 'react'[m
+[32m+[m[32mimport Image from 'next/image'[m
+[32m+[m[32mimport Link from 'next/link'[m
+ import Header from '@/components/layout/Header'[m
+ import ProductCarousel from '@/components/ui/ProductCarousel'[m
+[32m+[m[32mimport { Dog, ShoppingBag, Heart, Star } from 'phosphor-react'[m
+ [m
+ export default function Home() {[m
+   return ([m
+     <>[m
+       <Header />[m
+[31m-      <div className="pt-20">[m
+[32m+[m[32m      <main className="pt-20">[m
+         {/* Banner Principal */}[m
+[31m-        <section className="relative h-[600px] bg-gray-100">[m
+[31m-          <div className="container h-full flex items-center">[m
+[32m+[m[32m        <section className="relative h-[600px] bg-gradient-to-r from-primary/10 to-primary/5 overflow-hidden">[m
+[32m+[m[32m          <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10" />[m
+[32m+[m[32m          <div className="container h-full flex items-center relative">[m
+             <div className="max-w-2xl">[m
+[31m-              <h1 className="text-4xl md:text-5xl font-bold text-text mb-4">[m
+[31m-                Bem-vindo à Rottava Agropet[m
+[32m+[m[32m              <h1 className="text-5xl md:text-6xl font-bold text-text mb-6 leading-tight">[m
+[32m+[m[32m                Bem-vindo à{' '}[m
+[32m+[m[32m                <span className="text-primary">Rottava Agropet</span>[m
+               </h1>[m
+               <p className="text-lg md:text-xl text-text/80 mb-8">[m
+                 Sua loja completa em produtos para pets e agropecuária. [m
+                 Encontre tudo o que você precisa para seus animais de estimação e sua produção.[m
+               </p>[m
+               <div className="flex gap-4">[m
+[31m-                <a href="/produtos" className="btn-primary">[m
+[32m+[m[32m                <Link[m[41m [m
+[32m+[m[32m                  href="/produtos"[m[41m [m
+[32m+[m[32m                  className="inline-flex items-center px-8 py-3 bg-primary text-white rounded-full font-medium hover:bg-primary-dark transition-all hover:shadow-lg hover:scale-105"[m
+[32m+[m[32m                >[m
+[32m+[m[32m                  <ShoppingBag size={20} className="mr-2" />[m
+                   Produtos[m
+[31m-                </a>[m
+[31m-                <a href="/banho-e-tosa" className="btn-primary">[m
+[32m+[m[32m                </Link>[m
+[32m+[m[32m                <Link[m[41m [m
+[32m+[m[32m                  href="/banho-e-tosa"[m[41m [m
+[32m+[m[32m                  className="inline-flex items-center px-8 py-3 bg-white text-primary rounded-full font-medium hover:bg-primary/5 transition-all hover:shadow-lg hover:scale-105"[m
+[32m+[m[32m                >[m
+[32m+[m[32m                  <Dog size={20} className="mr-2" />[m
+                   Banho e Tosa[m
+[31m-                </a>[m
+[32m+[m[32m                </Link>[m
+[32m+[m[32m              </div>[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m            <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2">[m
+[32m+[m[32m              <Image[m
+[32m+[m[32m                src="/hero-image.png"[m
+[32m+[m[32m                alt="Pets felizes"[m
+[32m+[m[32m                width={600}[m
+[32m+[m[32m                height={600}[m
+[32m+[m[32m                className="object-cover"[m
+[32m+[m[32m              />[m
+[32m+[m[32m            </div>[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        {/* Características */}[m
+[32m+[m[32m        <section className="py-16 bg-white">[m
+[32m+[m[32m          <div className="container">[m
+[32m+[m[32m            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">[m
+[32m+[m[32m              <div className="flex items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">[m
+[32m+[m[32m                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">[m
+[32m+[m[32m                  <Heart size={24} weight="fill" />[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <div className="ml-4">[m
+[32m+[m[32m                  <h3 className="text-lg font-semibold text-text mb-2">Cuidado Especial</h3>[m
+[32m+[m[32m                  <p className="text-text/70">[m
+[32m+[m[32m                    Tratamos seu pet com todo o carinho e atenção que ele merece.[m
+[32m+[m[32m                  </p>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m              </div>[m
+[32m+[m[32m              <div className="flex items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">[m
+[32m+[m[32m                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">[m
+[32m+[m[32m                  <Star size={24} weight="fill" />[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <div className="ml-4">[m
+[32m+[m[32m                  <h3 className="text-lg font-semibold text-text mb-2">Qualidade Premium</h3>[m
+[32m+[m[32m                  <p className="text-text/70">[m
+[32m+[m[32m                    Produtos selecionados das melhores marcas do mercado.[m
+[32m+[m[32m                  </p>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m              </div>[m
+[32m+[m[32m              <div className="flex items-start p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow">[m
+[32m+[m[32m                <div className="flex-shrink-0 w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary">[m
+[32m+[m[32m                  <ShoppingBag size={24} weight="fill" />[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m                <div className="ml-4">[m
+[32m+[m[32m                  <h3 className="text-lg font-semibold text-text mb-2">Entrega Rápida</h3>[m
+[32m+[m[32m                  <p className="text-text/70">[m
+[32m+[m[32m                    Receba seus produtos no conforto da sua casa.[m
+[32m+[m[32m                  </p>[m
+[32m+[m[32m                </div>[m
+               </div>[m
+             </div>[m
+           </div>[m
+         </section>[m
+ [m
+         {/* Carrossel de Produtos */}[m
+[31m-        <ProductCarousel />[m
+[31m-      </div>[m
+[32m+[m[32m        <section className="py-16 bg-gray-50">[m
+[32m+[m[32m          <div className="container">[m
+[32m+[m[32m            <h2 className="text-3xl font-bold text-text mb-8">Produtos em Destaque</h2>[m
+[32m+[m[32m            <ProductCarousel />[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m        </section>[m
+[32m+[m
+[32m+[m[32m        {/* CTA */}[m
+[32m+[m[32m        <section className="py-16 bg-primary">[m
+[32m+[m[32m          <div className="container text-center">[m
+[32m+[m[32m            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">[m
+[32m+[m[32m              Agende um horário para seu pet[m
+[32m+[m[32m            </h2>[m
+[32m+[m[32m            <p className="text-white/90 text-lg mb-8 max-w-2xl mx-auto">[m
+[32m+[m[32m              Oferecemos serviços completos de banho e tosa com profissionais experientes e apaixonados por pets.[m
+[32m+[m[32m            </p>[m
+[32m+[m[32m            <Link[m[41m [m
+[32m+[m[32m              href="/banho-e-tosa"[m[41m [m
+[32m+[m[32m              className="inline-flex items-center px-8 py-3 bg-white text-primary rounded-full font-medium hover:bg-primary-light transition-all hover:shadow-lg hover:scale-105"[m
+[32m+[m[32m            >[m
+[32m+[m[32m              Agendar Agora[m
+[32m+[m[32m            </Link>[m
+[32m+[m[32m          </div>[m
+[32m+[m[32m        </section>[m
+[32m+[m[32m      </main>[m
+     </>[m
+   )

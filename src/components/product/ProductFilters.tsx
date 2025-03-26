@@ -1,5 +1,5 @@
-import React from 'react'
-import { Star, X } from 'phosphor-react'
+import React, { useState } from 'react'
+import { Star, X, CaretDown, CaretUp, ShoppingBag, Dog, Package } from 'phosphor-react'
 
 interface FilterProps {
   filters: {
@@ -28,7 +28,34 @@ interface FilterProps {
     }
     rating: number
   }
-  onFilterChange: (filters: any) => void
+  onFilterChange: (filters: FilterProps['filters']) => void
+}
+
+interface FilterSectionProps {
+  title: string
+  icon?: React.ReactNode
+  children: React.ReactNode
+  defaultOpen?: boolean
+}
+
+function FilterSection({ title, icon, children, defaultOpen = true }: FilterSectionProps) {
+  const [isOpen, setIsOpen] = useState(defaultOpen)
+
+  return (
+    <div className="border-b border-gray-100 last:border-0 pb-4">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center justify-between w-full py-2 text-text hover:text-primary transition-colors"
+      >
+        <div className="flex items-center gap-2">
+          {icon}
+          <span className="font-medium">{title}</span>
+        </div>
+        {isOpen ? <CaretUp size={16} /> : <CaretDown size={16} />}
+      </button>
+      {isOpen && <div className="mt-3">{children}</div>}
+    </div>
+  )
 }
 
 export default function ProductFilters({ filters, onFilterChange }: FilterProps) {
@@ -107,203 +134,138 @@ export default function ProductFilters({ filters, onFilterChange }: FilterProps)
   }
 
   return (
-    <div className="space-y-4">
+    <div className="bg-white rounded-2xl shadow-sm p-6">
       {/* Cabeçalho dos Filtros */}
-      <div className="flex justify-between items-center pb-4 border-b">
-        <h2 className="text-lg font-semibold text-text">Filtros</h2>
+      <div className="flex justify-between items-center pb-4 mb-4 border-b border-gray-100">
+        <h2 className="text-xl font-semibold text-text">Filtros</h2>
         {hasActiveFilters() && (
           <button
             onClick={clearFilters}
-            className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors"
+            className="flex items-center gap-2 text-sm text-primary hover:text-primary-dark transition-colors"
           >
-            <X size={16} />
-            Limpar Filtros
+            <X size={16} weight="bold" />
+            Limpar
           </button>
         )}
       </div>
 
       {/* Container com Rolagem */}
-      <div className="space-y-6 max-h-[calc(100vh-220px)] overflow-y-auto pr-4 -mr-4">
-        {/* Filtros Básicos */}
-        <div>
-          <h3 className="font-semibold mb-3">Categorias</h3>
+      <div className="space-y-1 max-h-[calc(100vh-220px)] overflow-y-auto pr-4 -mr-4">
+        {/* Categorias */}
+        <FilterSection title="Categorias" icon={<ShoppingBag size={18} />}>
           <div className="space-y-2">
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.category.includes('Rações')}
-                onChange={() => handleCategoryChange('Rações')}
-              />
-              <span>Rações</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.category.includes('Brinquedos')}
-                onChange={() => handleCategoryChange('Brinquedos')}
-              />
-              <span>Brinquedos</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.category.includes('Acessórios')}
-                onChange={() => handleCategoryChange('Acessórios')}
-              />
-              <span>Acessórios</span>
-            </label>
-          </div>
-        </div>
-
-        {/* Preço */}
-        <div>
-          <h3 className="font-semibold mb-3">Preço</h3>
-          <div className="space-y-2">
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.priceRange.max === 50}
-                onChange={() => handlePriceRangeChange(0, 50)}
-              />
-              <span>Até R$ 50</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.priceRange.min === 50 && filters.priceRange.max === 100}
-                onChange={() => handlePriceRangeChange(50, 100)}
-              />
-              <span>R$ 50 - R$ 100</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.priceRange.min === 100 && filters.priceRange.max === 200}
-                onChange={() => handlePriceRangeChange(100, 200)}
-              />
-              <span>R$ 100 - R$ 200</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.priceRange.min === 200}
-                onChange={() => handlePriceRangeChange(200, 999999)}
-              />
-              <span>Acima de R$ 200</span>
-            </label>
-          </div>
-        </div>
-
-        {/* Filtros para Rações */}
-        <div>
-          <h3 className="font-semibold mb-3">Tipo de Animal</h3>
-          <div className="space-y-2">
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.animalType.includes('Cães')}
-                onChange={() => handleAnimalTypeChange('Cães')}
-              />
-              <span>Cães</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.animalType.includes('Gatos')}
-                onChange={() => handleAnimalTypeChange('Gatos')}
-              />
-              <span>Gatos</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.animalType.includes('Pássaros')}
-                onChange={() => handleAnimalTypeChange('Pássaros')}
-              />
-              <span>Pássaros</span>
-            </label>
-          </div>
-        </div>
-
-        {/* Disponibilidade */}
-        <div>
-          <h3 className="font-semibold mb-3">Disponibilidade</h3>
-          <div className="space-y-2">
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.availability.inStock}
-                onChange={() => handleAvailabilityChange('inStock')}
-              />
-              <span>Em Estoque</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.availability.onSale}
-                onChange={() => handleAvailabilityChange('onSale')}
-              />
-              <span>Promoções</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.availability.bestSellers}
-                onChange={() => handleAvailabilityChange('bestSellers')}
-              />
-              <span>Mais Vendidos</span>
-            </label>
-            <label className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                className="rounded text-primary"
-                checked={filters.availability.newArrivals}
-                onChange={() => handleAvailabilityChange('newArrivals')}
-              />
-              <span>Lançamentos</span>
-            </label>
-          </div>
-        </div>
-
-        {/* Avaliação */}
-        <div>
-          <h3 className="font-semibold mb-3">Avaliação</h3>
-          <div className="space-y-2">
-            {[5, 4, 3, 2, 1].map((rating) => (
-              <label key={rating} className="flex items-center gap-2">
+            {['Rações', 'Brinquedos', 'Acessórios'].map((category) => (
+              <label key={category} className="flex items-center gap-3 group cursor-pointer">
                 <input
                   type="checkbox"
-                  className="rounded text-primary"
+                  className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 transition-shadow"
+                  checked={filters.category.includes(category)}
+                  onChange={() => handleCategoryChange(category)}
+                />
+                <span className="text-text/80 group-hover:text-primary transition-colors">
+                  {category}
+                </span>
+              </label>
+            ))}
+          </div>
+        </FilterSection>
+
+        {/* Preço */}
+        <FilterSection title="Faixa de Preço" icon={<Package size={18} />}>
+          <div className="space-y-2">
+            {[
+              { label: 'Até R$ 50', min: 0, max: 50 },
+              { label: 'R$ 50 - R$ 100', min: 50, max: 100 },
+              { label: 'R$ 100 - R$ 200', min: 100, max: 200 },
+              { label: 'Acima de R$ 200', min: 200, max: 999999 },
+            ].map((range) => (
+              <label key={range.label} className="flex items-center gap-3 group cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 transition-shadow"
+                  checked={
+                    filters.priceRange.min === range.min && filters.priceRange.max === range.max
+                  }
+                  onChange={() => handlePriceRangeChange(range.min, range.max)}
+                />
+                <span className="text-text/80 group-hover:text-primary transition-colors">
+                  {range.label}
+                </span>
+              </label>
+            ))}
+          </div>
+        </FilterSection>
+
+        {/* Tipo de Animal */}
+        <FilterSection title="Tipo de Animal" icon={<Dog size={18} />}>
+          <div className="space-y-2">
+            {['Cães', 'Gatos', 'Pássaros'].map((type) => (
+              <label key={type} className="flex items-center gap-3 group cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 transition-shadow"
+                  checked={filters.animalType.includes(type)}
+                  onChange={() => handleAnimalTypeChange(type)}
+                />
+                <span className="text-text/80 group-hover:text-primary transition-colors">
+                  {type}
+                </span>
+              </label>
+            ))}
+          </div>
+        </FilterSection>
+
+        {/* Disponibilidade */}
+        <FilterSection title="Disponibilidade" icon={<Package size={18} />}>
+          <div className="space-y-2">
+            {[
+              { key: 'inStock' as const, label: 'Em Estoque' },
+              { key: 'onSale' as const, label: 'Em Promoção' },
+              { key: 'bestSellers' as const, label: 'Mais Vendidos' },
+              { key: 'newArrivals' as const, label: 'Novidades' },
+            ].map((item) => (
+              <label key={item.key} className="flex items-center gap-3 group cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 transition-shadow"
+                  checked={filters.availability[item.key]}
+                  onChange={() => handleAvailabilityChange(item.key)}
+                />
+                <span className="text-text/80 group-hover:text-primary transition-colors">
+                  {item.label}
+                </span>
+              </label>
+            ))}
+          </div>
+        </FilterSection>
+
+        {/* Avaliação */}
+        <FilterSection title="Avaliação" icon={<Star size={18} />}>
+          <div className="space-y-2">
+            {[5, 4, 3, 2, 1].map((rating) => (
+              <label key={rating} className="flex items-center gap-3 group cursor-pointer">
+                <input
+                  type="checkbox"
+                  className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary/20 transition-shadow"
                   checked={filters.rating === rating}
                   onChange={() => handleRatingChange(rating)}
                 />
-                <div className="flex items-center">
-                  {Array.from({ length: rating }).map((_, index) => (
-                    <Star
-                      key={index}
-                      weight="fill"
-                      className="w-4 h-4 text-yellow-400"
-                    />
-                  ))}
-                  <span className="ml-1">ou mais</span>
+                <div className="flex items-center gap-1">
+                  <div className="flex text-yellow-400">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className={i < rating ? 'text-yellow-400' : 'text-gray-300'}>
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                  <span className="text-text/80 group-hover:text-primary transition-colors">
+                    {rating === 5 ? 'e acima' : `ou mais`}
+                  </span>
                 </div>
               </label>
             ))}
           </div>
-        </div>
+        </FilterSection>
       </div>
     </div>
   )

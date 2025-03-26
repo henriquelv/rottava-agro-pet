@@ -1,9 +1,12 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { MagnifyingGlass, X } from 'phosphor-react'
+import { MagnifyingGlass, X, Package } from 'phosphor-react'
 import { useRouter } from 'next/navigation'
 import { Product } from '@/types/product'
+import Image from 'next/image'
+import Link from 'next/link'
+import { formatCurrency } from '@/utils/format'
 
 interface SearchBarProps {
   onSearch?: (query: string) => void
@@ -16,33 +19,26 @@ export function SearchBar({ onSearch, className = '' }: SearchBarProps) {
   const [results, setResults] = useState<Product[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const searchRef = useRef<HTMLDivElement>(null)
+  const inputRef = useRef<HTMLInputElement>(null)
   const router = useRouter()
 
-  // Simula uma busca na API
   const searchProducts = async (searchQuery: string) => {
+    if (!searchQuery.trim()) {
+      setResults([])
+      return
+    }
+
     setIsLoading(true)
-    // Aqui você implementará a chamada real à API
-    await new Promise(resolve => setTimeout(resolve, 500))
-    setIsLoading(false)
-    
-    // Dados de exemplo
-    setResults([
-      {
-        id: '1',
-        name: 'Ração Premium',
-        slug: 'racao-premium',
-        description: 'Ração premium para cães',
-        images: [{ id: '1', url: '/products/racao.jpg', alt: 'Ração', isMain: true }],
-        category: 'Ração',
-        variants: [{ id: '1', name: 'Padrão', price: 159.90, sku: 'RAC001', stockQuantity: 10 }],
-        brand: 'PremiumPet',
-        rating: 4.5,
-        reviewCount: 128,
-        tags: ['ração'],
-        createdAt: new Date().toISOString(),
-        updatedAt: new Date().toISOString(),
-      }
-    ])
+    try {
+      const response = await fetch(`/api/search?q=${encodeURIComponent(searchQuery)}`)
+      const data = await response.json()
+      setResults(data.products)
+    } catch (error) {
+      console.error('Erro ao buscar produtos:', error)
+      setResults([])
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   useEffect(() => {
@@ -57,42 +53,46 @@ export function SearchBar({ onSearch, className = '' }: SearchBarProps) {
   }, [])
 
   useEffect(() => {
-    if (query.length >= 3) {
-      const debounce = setTimeout(() => {
-        searchProducts(query)
-      }, 300)
+    const delayDebounceFn = setTimeout(() => {
+      searchProducts(query)
+    }, 300)
 
-      return () => clearTimeout(debounce)
-    } else {
-      setResults([])
-    }
+    return () => clearTimeout(delayDebounceFn)
   }, [query])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (query.trim()) {
-      onSearch?.(query)
-      router.push(`/busca?q=${encodeURIComponent(query)}`)
-      setIsOpen(false)
-    }
+    if (!query.trim()) return
+
+    onSearch?.(query)
+    router.push(`/produtos?q=${encodeURIComponent(query)}`)
+    setIsOpen(false)
+  }
+
+  const handleProductClick = (product: Product) => {
+    router.push(`/produtos/${product.slug}`)
+    setIsOpen(false)
+    setQuery('')
   }
 
   return (
     <div ref={searchRef} className={`relative ${className}`}>
       <form onSubmit={handleSubmit} className="relative">
         <input
+          ref={inputRef}
           type="text"
           value={query}
           onChange={(e) => {
             setQuery(e.target.value)
             setIsOpen(true)
           }}
+          onFocus={() => setIsOpen(true)}
           placeholder="Buscar produtos..."
-          className="w-full pl-10 pr-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
+          className="w-full pl-10 pr-4 py-2 rounded-full bg-background border border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-shadow"
         />
         <MagnifyingGlass
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-text/60"
-          weight="bold"
+          size={20}
+          className="absolute left-3 top-1/2 -translate-y-1/2 text-text/60"
         />
         {query && (
           <button
@@ -100,50 +100,65 @@ export function SearchBar({ onSearch, className = '' }: SearchBarProps) {
             onClick={() => {
               setQuery('')
               setResults([])
+              inputRef.current?.focus()
             }}
-            className="absolute right-3 top-1/2 -translate-y-1/2"
+            className="absolute right-3 top-1/2 -translate-y-1/2 text-text/60 hover:text-text transition-colors"
           >
-            <X className="w-5 h-5 text-text/60" weight="bold" />
+            <X size={20} />
           </button>
         )}
       </form>
 
-      {/* Resultados da Busca */}
-      {isOpen && (query.length >= 3 || results.length > 0) && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-lg shadow-lg border overflow-hidden z-50">
+      {isOpen && (
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-lg border border-border overflow-hidden z-50">
           {isLoading ? (
-            <div className="p-4 text-center text-text/60">Buscando...</div>
+            <div className="flex items-center justify-center p-8 text-text/60">
+              <div className="animate-spin rounded-full h-8 w-8 border-2 border-primary border-t-transparent" />
+            </div>
           ) : results.length > 0 ? (
-            <div className="max-h-96 overflow-y-auto">
+            <div className="divide-y divide-border">
               {results.map((product) => (
                 <button
                   key={product.id}
-                  onClick={() => {
-                    router.push(`/produto/${product.slug}`)
-                    setIsOpen(false)
-                  }}
-                  className="w-full p-4 hover:bg-gray-50 flex items-center gap-4 text-left"
+                  onClick={() => handleProductClick(product)}
+                  className="flex items-center gap-4 p-4 w-full hover:bg-background/50 transition-colors text-left"
                 >
-                  <div className="relative w-16 h-16 flex-shrink-0">
-                    <img
-                      src={product.images[0].url}
-                      alt={product.images[0].alt}
-                      className="object-cover rounded"
-                    />
+                  <div className="relative w-16 h-16 rounded-lg overflow-hidden bg-background flex-shrink-0">
+                    {product.images[0] ? (
+                      <Image
+                        src={product.images[0].url}
+                        alt={product.images[0].alt}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center text-text/20">
+                        <Package size={24} />
+                      </div>
+                    )}
                   </div>
-                  <div>
-                    <h3 className="font-medium text-text">{product.name}</h3>
-                    <p className="text-sm text-text/60">{product.brand}</p>
-                    <p className="text-sm font-medium text-primary">
-                      R$ {product.variants[0].price.toFixed(2)}
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-medium text-text truncate">{product.name}</h4>
+                    <p className="text-sm text-text/60 truncate">{product.description}</p>
+                    <p className="text-sm font-medium text-primary mt-1">
+                      {product.variants && product.variants.length > 0 
+                        ? formatCurrency(product.variants[0].price)
+                        : formatCurrency(product.price || 0)}
                     </p>
                   </div>
                 </button>
               ))}
+              <Link
+                href={`/produtos?q=${encodeURIComponent(query)}`}
+                className="block p-4 text-center text-primary hover:text-primary-dark transition-colors"
+              >
+                Ver todos os resultados
+              </Link>
             </div>
-          ) : query.length >= 3 ? (
-            <div className="p-4 text-center text-text/60">
-              Nenhum resultado encontrado para "{query}"
+          ) : query.trim() ? (
+            <div className="flex flex-col items-center justify-center p-8 text-text/60">
+              <Package size={32} className="mb-2" />
+              <p>Nenhum produto encontrado</p>
             </div>
           ) : null}
         </div>

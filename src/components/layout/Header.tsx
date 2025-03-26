@@ -5,11 +5,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useAuth } from '@/hooks/useAuth'
 import { SearchBar } from '@/components/search/SearchBar'
-import { ShoppingCart, User, List, X } from 'phosphor-react'
+import { ShoppingCart, User, List, X, GearSix } from 'phosphor-react'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { user, isAuthenticated, logout } = useAuth()
+  const isAdmin = user?.email === 'henrique.vmoreno@gmail.com'
 
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
@@ -76,6 +77,17 @@ export default function Header() {
                     <p className="text-sm font-medium text-text">{user?.name}</p>
                     <p className="text-xs text-text/60">{user?.email}</p>
                   </div>
+                  {isAdmin && (
+                    <Link
+                      href="/admin/dashboard"
+                      className="block px-4 py-2 text-sm text-primary hover:bg-gray-50"
+                    >
+                      <div className="flex items-center gap-2">
+                        <GearSix size={16} />
+                        Administração
+                      </div>
+                    </Link>
+                  )}
                   <Link
                     href="/perfil"
                     className="block px-4 py-2 text-sm text-text hover:bg-gray-50"
@@ -150,6 +162,17 @@ export default function Header() {
                     <p className="text-base font-medium text-text">{user?.name}</p>
                     <p className="text-sm text-text/60">{user?.email}</p>
                   </div>
+                  {isAdmin && (
+                    <Link
+                      href="/admin/dashboard"
+                      className="block px-3 py-2 text-base font-medium text-primary hover:text-primary-dark"
+                    >
+                      <div className="flex items-center gap-2">
+                        <GearSix size={16} />
+                        Administração
+                      </div>
+                    </Link>
+                  )}
                   <Link
                     href="/perfil"
                     className="block px-3 py-2 text-base font-medium text-text hover:text-primary"
@@ -179,6 +202,19 @@ export default function Header() {
               )}
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Botão de Admin na parte principal do menu (ao lado do login) */}
+      {isAuthenticated && isAdmin && (
+        <div className="hidden md:block fixed bottom-8 right-8">
+          <Link
+            href="/admin/dashboard"
+            className="flex items-center gap-2 px-4 py-3 bg-primary text-white rounded-full shadow-lg hover:bg-primary-dark transition-colors"
+          >
+            <GearSix size={20} />
+            <span>Administração</span>
+          </Link>
         </div>
       )}
     </header>

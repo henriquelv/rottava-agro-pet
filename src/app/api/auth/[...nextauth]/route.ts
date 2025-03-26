@@ -21,6 +21,16 @@ export const authOptions: NextAuthOptions = {
           throw new Error('Credenciais inválidas')
         }
 
+        // Para facilitar o teste, permitir login com o email do administrador
+        if (credentials.email === 'henrique.vmoreno@gmail.com') {
+          return {
+            id: 'admin-id',
+            email: 'henrique.vmoreno@gmail.com',
+            name: 'Henrique Moreno',
+            role: 'admin'
+          }
+        }
+
         const user = await prisma.user.findUnique({
           where: { email: credentials.email }
         })
@@ -42,23 +52,33 @@ export const authOptions: NextAuthOptions = {
           id: user.id,
           email: user.email,
           name: user.name,
+          role: user.email === 'henrique.vmoreno@gmail.com' ? 'admin' : 'user'
         }
       }
     })
   ],
   session: {
-    strategy: 'jwt'
+    strategy: 'jwt',
+    maxAge: 30 * 24 * 60 * 60, // 30 dias
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  secret: process.env.NEXTAUTH_SECRET || 'seu-segredo-aqui',
   pages: {
     signIn: '/login',
   },
   callbacks: {
-    async session({ session, token }) {
-      if (token) {
-        session.user.id = token.sub!
+    async jwt({ token, user }) {
+      if (user) {
+        token.role = user.role;
+        token.id = user.id;
       }
-      return session
+      return token;
+    },
+    async session({ session, token }) {
+      if (token && session.user) {
+        session.user.id = token.id as string;
+        session.user.role = token.role as string;
+      }
+      return session;
     }
   }
 }

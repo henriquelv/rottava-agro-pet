@@ -26,6 +26,8 @@ export interface Product {
   rating: number;
   reviewCount: number;
   tags: string[];
+  price?: number;
+  compareAtPrice?: number;
   createdAt: string;
   updatedAt: string;
 } 
