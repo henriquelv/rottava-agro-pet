@@ -55,8 +55,4 @@ npm run dev
 - `/src/hooks` - Hooks personalizados
 - `/src/lib` - Utilitários e configurações
 - `/src/services` - Serviços e APIs
-- `/src/utils` - Funções utilitárias
-
-## Licença
-
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes. 
+- `/src/utils` - Funções utilitárias 
