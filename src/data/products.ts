@@ -1,188 +1,309 @@
+import { Product } from '@/types/product'
+
 export interface Product {
   id: string;
   name: string;
-  slug: string;
   description: string;
   price: number;
-  compareAtPrice?: number;
-  images: {
-    url: string;
-    alt: string;
-  }[];
   category: string;
+  subcategory: string;
+  subsubcategory?: string;
   brand: string;
-  rating: number;
-  reviewCount: number;
-  tags: string[];
+  image: string;
+  weight?: string;
   stock: number;
-  minStock: number;
+  featured?: boolean;
+  rating?: number;
+  reviewCount?: number;
+  compareAtPrice?: number;
+  slug?: string;
+  images?: { url: string; alt: string }[];
+  tags?: string[];
 }
 
 export const products: Product[] = [
+  // Rações - Cães - Adulto
   {
-    id: '1',
-    name: 'Ração Premium para Cães Adultos',
-    slug: 'racao-premium-caes-adultos',
-    description: 'Ração premium para cães adultos de todas as raças. Contém nutrientes essenciais para a saúde do seu pet.',
-    price: 129.90,
-    compareAtPrice: 149.90,
-    images: [
-      {
-        url: '/products/racao-caes.jpg',
-        alt: 'Ração para cães'
-      }
-    ],
-    category: 'Ração',
-    brand: 'PetNutri',
-    rating: 4.8,
-    reviewCount: 124,
-    tags: ['cães', 'ração', 'premium'],
-    stock: 45,
-    minStock: 10
+    id: 'dal-dog-ad-racas-peq-10',
+    name: 'DAL DOG AD RAÇAS PEQ. 10,1 KG',
+    description: 'Ração para cães adultos de raças pequenas',
+    price: 89.90,
+    category: 'racoes',
+    subcategory: 'caes',
+    subsubcategory: 'adulto',
+    brand: 'Dal Dog',
+    image: '/images/products/racoes/caes/dal-dog-ad-racas-peq-10.jpg',
+    weight: '10,1kg',
+    stock: 10,
+    rating: 4.5,
+    reviewCount: 12
   },
   {
-    id: '2',
-    name: 'Ração para Gatos Castrados',
-    slug: 'racao-gatos-castrados',
-    description: 'Ração especial para gatos castrados. Ajuda a manter o peso ideal e a saúde do seu felino.',
+    id: 'dal-dog-ad-racas-peq-25',
+    name: 'DAL DOG AD RAÇAS PEQ. 25 KG',
+    description: 'Ração para cães adultos de raças pequenas',
+    price: 199.90,
+    category: 'racoes',
+    subcategory: 'caes',
+    subsubcategory: 'adulto',
+    brand: 'Dal Dog',
+    image: '/images/products/racoes/caes/dal-dog-ad-racas-peq-25.jpg',
+    weight: '25kg',
+    stock: 5,
+    rating: 4.5,
+    reviewCount: 8
+  },
+  {
+    id: 'dal-dog-ad-rmg-15',
+    name: 'Ração DAL DOG AD RMG 15 KG',
+    slug: 'dal-dog-ad-rmg-15',
+    description: 'Ração Dal Dog para Cães Adultos Raças Médias e Grandes - 15kg',
     price: 89.90,
     compareAtPrice: 99.90,
     images: [
       {
-        url: '/products/racao-gatos.jpg',
-        alt: 'Ração para gatos'
+        url: '/products/dal-dog-adulto.png',
+        alt: 'Ração Dal Dog para Cães Adultos'
       }
     ],
     category: 'Ração',
-    brand: 'CatLife',
-    rating: 4.7,
-    reviewCount: 98,
-    tags: ['gatos', 'ração', 'castrados'],
-    stock: 38,
-    minStock: 8
-  },
-  {
-    id: '3',
-    name: 'Antipulgas e Carrapatos para Cães',
-    slug: 'antipulgas-carrapatos-caes',
-    description: 'Proteção eficaz contra pulgas e carrapatos para cães de 10 a 20kg. Duração de 3 meses.',
-    price: 79.90,
-    images: [
-      {
-        url: '/products/antipulgas.jpg',
-        alt: 'Antipulgas para cães'
-      }
-    ],
-    category: 'Medicamentos',
-    brand: 'PetProtect',
-    rating: 4.9,
-    reviewCount: 156,
-    tags: ['cães', 'antipulgas', 'carrapatos', 'medicamentos'],
-    stock: 25,
-    minStock: 5
-  },
-  {
-    id: '4',
-    name: 'Coleira Ajustável para Cães',
-    slug: 'coleira-ajustavel-caes',
-    description: 'Coleira ajustável de nylon resistente para cães de porte médio. Disponível em várias cores.',
-    price: 39.90,
-    compareAtPrice: 49.90,
-    images: [
-      {
-        url: '/products/coleira.jpg',
-        alt: 'Coleira para cães'
-      }
-    ],
-    category: 'Acessórios',
-    brand: 'PetStyle',
+    brand: 'Dal Dog',
     rating: 4.5,
-    reviewCount: 87,
-    tags: ['cães', 'coleira', 'acessórios'],
-    stock: 60,
-    minStock: 10
+    reviewCount: 43,
+    stock: 20,
+    tags: ['cães', 'ração', 'dal dog']
   },
   {
-    id: '5',
-    name: 'Shampoo Hidratante para Pets',
-    slug: 'shampoo-hidratante-pets',
-    description: 'Shampoo hidratante para cães e gatos. Limpa e hidrata o pelo, deixando-o macio e brilhante.',
-    price: 29.90,
+    id: 'fn-fresh-meat-ad-mini-pq-7',
+    name: 'Ração FN FRESH MEAT AD MINI/PQ 7KG',
+    slug: 'fn-fresh-meat-ad-mini-pq-7',
+    description: 'Ração Farmina N&D Fresh Meat para Cães Adultos Raças Mini e Pequenas - 7kg',
+    price: 159.90,
+    compareAtPrice: 179.90,
     images: [
       {
-        url: '/products/shampoo.jpg',
-        alt: 'Shampoo para pets'
-      }
-    ],
-    category: 'Higiene',
-    brand: 'PetClean',
-    rating: 4.6,
-    reviewCount: 112,
-    tags: ['cães', 'gatos', 'shampoo', 'higiene'],
-    stock: 42,
-    minStock: 8
-  },
-  {
-    id: '6',
-    name: 'Brinquedo Interativo para Cães',
-    slug: 'brinquedo-interativo-caes',
-    description: 'Brinquedo interativo que estimula a inteligência do seu cão. Ideal para todas as raças.',
-    price: 49.90,
-    compareAtPrice: 59.90,
-    images: [
-      {
-        url: '/products/brinquedo.jpg',
-        alt: 'Brinquedo para cães'
-      }
-    ],
-    category: 'Brinquedos',
-    brand: 'PetFun',
-    rating: 4.7,
-    reviewCount: 76,
-    tags: ['cães', 'brinquedos', 'interativo'],
-    stock: 30,
-    minStock: 5
-  },
-  {
-    id: '7',
-    name: 'Ração para Filhotes de Cães',
-    slug: 'racao-filhotes-caes',
-    description: 'Ração especial para filhotes de cães. Rica em nutrientes essenciais para o desenvolvimento saudável.',
-    price: 119.90,
-    compareAtPrice: 139.90,
-    images: [
-      {
-        url: '/products/racao-filhotes.jpg',
-        alt: 'Ração para filhotes'
+        url: '/products/farmina-fresh-meat.png',
+        alt: 'Ração Farmina N&D Fresh Meat'
       }
     ],
     category: 'Ração',
-    brand: 'PetNutri',
+    brand: 'Farmina',
     rating: 4.9,
-    reviewCount: 134,
-    tags: ['cães', 'filhotes', 'ração'],
-    stock: 35,
-    minStock: 7
+    reviewCount: 76,
+    stock: 5,
+    tags: ['cães', 'ração', 'farmina']
   },
   {
-    id: '8',
-    name: 'Cama para Pets',
-    slug: 'cama-pets',
-    description: 'Cama confortável para cães e gatos. Tecido macio e lavável, ideal para o descanso do seu pet.',
-    price: 89.90,
-    compareAtPrice: 109.90,
+    id: 'fn-life-ad-port-med-gr-15',
+    name: 'FN LIFE AD PORT MED/GR 15KG',
+    description: 'Ração Life para cães adultos de porte médio e grande',
+    price: 159.90,
+    category: 'racoes',
+    subcategory: 'caes',
+    subsubcategory: 'adulto',
+    brand: 'FN Life',
+    image: '/images/products/racoes/caes/fn-life-ad-port-med-gr-15.jpg',
+    weight: '15kg',
+    stock: 6,
+    rating: 4.7,
+    reviewCount: 18
+  },
+  {
+    id: 'fn-pro-caes-ad-med-gr-15',
+    name: 'FN PRO CAES AD MED/GR 15KG',
+    description: 'Ração Pro para cães adultos de porte médio e grande',
+    price: 179.90,
+    category: 'racoes',
+    subcategory: 'caes',
+    subsubcategory: 'adulto',
+    brand: 'FN Pro',
+    image: '/images/products/racoes/caes/fn-pro-caes-ad-med-gr-15.jpg',
+    weight: '15kg',
+    stock: 4,
+    rating: 4.9,
+    reviewCount: 25
+  },
+  {
+    id: 'golden-caes-adult-carne-15',
+    name: 'Ração GOLDEN CAES ADULT CARNE 15 KG',
+    slug: 'golden-caes-adult-carne-15',
+    description: 'Ração Golden Special Sabor Carne e Arroz para Cães Adultos - 15kg',
+    price: 159.90,
+    compareAtPrice: 179.90,
     images: [
       {
-        url: '/products/cama.jpg',
-        alt: 'Cama para pets'
+        url: '/products/golden-special-adult-carne.png',
+        alt: 'Ração Golden Special Sabor Carne e Arroz para Cães Adultos'
       }
     ],
-    category: 'Acessórios',
-    brand: 'PetHome',
+    category: 'Ração',
+    brand: 'Golden',
     rating: 4.8,
-    reviewCount: 92,
-    tags: ['cães', 'gatos', 'cama', 'acessórios'],
-    stock: 20,
-    minStock: 4
+    reviewCount: 89,
+    stock: 15,
+    tags: ['cães', 'ração', 'golden']
+  },
+  {
+    id: 'golden-caes-adult-frango-20',
+    name: 'GOLDEN CAES ADULT FRANGO 20 K',
+    description: 'Ração Golden sabor frango para cães adultos',
+    price: 199.90,
+    category: 'racoes',
+    subcategory: 'caes',
+    subsubcategory: 'adulto',
+    brand: 'Golden',
+    image: '/images/products/racoes/caes/golden-caes-adult-frango-20.jpg',
+    weight: '20kg',
+    stock: 8,
+    rating: 4.8,
+    reviewCount: 28
+  },
+  {
+    id: 'golden-caes-adult-light-15',
+    name: 'GOLDEN CAES ADULT LIGHT 15 KG',
+    description: 'Ração Golden Light para cães adultos com tendência a obesidade',
+    price: 179.90,
+    category: 'racoes',
+    subcategory: 'caes',
+    subsubcategory: 'adulto',
+    brand: 'Golden',
+    image: '/images/products/racoes/caes/golden-caes-adult-light-15.jpg',
+    weight: '15kg',
+    stock: 6,
+    rating: 4.7,
+    reviewCount: 22
+  },
+  {
+    id: 'golden-caes-adult-senior-15',
+    name: 'Ração GOLDEN CAES ADULT SENIOR 15 KG',
+    slug: 'golden-caes-adult-senior-15',
+    description: 'Ração Golden Special para Cães Adultos Sênior - 15kg',
+    price: 169.90,
+    compareAtPrice: 189.90,
+    images: [
+      {
+        url: '/products/golden-special-senior.png',
+        alt: 'Ração Golden Special para Cães Adultos Sênior'
+      }
+    ],
+    category: 'Ração',
+    brand: 'Golden',
+    rating: 4.7,
+    reviewCount: 64,
+    stock: 8,
+    tags: ['cães', 'ração', 'golden', 'sênior']
+  },
+  {
+    id: 'premier-formula-caes-filhotes-15',
+    name: 'Ração PREMIER FORMULA CAES FILHOTES 15 KG',
+    slug: 'premier-formula-caes-filhotes-15',
+    description: 'Ração Premier Pet Formula Cães Filhotes Raças Médias e Grandes - 15kg',
+    price: 199.90,
+    compareAtPrice: 219.90,
+    images: [
+      {
+        url: '/products/premier-formula-filhotes.png',
+        alt: 'Ração Premier Pet Formula Cães Filhotes'
+      }
+    ],
+    category: 'Ração',
+    brand: 'Premier',
+    rating: 4.9,
+    reviewCount: 127,
+    stock: 12,
+    tags: ['cães', 'ração', 'premier', 'filhotes']
   }
-]; 
+];
+
+// Categorias principais
+export const categories = {
+  racoes: {
+    name: 'Rações',
+    subcategories: {
+      caes: {
+        name: 'Cães',
+        subsubcategories: ['adulto', 'filhotes', 'senior']
+      },
+      gatos: {
+        name: 'Gatos',
+        subsubcategories: ['adulto', 'castrados', 'filhotes']
+      },
+      passaros: {
+        name: 'Pássaros',
+        subsubcategories: ['calopsita', 'periquito', 'canario', 'papagaio', 'passaros-livres']
+      },
+      roedores: {
+        name: 'Roedores',
+        subsubcategories: ['hamster']
+      }
+    }
+  },
+  veterinaria: {
+    name: 'Veterinária',
+    subcategories: {
+      caes_gatos: {
+        name: 'Cães & Gatos',
+        subsubcategories: [
+          'anti-pulgas-carrapatos',
+          'vermifugos',
+          'anti-inflamatorios',
+          'suplementos',
+          'antibioticos',
+          'outros'
+        ]
+      },
+      passaros: {
+        name: 'Pássaros',
+        subsubcategories: ['suplementos']
+      }
+    }
+  },
+  acessorios: {
+    name: 'Acessórios & Brinquedos',
+    subcategories: {
+      caes: {
+        name: 'Cães',
+        subsubcategories: ['camas', 'coleiras-peitorais', 'brinquedos']
+      },
+      gatos: {
+        name: 'Gatos',
+        subsubcategories: ['brinquedos', 'arranhadores-ninhos']
+      },
+      passaros: {
+        name: 'Pássaros',
+        subsubcategories: ['gaiolas-acessorios']
+      }
+    }
+  },
+  higiene: {
+    name: 'Higiene & Limpeza',
+    subcategories: {
+      caes_gatos: {
+        name: 'Cães & Gatos',
+        subsubcategories: ['granulados', 'tapetes', 'shampoos']
+      }
+    }
+  },
+  petiscos: {
+    name: 'Petiscos & Ossos',
+    subcategories: {
+      caes: {
+        name: 'Cães',
+        subsubcategories: ['petiscos', 'biscoitos']
+      },
+      gatos: {
+        name: 'Gatos',
+        subsubcategories: ['petiscos']
+      }
+    }
+  },
+  outros: {
+    name: 'Outros',
+    subcategories: {
+      roedores: {
+        name: 'Roedores',
+        subsubcategories: ['feno', 'maravalha']
+      }
+    }
+  }
+} 

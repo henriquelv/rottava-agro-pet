@@ -30,4 +30,72 @@ export interface Product {
   compareAtPrice?: number;
   createdAt: string;
   updatedAt: string;
+}
+
+export interface ProductAttribute {
+  name: string;
+  value: string;
+}
+
+export interface StockMovement {
+  id: string;
+  type: 'in' | 'out' | 'adjustment' | 'transfer';
+  quantity: number;
+  product: Product;
+  variant?: ProductVariant;
+  reason?: string;
+  reference?: string;
+  cost?: number;
+  location?: string;
+  supplier?: {
+    id: string;
+    name: string;
+  };
+  createdAt: Date;
+  createdBy: {
+    id: string;
+    name: string;
+  };
+}
+
+export interface StockTransfer {
+  id: string;
+  product: Product;
+  variant?: ProductVariant;
+  quantity: number;
+  fromLocation: string;
+  toLocation: string;
+  status: 'pending' | 'in_transit' | 'completed' | 'cancelled';
+  createdAt: Date;
+  completedAt?: Date;
+  createdBy: {
+    id: string;
+    name: string;
+  };
+}
+
+export interface Supplier {
+  id: string;
+  name: string;
+  code?: string;
+  contact?: {
+    email?: string;
+    phone?: string;
+    address?: string;
+  };
+  products?: Product[];
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ProductLocation {
+  id: string;
+  name: string;
+  code?: string;
+  type: 'warehouse' | 'store' | 'supplier';
+  address?: string;
+  products?: {
+    product: Product;
+    quantity: number;
+  }[];
 } 
