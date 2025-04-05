@@ -23,7 +23,7 @@ export default function Header() {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   const { user, isAuthenticated, logout } = useAuth()
-  const isAdmin = user?.email === 'henrique.vmoreno@gmail.com'
+  const isAdmin = user?.role === 'admin'
 
   return (
     <div>
@@ -75,17 +75,23 @@ export default function Header() {
                   <CaretDown size={16} />
                 </button>
                 <div className="absolute top-full left-0 w-64 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block">
-                  <Link href="/produtos/racao" className="block px-4 py-2 text-sm hover:bg-gray-50">
-                    Ração
+                  <Link href="/produtos/categoria/cao" className="block px-4 py-2 text-sm hover:bg-gray-50">
+                    Cães
                   </Link>
-                  <Link href="/produtos/acessorios" className="block px-4 py-2 text-sm hover:bg-gray-50">
+                  <Link href="/produtos/categoria/gato" className="block px-4 py-2 text-sm hover:bg-gray-50">
+                    Gatos
+                  </Link>
+                  <Link href="/produtos/categoria/ave" className="block px-4 py-2 text-sm hover:bg-gray-50">
+                    Aves
+                  </Link>
+                  <Link href="/produtos/categoria/peixe" className="block px-4 py-2 text-sm hover:bg-gray-50">
+                    Peixes
+                  </Link>
+                  <Link href="/produtos/categoria/cavalo" className="block px-4 py-2 text-sm hover:bg-gray-50">
+                    Cavalos
+                  </Link>
+                  <Link href="/produtos/categoria/acessorios" className="block px-4 py-2 text-sm hover:bg-gray-50">
                     Acessórios
-                  </Link>
-                  <Link href="/produtos/medicamentos" className="block px-4 py-2 text-sm hover:bg-gray-50">
-                    Medicamentos
-                  </Link>
-                  <Link href="/produtos/higiene" className="block px-4 py-2 text-sm hover:bg-gray-50">
-                    Higiene
                   </Link>
                 </div>
               </div>
@@ -108,10 +114,10 @@ export default function Header() {
                 Blog
               </Link>
               <Link
-                href="/contato"
+                href="/admin/dashboard"
                 className="text-text hover:text-primary transition-colors"
               >
-                Contato
+                Administração
               </Link>
             </nav>
 
@@ -119,12 +125,14 @@ export default function Header() {
             <div className="hidden md:flex items-center space-x-4">
               <SearchBar className="w-64" />
 
-              <Link
-                href="/favoritos"
-                className="p-2 text-text hover:text-primary transition-colors"
-              >
-                <Heart size={24} />
-              </Link>
+              {isAuthenticated && (
+                <Link
+                  href="/favoritos"
+                  className="p-2 text-text hover:text-primary transition-colors"
+                >
+                  <Heart size={24} />
+                </Link>
+              )}
 
               <Link
                 href="/carrinho"
@@ -155,18 +163,6 @@ export default function Header() {
                         <p className="text-sm font-medium text-text">{user?.name}</p>
                         <p className="text-xs text-text/60">{user?.email}</p>
                       </div>
-                      {isAdmin && (
-                        <Link
-                          href="/admin/dashboard"
-                          className="block px-4 py-2 text-sm text-primary hover:bg-gray-50"
-                          onClick={() => setIsUserMenuOpen(false)}
-                        >
-                          <div className="flex items-center gap-2">
-                            <GearSix size={16} />
-                            Administração
-                          </div>
-                        </Link>
-                      )}
                       <Link
                         href="/perfil"
                         className="block px-4 py-2 text-sm text-text hover:bg-gray-50"
@@ -203,149 +199,79 @@ export default function Header() {
               ) : (
                 <Link
                   href="/login"
-                  className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary-dark"
+                  className="flex items-center gap-2 p-2 text-text hover:text-primary transition-colors"
                 >
-                  Entrar
+                  <User size={24} />
+                  <span className="text-sm">Entrar</span>
                 </Link>
               )}
             </div>
 
             {/* Menu Mobile */}
-            <div className="flex md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 text-text hover:text-primary transition-colors"
-              >
-                {isMenuOpen ? <X size={24} /> : <List size={24} />}
-              </button>
-            </div>
+            <button
+              className="md:hidden p-2 text-text hover:text-primary transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <List size={24} />}
+            </button>
           </div>
         </div>
 
-        {/* Menu Mobile Dropdown */}
+        {/* Menu Mobile Expandido */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden bg-white border-t">
+            <div className="container py-4">
               <SearchBar className="mb-4" />
-
-              <button
-                onClick={() => setIsSubmenuOpen(!isSubmenuOpen)}
-                className="flex items-center justify-between w-full px-3 py-2 text-base font-medium text-text hover:text-primary"
-              >
-                Produtos
-                <CaretDown size={16} className={isSubmenuOpen ? 'rotate-180' : ''} />
-              </button>
-              {isSubmenuOpen && (
-                <div className="pl-4 space-y-1">
-                  <Link href="/produtos/racao" className="block px-3 py-2 text-sm text-text hover:text-primary">
-                    Ração
-                  </Link>
-                  <Link href="/produtos/acessorios" className="block px-3 py-2 text-sm text-text hover:text-primary">
-                    Acessórios
-                  </Link>
-                  <Link href="/produtos/medicamentos" className="block px-3 py-2 text-sm text-text hover:text-primary">
-                    Medicamentos
-                  </Link>
-                  <Link href="/produtos/higiene" className="block px-3 py-2 text-sm text-text hover:text-primary">
-                    Higiene
-                  </Link>
-                </div>
-              )}
-
-              <Link
-                href="/banho-e-tosa"
-                className="block px-3 py-2 text-base font-medium text-text hover:text-primary"
-              >
-                Banho e Tosa
-              </Link>
-              <Link
-                href="/servicos"
-                className="block px-3 py-2 text-base font-medium text-text hover:text-primary"
-              >
-                Serviços
-              </Link>
-              <Link
-                href="/blog"
-                className="block px-3 py-2 text-base font-medium text-text hover:text-primary"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/contato"
-                className="block px-3 py-2 text-base font-medium text-text hover:text-primary"
-              >
-                Contato
-              </Link>
-
-              <div className="border-t border-gray-200 pt-4 pb-3">
-                {isAuthenticated ? (
-                  <>
-                    <div className="px-3">
-                      <p className="text-base font-medium text-text">{user?.name}</p>
-                      <p className="text-sm text-text/60">{user?.email}</p>
-                    </div>
-                    {isAdmin && (
-                      <Link
-                        href="/admin/dashboard"
-                        className="block px-3 py-2 text-base font-medium text-primary hover:text-primary-dark"
-                      >
-                        <div className="flex items-center gap-2">
-                          <GearSix size={16} />
-                          Administração
-                        </div>
-                      </Link>
-                    )}
-                    <Link
-                      href="/perfil"
-                      className="block px-3 py-2 text-base font-medium text-text hover:text-primary"
-                    >
-                      Minha Conta
-                    </Link>
-                    <Link
-                      href="/pedidos"
-                      className="block px-3 py-2 text-base font-medium text-text hover:text-primary"
-                    >
-                      Meus Pedidos
-                    </Link>
-                    <Link
-                      href="/favoritos"
-                      className="block px-3 py-2 text-base font-medium text-text hover:text-primary"
-                    >
-                      Favoritos
-                    </Link>
-                    <button
-                      onClick={() => logout()}
-                      className="block w-full text-left px-3 py-2 text-base font-medium text-red-600 hover:bg-gray-50"
-                    >
-                      Sair
-                    </button>
-                  </>
-                ) : (
-                  <Link
-                    href="/login"
-                    className="block px-3 py-2 text-base font-medium text-primary hover:text-primary-dark"
+              <nav className="space-y-4">
+                <div>
+                  <button
+                    className="flex items-center justify-between w-full text-text"
+                    onClick={() => setIsSubmenuOpen(!isSubmenuOpen)}
                   >
-                    Entrar
-                  </Link>
-                )}
-              </div>
+                    <span>Produtos</span>
+                    <CaretDown size={16} className={isSubmenuOpen ? "rotate-180" : ""} />
+                  </button>
+                  {isSubmenuOpen && (
+                    <div className="mt-2 ml-4 space-y-2">
+                      <Link href="/produtos/categoria/cao" className="block text-sm text-text/80">
+                        Cães
+                      </Link>
+                      <Link href="/produtos/categoria/gato" className="block text-sm text-text/80">
+                        Gatos
+                      </Link>
+                      <Link href="/produtos/categoria/ave" className="block text-sm text-text/80">
+                        Aves
+                      </Link>
+                      <Link href="/produtos/categoria/peixe" className="block text-sm text-text/80">
+                        Peixes
+                      </Link>
+                      <Link href="/produtos/categoria/cavalo" className="block text-sm text-text/80">
+                        Cavalos
+                      </Link>
+                      <Link href="/produtos/categoria/acessorios" className="block text-sm text-text/80">
+                        Acessórios
+                      </Link>
+                    </div>
+                  )}
+                </div>
+                <Link href="/banho-e-tosa" className="block text-text">
+                  Banho e Tosa
+                </Link>
+                <Link href="/servicos" className="block text-text">
+                  Serviços
+                </Link>
+                <Link href="/blog" className="block text-text">
+                  Blog
+                </Link>
+                <Link href="/sobre" className="block text-text">
+                  Sobre Nós
+                </Link>
+              </nav>
             </div>
           </div>
         )}
       </header>
-
-      {/* Botão de Admin Fixo */}
-      {isAuthenticated && isAdmin && (
-        <div className="hidden md:block fixed bottom-8 right-8">
-          <Link
-            href="/admin/dashboard"
-            className="flex items-center gap-2 px-4 py-3 bg-primary text-white rounded-full shadow-lg hover:bg-primary-dark transition-colors"
-          >
-            <GearSix size={20} />
-            <span>Administração</span>
-          </Link>
-        </div>
-      )}
+      <div className="h-24" /> {/* Espaçador para compensar o header fixo */}
     </div>
   )
-} 
+}

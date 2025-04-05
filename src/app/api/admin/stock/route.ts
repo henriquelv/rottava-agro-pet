@@ -1,61 +1,72 @@
 import { NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
-
-export async function POST(request: Request) {
-  try {
-    const data = await request.json()
-    
-    // Criar movimento de estoque
-    const stockMovement = await prisma.stockMovement.create({
-      data: {
-        productId: data.productId,
-        type: data.type,
-        quantity: data.quantity,
-        reason: data.reason
-      }
-    })
-    
-    // Atualizar estoque do produto
-    const product = await prisma.product.findUnique({
-      where: { id: data.productId }
-    })
-    
-    if (!product) {
-      return NextResponse.json({ error: 'Produto não encontrado' }, { status: 404 })
-    }
-    
-    const newStock = data.type === 'in' 
-      ? product.stock + data.quantity 
-      : product.stock - data.quantity
-    
-    await prisma.product.update({
-      where: { id: data.productId },
-      data: { stock: newStock }
-    })
-    
-    return NextResponse.json(stockMovement)
-  } catch (error) {
-    return NextResponse.json({ error: 'Erro ao registrar movimento de estoque' }, { status: 500 })
-  }
-}
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+import { Product } from '@/database/models'
+import { Op } from 'sequelize'
+import { sequelize } from '@/lib/sequelize'
 
 export async function GET(request: Request) {
   try {
-    const { searchParams } = new URL(request.url)
-    const productId = searchParams.get('productId')
-    
-    const stockMovements = await prisma.stockMovement.findMany({
-      where: productId ? { productId } : undefined,
-      include: {
-        product: true
-      },
-      orderBy: {
-        createdAt: 'desc'
+    const session = await getServerSession(authOptions)
+
+    if (!session?.user || session.user.role !== 'admin') {
+      return NextResponse.json(
+        { error: 'Não autorizado' },
+        { status: 401 }
+      )
+    }
+
+    const products = await Product.findAll({
+      attributes: ['id', 'nome', 'estoque', 'estoqueMinimo'],
+      where: {
+        estoque: {
+          [Op.lte]: sequelize.col('estoqueMinimo')
+        }
       }
     })
-    
-    return NextResponse.json(stockMovements)
+
+    return NextResponse.json(products)
   } catch (error) {
-    return NextResponse.json({ error: 'Erro ao buscar movimentos de estoque' }, { status: 500 })
+    console.error('Erro ao buscar estoque:', error)
+    return NextResponse.json(
+      { error: 'Erro ao buscar estoque' },
+      { status: 500 }
+    )
+  }
+}
+
+export async function PUT(request: Request) {
+  try {
+    const session = await getServerSession(authOptions)
+
+    if (!session?.user || session.user.role !== 'admin') {
+      return NextResponse.json(
+        { error: 'Não autorizado' },
+        { status: 401 }
+      )
+    }
+
+    const data = await request.json()
+    const { id, estoque } = data
+
+    if (!id || estoque === undefined) {
+      return NextResponse.json(
+        { error: 'ID e estoque são obrigatórios' },
+        { status: 400 }
+      )
+    }
+
+    await Product.update(
+      { estoque },
+      { where: { id } }
+    )
+
+    return NextResponse.json({ message: 'Estoque atualizado com sucesso' })
+  } catch (error) {
+    console.error('Erro ao atualizar estoque:', error)
+    return NextResponse.json(
+      { error: 'Erro ao atualizar estoque' },
+      { status: 500 }
+    )
   }
 } 

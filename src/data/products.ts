@@ -1,26 +1,6 @@
-import { Product } from '@/types/product'
+import { Product, Categories } from '@/types/product'
 
-export interface Product {
-  id: string;
-  name: string;
-  description: string;
-  price: number;
-  category: string;
-  subcategory: string;
-  subsubcategory?: string;
-  brand: string;
-  image: string;
-  weight?: string;
-  stock: number;
-  featured?: boolean;
-  rating?: number;
-  reviewCount?: number;
-  compareAtPrice?: number;
-  slug?: string;
-  images?: { url: string; alt: string }[];
-  tags?: string[];
-}
-
+// Produtos
 export const products: Product[] = [
   // Rações - Cães - Adulto
   {
@@ -216,9 +196,10 @@ export const products: Product[] = [
 ];
 
 // Categorias principais
-export const categories = {
+export const categories: Categories = {
   racoes: {
     name: 'Rações',
+    icone: 'Package',
     subcategories: {
       caes: {
         name: 'Cães',
@@ -240,6 +221,7 @@ export const categories = {
   },
   veterinaria: {
     name: 'Veterinária',
+    icone: 'FirstAid',
     subcategories: {
       caes_gatos: {
         name: 'Cães & Gatos',

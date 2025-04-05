@@ -1,53 +1,45 @@
 import { NextResponse } from 'next/server'
-import { PrismaClient } from '@prisma/client'
+import { User } from '@/database/models'
 import bcrypt from 'bcryptjs'
-
-const prisma = new PrismaClient()
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const { name, email, password } = body
+    const { name, email, password } = await request.json()
 
     if (!name || !email || !password) {
       return NextResponse.json(
-        { message: 'Todos os campos são obrigatórios' },
+        { error: 'Todos os campos são obrigatórios' },
         { status: 400 }
       )
     }
 
-    // Verifica se o email já está em uso
-    const existingUser = await prisma.user.findUnique({
+    const existingUser = await User.findOne({
       where: { email }
     })
 
     if (existingUser) {
       return NextResponse.json(
-        { message: 'Este email já está em uso' },
+        { error: 'Email já cadastrado' },
         { status: 400 }
       )
     }
 
-    // Hash da senha
-    const hashedPassword = await bcrypt.hash(password, 12)
+    const hashedPassword = await bcrypt.hash(password, 10)
 
-    // Cria o usuário
-    const user = await prisma.user.create({
-      data: {
-        name,
-        email,
-        password: hashedPassword,
-      }
+    const user = await User.create({
+      name,
+      email,
+      password: hashedPassword,
+      role: 'user'
     })
 
-    // Remove a senha do objeto retornado
-    const { password: _, ...userWithoutPassword } = user
+    const { password: _, ...userWithoutPassword } = user.toJSON()
 
-    return NextResponse.json(userWithoutPassword, { status: 201 })
+    return NextResponse.json(userWithoutPassword)
   } catch (error) {
     console.error('Erro ao registrar usuário:', error)
     return NextResponse.json(
-      { message: 'Erro ao criar conta' },
+      { error: 'Erro ao registrar usuário' },
       { status: 500 }
     )
   }

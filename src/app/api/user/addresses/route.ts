@@ -1,31 +1,29 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
-import { PrismaClient } from '@prisma/client'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { authOptions } from '@/lib/auth'
+import { Address } from '@/database/models'
 
-const prisma = new PrismaClient()
-
-export async function GET() {
+export async function GET(request: Request) {
   try {
     const session = await getServerSession(authOptions)
 
-    if (!session?.user?.id) {
+    if (!session?.user) {
       return NextResponse.json(
-        { message: 'Não autorizado' },
+        { error: 'Não autorizado' },
         { status: 401 }
       )
     }
 
-    const addresses = await prisma.address.findMany({
+    const addresses = await Address.findAll({
       where: { userId: session.user.id },
-      orderBy: { createdAt: 'desc' },
+      order: [['createdAt', 'DESC']]
     })
 
     return NextResponse.json(addresses)
   } catch (error) {
     console.error('Erro ao buscar endereços:', error)
     return NextResponse.json(
-      { message: 'Erro ao buscar endereços' },
+      { error: 'Erro ao buscar endereços' },
       { status: 500 }
     )
   }
@@ -35,41 +33,81 @@ export async function POST(request: Request) {
   try {
     const session = await getServerSession(authOptions)
 
-    if (!session?.user?.id) {
+    if (!session?.user) {
       return NextResponse.json(
-        { message: 'Não autorizado' },
+        { error: 'Não autorizado' },
         { status: 401 }
       )
     }
 
-    const body = await request.json()
-    const { street, number, complement, district, city, state, zipCode } = body
+    const data = await request.json()
 
-    if (!street || !number || !district || !city || !state || !zipCode) {
+    if (!data.cep || !data.logradouro || !data.numero || !data.bairro || !data.cidade || !data.estado) {
       return NextResponse.json(
-        { message: 'Campos obrigatórios não preenchidos' },
+        { error: 'Todos os campos são obrigatórios' },
         { status: 400 }
       )
     }
 
-    const address = await prisma.address.create({
-      data: {
-        street,
-        number,
-        complement,
-        district,
-        city,
-        state,
-        zipCode,
-        userId: session.user.id,
-      }
+    const address = await Address.create({
+      ...data,
+      userId: session.user.id
     })
 
-    return NextResponse.json(address, { status: 201 })
+    return NextResponse.json(address)
   } catch (error) {
     console.error('Erro ao criar endereço:', error)
     return NextResponse.json(
-      { message: 'Erro ao criar endereço' },
+      { error: 'Erro ao criar endereço' },
+      { status: 500 }
+    )
+  }
+}
+
+export async function PUT(request: Request) {
+  try {
+    const session = await getServerSession(authOptions)
+
+    if (!session?.user) {
+      return NextResponse.json(
+        { error: 'Não autorizado' },
+        { status: 401 }
+      )
+    }
+
+    const data = await request.json()
+    const { id, ...updateData } = data
+
+    if (!id) {
+      return NextResponse.json(
+        { error: 'ID do endereço é obrigatório' },
+        { status: 400 }
+      )
+    }
+
+    const address = await Address.findOne({
+      where: {
+        id,
+        userId: session.user.id
+      }
+    })
+
+    if (!address) {
+      return NextResponse.json(
+        { error: 'Endereço não encontrado' },
+        { status: 404 }
+      )
+    }
+
+    await Address.update(updateData, {
+      where: { id }
+    })
+
+    return NextResponse.json({ message: 'Endereço atualizado com sucesso' })
+  } catch (error) {
+    console.error('Erro ao atualizar endereço:', error)
+    return NextResponse.json(
+      { error: 'Erro ao atualizar endereço' },
       { status: 500 }
     )
   }
@@ -79,44 +117,48 @@ export async function DELETE(request: Request) {
   try {
     const session = await getServerSession(authOptions)
 
-    if (!session?.user?.id) {
+    if (!session?.user) {
       return NextResponse.json(
-        { message: 'Não autorizado' },
+        { error: 'Não autorizado' },
         { status: 401 }
       )
     }
 
     const { searchParams } = new URL(request.url)
-    const addressId = searchParams.get('id')
+    const id = searchParams.get('id')
 
-    if (!addressId) {
+    if (!id) {
       return NextResponse.json(
-        { message: 'ID do endereço não fornecido' },
+        { error: 'ID do endereço é obrigatório' },
         { status: 400 }
       )
     }
 
-    const address = await prisma.address.findUnique({
-      where: { id: addressId }
+    const address = await Address.findOne({
+      where: {
+        id,
+        userId: session.user.id
+      }
     })
 
-    if (!address || address.userId !== session.user.id) {
+    if (!address) {
       return NextResponse.json(
-        { message: 'Endereço não encontrado' },
+        { error: 'Endereço não encontrado' },
         { status: 404 }
       )
     }
 
-    await prisma.address.delete({
-      where: { id: addressId }
+    await Address.destroy({
+      where: { id }
     })
 
     return NextResponse.json({ message: 'Endereço excluído com sucesso' })
   } catch (error) {
     console.error('Erro ao excluir endereço:', error)
     return NextResponse.json(
-      { message: 'Erro ao excluir endereço' },
+      { error: 'Erro ao excluir endereço' },
       { status: 500 }
     )
   }
+} 
 } 

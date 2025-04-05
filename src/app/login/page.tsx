@@ -41,30 +41,6 @@ export default function LoginPage() {
     }
   }
 
-  const handleAdminLogin = async () => {
-    setIsLoading(true)
-    try {
-      // Configuração direta para fazer login como administrador
-      const result = await signIn('credentials', {
-        email: 'henrique.vmoreno@gmail.com',
-        password: 'admin123', // Qualquer senha funciona no modo de teste
-        redirect: false,
-      })
-
-      if (result?.error) {
-        toast.error('Erro ao fazer login como administrador')
-      } else {
-        toast.success('Login como administrador realizado com sucesso')
-        router.push('/')
-        router.refresh()
-      }
-    } catch (error) {
-      toast.error('Ocorreu um erro ao fazer login')
-    } finally {
-      setIsLoading(false)
-    }
-  }
-
   return (
     <div className="min-h-screen flex items-center justify-center bg-background py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
@@ -159,29 +135,6 @@ export default function LoginPage() {
             >
               {isLoading ? 'Entrando...' : 'Entrar'}
             </button>
-          </div>
-          
-          <div className="mt-4 text-center">
-            <button
-              type="button"
-              onClick={handleAdminLogin}
-              disabled={isLoading}
-              className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {isLoading ? 'Processando...' : 'Entrar como Administrador'}
-            </button>
-            <p className="mt-2 text-xs text-gray-500">
-              Email: henrique.vmoreno@gmail.com
-            </p>
-          </div>
-          
-          <div className="mt-6">
-            <Link 
-              href="/teste-admin" 
-              className="flex justify-center text-sm text-primary hover:text-primary-dark"
-            >
-              Verificar status de autenticação
-            </Link>
           </div>
         </form>
       </div>

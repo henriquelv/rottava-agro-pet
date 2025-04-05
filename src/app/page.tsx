@@ -15,22 +15,12 @@ import {
   ShoppingBag,
   MagnifyingGlass
 } from 'phosphor-react'
-import { products } from '@/data/products'
-import { ProductGrid } from '@/components/ProductGrid'
+import ProductGrid from '@/components/ProductGrid'
 import { useRouter } from 'next/navigation'
-
-// Função para selecionar produtos em destaque de forma determinística
-function getFeaturedProducts() {
-  // Pega os primeiros 8 produtos que têm rating maior que 4.5
-  return products
-    .filter(product => (product.rating || 0) > 4.5)
-    .slice(0, 8)
-}
 
 export default function Home() {
   const router = useRouter()
   const [searchTerm, setSearchTerm] = useState('')
-  const featuredProducts = getFeaturedProducts()
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
@@ -203,7 +193,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mx-auto max-w-2xl lg:max-w-7xl">
-              <ProductGrid products={featuredProducts} />
+              <ProductGrid products={[]} />
             </div>
           </div>
         </section>

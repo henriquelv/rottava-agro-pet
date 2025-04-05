@@ -21,6 +21,8 @@ export interface Product {
   description: string;
   images: ProductImage[];
   category: string;
+  subcategory?: string;
+  subsubcategory?: string;
   variants: ProductVariant[];
   brand: string;
   rating: number;
@@ -30,6 +32,9 @@ export interface Product {
   compareAtPrice?: number;
   createdAt: string;
   updatedAt: string;
+  stock: number;
+  image?: string;
+  weight?: string;
 }
 
 export interface ProductAttribute {
@@ -98,4 +103,21 @@ export interface ProductLocation {
     product: Product;
     quantity: number;
   }[];
+}
+
+export interface SubCategory {
+  name: string;
+  subsubcategories: string[];
+}
+
+export interface Category {
+  name: string;
+  icone: string;
+  subcategories: {
+    [key: string]: SubCategory;
+  };
+}
+
+export interface Categories {
+  [key: string]: Category;
 } 

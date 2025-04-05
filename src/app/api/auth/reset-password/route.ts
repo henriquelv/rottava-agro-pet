@@ -1,58 +1,50 @@
 import { NextResponse } from 'next/server'
-import { PrismaClient } from '@prisma/client'
+import { User } from '@/database/models'
 import bcrypt from 'bcryptjs'
-
-const prisma = new PrismaClient()
+import { Op } from 'sequelize'
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const { token, password } = body
+    const { token, password } = await request.json()
 
     if (!token || !password) {
       return NextResponse.json(
-        { message: 'Token e senha são obrigatórios' },
+        { error: 'Token e senha são obrigatórios' },
         { status: 400 }
       )
     }
 
-    // Busca o usuário pelo token
-    const user = await prisma.user.findFirst({
+    const user = await User.findOne({
       where: {
-        resetToken: token,
-        resetTokenExpiry: {
-          gt: new Date()
+        resetPasswordToken: token,
+        resetPasswordExpires: {
+          [Op.gt]: new Date()
         }
       }
     })
 
     if (!user) {
       return NextResponse.json(
-        { message: 'Token inválido ou expirado' },
+        { error: 'Token inválido ou expirado' },
         { status: 400 }
       )
     }
 
-    // Hash da nova senha
-    const hashedPassword = await bcrypt.hash(password, 12)
+    const hashedPassword = await bcrypt.hash(password, 10)
 
-    // Atualiza a senha e remove o token
-    await prisma.user.update({
-      where: { id: user.id },
-      data: {
-        password: hashedPassword,
-        resetToken: null,
-        resetTokenExpiry: null
-      }
+    await User.update({
+      password: hashedPassword,
+      resetPasswordToken: null,
+      resetPasswordExpires: null
+    }, {
+      where: { id: user.id }
     })
 
-    return NextResponse.json({
-      message: 'Senha redefinida com sucesso'
-    })
+    return NextResponse.json({ message: 'Senha atualizada com sucesso' })
   } catch (error) {
     console.error('Erro ao redefinir senha:', error)
     return NextResponse.json(
-      { message: 'Erro ao redefinir senha' },
+      { error: 'Erro ao redefinir senha' },
       { status: 500 }
     )
   }

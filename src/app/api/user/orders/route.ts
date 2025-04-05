@@ -1,46 +1,39 @@
 import { NextResponse } from 'next/server'
 import { getServerSession } from 'next-auth'
-import { PrismaClient } from '@prisma/client'
-import { authOptions } from '@/app/api/auth/[...nextauth]/route'
+import { authOptions } from '@/lib/auth'
+import { Order, OrderItem, Product, Image } from '@/database/models'
 
-const prisma = new PrismaClient()
-
-export async function GET() {
+export async function GET(request: Request) {
   try {
     const session = await getServerSession(authOptions)
 
-    if (!session?.user?.id) {
+    if (!session?.user) {
       return NextResponse.json(
-        { message: 'Não autorizado' },
+        { error: 'Não autorizado' },
         { status: 401 }
       )
     }
 
-    const orders = await prisma.order.findMany({
+    const orders = await Order.findAll({
       where: { userId: session.user.id },
-      include: {
-        items: {
-          include: {
-            variant: {
-              include: {
-                product: {
-                  include: {
-                    images: true
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      orderBy: { createdAt: 'desc' }
+      include: [{
+        model: OrderItem,
+        include: [{
+          model: Product,
+          include: [{
+            model: Image,
+            as: 'imagens'
+          }]
+        }]
+      }],
+      order: [['createdAt', 'DESC']]
     })
 
     return NextResponse.json(orders)
   } catch (error) {
     console.error('Erro ao buscar pedidos:', error)
     return NextResponse.json(
-      { message: 'Erro ao buscar pedidos' },
+      { error: 'Erro ao buscar pedidos' },
       { status: 500 }
     )
   }
@@ -50,59 +43,40 @@ export async function POST(request: Request) {
   try {
     const session = await getServerSession(authOptions)
 
-    if (!session?.user?.id) {
+    if (!session?.user) {
       return NextResponse.json(
-        { message: 'Não autorizado' },
+        { error: 'Não autorizado' },
         { status: 401 }
       )
     }
 
-    const body = await request.json()
-    const { items, addressId, total } = body
+    const { items, total } = await request.json()
 
-    if (!items?.length || !addressId || total === undefined) {
+    if (!items || !Array.isArray(items) || items.length === 0) {
       return NextResponse.json(
-        { message: 'Dados do pedido inválidos' },
+        { error: 'Itens do pedido são obrigatórios' },
         { status: 400 }
       )
     }
 
-    const order = await prisma.order.create({
-      data: {
-        userId: session.user.id,
-        addressId,
-        total,
-        status: 'pendente',
-        items: {
-          create: items.map((item: any) => ({
-            variantId: item.variantId,
-            quantity: item.quantity,
-            price: item.price
-          }))
-        }
-      },
-      include: {
-        items: {
-          include: {
-            variant: {
-              include: {
-                product: {
-                  include: {
-                    images: true
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+    const order = await Order.create({
+      userId: session.user.id,
+      total,
+      status: 'pending'
     })
 
-    return NextResponse.json(order, { status: 201 })
+    await OrderItem.bulkCreate(items.map((item: any) => ({
+      orderId: order.id,
+      productId: item.productId,
+      quantity: item.quantity,
+      price: item.price
+    })))
+
+    return NextResponse.json(order)
   } catch (error) {
     console.error('Erro ao criar pedido:', error)
     return NextResponse.json(
-      { message: 'Erro ao criar pedido' },
+      { error: 'Erro ao criar pedido' },
       { status: 500 }
     )
   }

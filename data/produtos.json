@@ -1,0 +1,45 @@
+[
+  {
+    "codigo": "RAC001",
+    "nome": "Ração Golden Special para Cães Adultos Frango e Carne",
+    "slug": "racao-golden-special-caes-adultos-frango-carne",
+    "categoria": "cao",
+    "descricao": "Ração premium para cães adultos, sabor frango e carne. Contém nutrientes essenciais para uma alimentação balanceada.",
+    "preco": 159.90,
+    "precoPromocional": 139.90,
+    "estoque": 50,
+    "estoqueMinimo": 10,
+    "imagens": [
+      "/images/produtos/racao-golden-1.jpg",
+      "/images/produtos/racao-golden-2.jpg"
+    ]
+  },
+  {
+    "codigo": "RAC002",
+    "nome": "Ração Whiskas para Gatos Adultos Sabor Peixe",
+    "slug": "racao-whiskas-gatos-adultos-peixe",
+    "categoria": "gato",
+    "descricao": "Ração premium para gatos adultos, sabor peixe. Rica em proteínas e vitaminas.",
+    "preco": 89.90,
+    "precoPromocional": null,
+    "estoque": 30,
+    "estoqueMinimo": 5,
+    "imagens": [
+      "/images/produtos/racao-whiskas-1.jpg"
+    ]
+  },
+  {
+    "codigo": "ACE001",
+    "nome": "Coleira Antipulgas Seresto para Cães",
+    "slug": "coleira-antipulgas-seresto-caes",
+    "categoria": "acessorios",
+    "descricao": "Coleira antipulgas e carrapatos com proteção de até 8 meses.",
+    "preco": 249.90,
+    "precoPromocional": 229.90,
+    "estoque": 15,
+    "estoqueMinimo": 3,
+    "imagens": [
+      "/images/produtos/coleira-seresto-1.jpg"
+    ]
+  }
+] 

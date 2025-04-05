@@ -3,8 +3,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { useCart } from '@/hooks/CartContext'
-import { formatCurrency } from '@/utils/format'
-import { Plus, Minus, ShoppingBag } from 'phosphor-react'
+import { formatPrice } from '@/utils/format'
+import { Plus, Minus, ShoppingBag, ArrowLeft } from 'phosphor-react'
 import Header from '@/components/layout/Header'
 import type { CartItem } from '@/hooks/CartContext'
 
@@ -24,8 +24,9 @@ export default function Carrinho() {
             </p>
             <Link
               href="/produtos"
-              className="inline-block bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-primary text-white py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors"
             >
+              <ArrowLeft size={20} />
               Ver Produtos
             </Link>
           </div>
@@ -43,8 +44,9 @@ export default function Carrinho() {
             <h1 className="text-4xl font-bold text-text">Carrinho</h1>
             <Link
               href="/produtos"
-              className="bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 transition-colors"
             >
+              <ArrowLeft size={20} />
               Continuar Comprando
             </Link>
           </div>
@@ -55,60 +57,53 @@ export default function Carrinho() {
                 <div key={item.id} className="p-6">
                   <div className="flex gap-6">
                     {/* Imagem do Produto */}
-                    {item.tipo === 'produto' && (
-                      <div className="relative w-24 h-24 flex-shrink-0">
-                        <Image
-                          src={item.imagem}
-                          alt={item.nome}
-                          fill
-                          className="object-cover rounded-lg"
-                        />
-                      </div>
-                    )}
+                    <div className="relative w-24 h-24 flex-shrink-0">
+                      <Image
+                        src={item.imagem}
+                        alt={item.nome}
+                        fill
+                        className="object-cover rounded-lg"
+                      />
+                    </div>
 
                     {/* Detalhes do Item */}
                     <div className="flex-1">
                       <div className="flex justify-between">
                         <div>
                           <h3 className="font-medium text-text">{item.nome}</h3>
-                          {item.tipo === 'produto' && (
-                            <p className="text-sm text-text/60">{item.variante}</p>
-                          )}
-                          {item.tipo === 'agendamento' && (
-                            <div className="text-sm text-text/60">
-                              <p>Data: {new Date(item.data).toLocaleDateString('pt-BR')}</p>
-                              <p>Horário: {item.horario}</p>
-                            </div>
-                          )}
-                        </div>
-                        <div className="text-right">
-                          <p className="font-medium">{formatCurrency(item.preco)}</p>
-                          {item.tipo === 'produto' && (
-                            <p className="text-sm text-text/60">
-                              Subtotal: {formatCurrency(item.preco * item.quantidade)}
+                          {item.precoPromocional && (
+                            <p className="text-sm text-gray-500 line-through">
+                              {formatPrice(item.precoPromocional)}
                             </p>
                           )}
                         </div>
+                        <div className="text-right">
+                          <p className="font-medium text-primary">
+                            {formatPrice(item.preco)}
+                          </p>
+                          <p className="text-sm text-text/60">
+                            Subtotal: {formatPrice(item.preco * item.quantidade)}
+                          </p>
+                        </div>
                       </div>
 
-                      {/* Controles de Quantidade (apenas para produtos) */}
-                      {item.tipo === 'produto' && (
-                        <div className="flex items-center gap-3 mt-4">
-                          <button
-                            onClick={() => updateQuantity(item.id, item.quantidade - 1)}
-                            className="p-1 rounded-md hover:bg-gray-100 transition-colors"
-                          >
-                            <Minus size={16} />
-                          </button>
-                          <span className="w-8 text-center">{item.quantidade}</span>
-                          <button
-                            onClick={() => updateQuantity(item.id, item.quantidade + 1)}
-                            className="p-1 rounded-md hover:bg-gray-100 transition-colors"
-                          >
-                            <Plus size={16} />
-                          </button>
-                        </div>
-                      )}
+                      {/* Controles de Quantidade */}
+                      <div className="flex items-center gap-3 mt-4">
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantidade - 1)}
+                          className="p-1 rounded-md hover:bg-gray-100 transition-colors"
+                          disabled={item.quantidade <= 1}
+                        >
+                          <Minus size={16} />
+                        </button>
+                        <span className="w-8 text-center">{item.quantidade}</span>
+                        <button
+                          onClick={() => updateQuantity(item.id, item.quantidade + 1)}
+                          className="p-1 rounded-md hover:bg-gray-100 transition-colors"
+                        >
+                          <Plus size={16} />
+                        </button>
+                      </div>
 
                       {/* Botão Remover */}
                       <button
@@ -128,7 +123,7 @@ export default function Carrinho() {
               <div className="flex justify-between items-center mb-6">
                 <span className="text-lg font-medium">Total</span>
                 <span className="text-2xl font-bold text-primary">
-                  {formatCurrency(total)}
+                  {formatPrice(total)}
                 </span>
               </div>
 

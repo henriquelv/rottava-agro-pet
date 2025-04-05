@@ -1,91 +1,228 @@
 import { NextResponse } from 'next/server'
-import { prisma } from '@/lib/prisma'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/lib/auth'
+import { Product, Image, Category } from '@/database/models'
+import slugify from 'slugify'
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
-    const products = await prisma.product.findMany({
-      include: {
-        stockMovements: true,
-        orderItems: true
-      }
+    const session = await getServerSession(authOptions)
+
+    if (!session?.user || session.user.role !== 'admin') {
+      return NextResponse.json(
+        { error: 'Não autorizado' },
+        { status: 401 }
+      )
+    }
+
+    const products = await Product.findAll({
+      include: [
+        {
+          model: Image,
+          as: 'imagens'
+        },
+        {
+          model: Category,
+          as: 'categoria'
+        }
+      ],
+      order: [['createdAt', 'DESC']]
     })
-    
+
     return NextResponse.json(products)
   } catch (error) {
-    return NextResponse.json({ error: 'Erro ao buscar produtos' }, { status: 500 })
+    console.error('Erro ao buscar produtos:', error)
+    return NextResponse.json(
+      { error: 'Erro ao buscar produtos' },
+      { status: 500 }
+    )
   }
 }
 
 export async function POST(request: Request) {
   try {
+    const session = await getServerSession(authOptions)
+
+    if (!session?.user || session.user.role !== 'admin') {
+      return NextResponse.json(
+        { error: 'Não autorizado' },
+        { status: 401 }
+      )
+    }
+
     const data = await request.json()
-    
-    const product = await prisma.product.create({
-      data: {
-        name: data.name,
-        slug: data.slug,
-        description: data.description,
-        price: data.price,
-        compareAtPrice: data.compareAtPrice,
-        images: data.images,
-        category: data.category,
-        brand: data.brand,
-        tags: data.tags,
-        stock: data.stock,
-        minStock: data.minStock,
-        status: data.status
-      }
+
+    if (!data.nome || !data.preco || !data.categoryId) {
+      return NextResponse.json(
+        { error: 'Nome, preço e categoria são obrigatórios' },
+        { status: 400 }
+      )
+    }
+
+    const slug = slugify(data.nome, { lower: true })
+
+    const existingProduct = await Product.findOne({
+      where: { slug }
     })
-    
-    return NextResponse.json(product)
+
+    if (existingProduct) {
+      return NextResponse.json(
+        { error: 'Já existe um produto com este nome' },
+        { status: 400 }
+      )
+    }
+
+    const product = await Product.create({
+      ...data,
+      slug
+    })
+
+    if (data.imagens && Array.isArray(data.imagens)) {
+      await Image.bulkCreate(
+        data.imagens.map((url: string) => ({
+          url,
+          productId: product.id
+        }))
+      )
+    }
+
+    const productWithRelations = await Product.findByPk(product.id, {
+      include: [
+        {
+          model: Image,
+          as: 'imagens'
+        },
+        {
+          model: Category,
+          as: 'categoria'
+        }
+      ]
+    })
+
+    return NextResponse.json(productWithRelations)
   } catch (error) {
-    return NextResponse.json({ error: 'Erro ao criar produto' }, { status: 500 })
+    console.error('Erro ao criar produto:', error)
+    return NextResponse.json(
+      { error: 'Erro ao criar produto' },
+      { status: 500 }
+    )
   }
 }
 
 export async function PUT(request: Request) {
   try {
+    const session = await getServerSession(authOptions)
+
+    if (!session?.user || session.user.role !== 'admin') {
+      return NextResponse.json(
+        { error: 'Não autorizado' },
+        { status: 401 }
+      )
+    }
+
     const data = await request.json()
-    
-    const product = await prisma.product.update({
-      where: { id: data.id },
-      data: {
-        name: data.name,
-        slug: data.slug,
-        description: data.description,
-        price: data.price,
-        compareAtPrice: data.compareAtPrice,
-        images: data.images,
-        category: data.category,
-        brand: data.brand,
-        tags: data.tags,
-        stock: data.stock,
-        minStock: data.minStock,
-        status: data.status
+    const { id, ...updateData } = data
+
+    if (!id) {
+      return NextResponse.json(
+        { error: 'ID do produto é obrigatório' },
+        { status: 400 }
+      )
+    }
+
+    if (updateData.nome) {
+      updateData.slug = slugify(updateData.nome, { lower: true })
+
+      const existingProduct = await Product.findOne({
+        where: {
+          slug: updateData.slug,
+          id: { [Op.ne]: id }
+        }
+      })
+
+      if (existingProduct) {
+        return NextResponse.json(
+          { error: 'Já existe um produto com este nome' },
+          { status: 400 }
+        )
       }
+    }
+
+    await Product.update(updateData, {
+      where: { id }
     })
-    
-    return NextResponse.json(product)
+
+    if (data.imagens && Array.isArray(data.imagens)) {
+      await Image.destroy({
+        where: { productId: id }
+      })
+
+      await Image.bulkCreate(
+        data.imagens.map((url: string) => ({
+          url,
+          productId: id
+        }))
+      )
+    }
+
+    const updatedProduct = await Product.findByPk(id, {
+      include: [
+        {
+          model: Image,
+          as: 'imagens'
+        },
+        {
+          model: Category,
+          as: 'categoria'
+        }
+      ]
+    })
+
+    return NextResponse.json(updatedProduct)
   } catch (error) {
-    return NextResponse.json({ error: 'Erro ao atualizar produto' }, { status: 500 })
+    console.error('Erro ao atualizar produto:', error)
+    return NextResponse.json(
+      { error: 'Erro ao atualizar produto' },
+      { status: 500 }
+    )
   }
 }
 
 export async function DELETE(request: Request) {
   try {
+    const session = await getServerSession(authOptions)
+
+    if (!session?.user || session.user.role !== 'admin') {
+      return NextResponse.json(
+        { error: 'Não autorizado' },
+        { status: 401 }
+      )
+    }
+
     const { searchParams } = new URL(request.url)
     const id = searchParams.get('id')
-    
+
     if (!id) {
-      return NextResponse.json({ error: 'ID não fornecido' }, { status: 400 })
+      return NextResponse.json(
+        { error: 'ID do produto é obrigatório' },
+        { status: 400 }
+      )
     }
-    
-    await prisma.product.delete({
+
+    await Image.destroy({
+      where: { productId: id }
+    })
+
+    await Product.destroy({
       where: { id }
     })
-    
-    return NextResponse.json({ message: 'Produto deletado com sucesso' })
+
+    return NextResponse.json({ message: 'Produto excluído com sucesso' })
   } catch (error) {
-    return NextResponse.json({ error: 'Erro ao deletar produto' }, { status: 500 })
+    console.error('Erro ao excluir produto:', error)
+    return NextResponse.json(
+      { error: 'Erro ao excluir produto' },
+      { status: 500 }
+    )
   }
 } 

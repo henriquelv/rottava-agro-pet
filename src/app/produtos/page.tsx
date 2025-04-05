@@ -1,67 +1,45 @@
-'use client'
-
 import React from 'react'
-import Header from '@/components/layout/Header'
-import { WavyBackground } from '@/components/layout/WavyBackground'
-import { 
-  Dog, 
-  Cat, 
-  Bird, 
-  Fish, 
-  Horse, 
-  ShoppingBag 
-} from 'phosphor-react'
-import { products } from '@/data/products'
-import { ProductGrid } from '@/components/ProductGrid'
+import { Product, Image as ImageModel, Category } from '@/database/models'
+import ProductGrid from '@/components/ProductGrid'
+import CategoriesGrid from '@/components/CategoriesGrid'
+import { metadata } from './metadata'
 
-const categorias = [
-  {
-    id: 'cao',
-    nome: 'Cães',
-    icone: Dog,
-    descricao: 'Produtos especiais para seu melhor amigo'
-  },
-  {
-    id: 'gato',
-    nome: 'Gatos',
-    icone: Cat,
-    descricao: 'Tudo para seu gatinho'
-  },
-  {
-    id: 'ave',
-    nome: 'Aves',
-    icone: Bird,
-    descricao: 'Produtos para suas aves'
-  },
-  {
-    id: 'peixe',
-    nome: 'Peixes',
-    icone: Fish,
-    descricao: 'Acessórios para aquário'
-  },
-  {
-    id: 'cavalo',
-    nome: 'Cavalos',
-    icone: Horse,
-    descricao: 'Produtos para equinos'
-  },
-  {
-    id: 'acessorios',
-    nome: 'Acessórios',
-    icone: ShoppingBag,
-    descricao: 'Acessórios gerais para pets'
-  }
-]
+export { metadata }
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const rawProducts = await Product.findAll({
+    include: [
+      {
+        model: ImageModel,
+        as: 'images'
+      },
+      {
+        model: Category,
+        as: 'category'
+      }
+    ],
+    order: [['createdAt', 'DESC']]
+  })
+
+  const rawCategories = await Category.findAll({
+    order: [['nome', 'ASC']]
+  })
+
+  // Convertendo para objetos simples
+  const products = JSON.parse(JSON.stringify(rawProducts))
+  const categories = JSON.parse(JSON.stringify(rawCategories))
+
   return (
-    <div className="bg-white">
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">Nossos Produtos</h2>
-        <div className="mt-6">
-          <ProductGrid products={products} />
-        </div>
-      </div>
+    <div className="container mx-auto px-4 py-8">
+      <section className="mb-12">
+        <h2 className="text-2xl font-bold mb-6">Categorias em Destaque</h2>
+        <CategoriesGrid categories={categories} />
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-6">Nossos Produtos</h2>
+        <ProductGrid products={products} />
+      </section>
     </div>
   )
 } 

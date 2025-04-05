@@ -5,6 +5,18 @@ import { formatCurrency } from '@/utils/admin'
 
 interface SalesChartProps {
   type: 'vendas' | 'faturamento'
+  data?: {
+    labels: string[]
+    datasets: {
+      label: string
+      data: number[]
+      borderColor: string
+      backgroundColor: string
+      tension?: number
+      fill?: boolean
+      borderDash?: number[]
+    }[]
+  }
 }
 
 // Dados mock para demonstração
@@ -84,7 +96,9 @@ const options = {
   }
 }
 
-export default function SalesChart({ type }: SalesChartProps) {
+export default function SalesChart({ type, data }: SalesChartProps) {
+  const chartData = data || mockData[type]
+
   const chartOptions = {
     ...options,
     plugins: {
@@ -111,10 +125,18 @@ export default function SalesChart({ type }: SalesChartProps) {
     }
   }
 
+  if (!chartData?.labels || !chartData?.datasets) {
+    return (
+      <div className="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-[400px]">
+        <p className="text-text/60">Nenhum dado disponível</p>
+      </div>
+    )
+  }
+
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm">
       <div className="h-[400px]">
-        <Line data={mockData[type]} options={chartOptions} />
+        <Line data={chartData} options={chartOptions} />
       </div>
     </div>
   )

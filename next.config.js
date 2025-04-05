@@ -1,6 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        pg: false,
+        'pg-hstore': false,
+        fs: false,
+        net: false,
+        tls: false
+      };
+    }
+    return config;
+  },
   images: {
     remotePatterns: [
       {
@@ -30,7 +43,14 @@ const nextConfig = {
     domains: ['localhost', 'rottavaagropet.com.br']
   },
   env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL
+    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
+    DATABASE_URL: process.env.DATABASE_URL,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET
+  },
+  experimental: {
+    serverActions: true,
+    serverComponentsExternalPackages: ['sequelize', 'pg', 'pg-hstore']
   }
 }
 

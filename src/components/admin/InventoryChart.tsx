@@ -3,6 +3,23 @@ import { Bar } from 'react-chartjs-2'
 import { defaultOptions, colors } from '@/lib/chart'
 import { formatCurrency } from '@/utils/admin'
 
+interface InventoryChartProps {
+  data?: {
+    labels: string[]
+    datasets: {
+      label: string
+      data: number[]
+      backgroundColor: string
+    }[]
+  }
+  summary?: {
+    totalProducts: number
+    totalValue: number
+    lowStock: number
+    outOfStock: number
+  }
+}
+
 // Dados mock para demonstração
 const mockData = {
   labels: ['Ração', 'Medicamentos', 'Acessórios', 'Higiene', 'Brinquedos'],
@@ -53,40 +70,51 @@ const options = {
 }
 
 // Dados adicionais para o resumo
-const inventorySummary = {
+const mockSummary = {
   totalProducts: 165,
   totalValue: 45678.90,
   lowStock: 8,
   outOfStock: 2
 }
 
-export default function InventoryChart() {
+export default function InventoryChart({ data, summary }: InventoryChartProps) {
+  const chartData = data || mockData
+  const summaryData = summary || mockSummary
+
+  if (!chartData?.labels || !chartData?.datasets) {
+    return (
+      <div className="bg-white rounded-xl p-6 shadow-sm flex items-center justify-center h-[300px]">
+        <p className="text-text/60">Nenhum dado disponível</p>
+      </div>
+    )
+  }
+
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div className="p-4 bg-background rounded-lg">
           <span className="text-sm text-text/60">Total de Produtos</span>
-          <h4 className="text-xl font-bold">{inventorySummary.totalProducts}</h4>
+          <h4 className="text-xl font-bold">{summaryData.totalProducts}</h4>
         </div>
         
         <div className="p-4 bg-background rounded-lg">
           <span className="text-sm text-text/60">Valor em Estoque</span>
-          <h4 className="text-xl font-bold">{formatCurrency(inventorySummary.totalValue)}</h4>
+          <h4 className="text-xl font-bold">{formatCurrency(summaryData.totalValue)}</h4>
         </div>
         
         <div className="p-4 bg-background rounded-lg">
           <span className="text-sm text-text/60">Estoque Baixo</span>
-          <h4 className="text-xl font-bold text-amber-500">{inventorySummary.lowStock}</h4>
+          <h4 className="text-xl font-bold text-amber-500">{summaryData.lowStock}</h4>
         </div>
         
         <div className="p-4 bg-background rounded-lg">
           <span className="text-sm text-text/60">Sem Estoque</span>
-          <h4 className="text-xl font-bold text-red-500">{inventorySummary.outOfStock}</h4>
+          <h4 className="text-xl font-bold text-red-500">{summaryData.outOfStock}</h4>
         </div>
       </div>
 
       <div className="h-[300px]">
-        <Bar data={mockData} options={options} />
+        <Bar data={chartData} options={options} />
       </div>
     </div>
   )

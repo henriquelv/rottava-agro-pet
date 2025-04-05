@@ -27,7 +27,9 @@ interface Product {
   id: string
   name: string
   slug: string
+  codigo: string
   description: string
+  descricao_detalhada: string
   price: number
   compareAtPrice?: number
   images: {
@@ -424,123 +426,123 @@ export default function ProductsPage() {
       {/* Lista de Produtos */}
       <div className="bg-white rounded-xl shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr className="bg-background">
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  <input
-                    type="checkbox"
-                    checked={selectedProducts.length === sortedProducts.length}
-                    onChange={toggleSelectAll}
-                    className="rounded border-gray-300 text-primary focus:ring-primary"
-                  />
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Produto
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Categoria
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Preço
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Estoque
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Status
-                </th>
-                <th className="px-6 py-3 text-right text-sm font-medium text-text/60">
-                  Ações
-                </th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-100">
-              {sortedProducts.map((product) => (
-                <tr key={product.id}>
-                  <td className="px-6 py-4 whitespace-nowrap">
+          {view === 'table' && (
+            <table className="min-w-full divide-y divide-gray-200">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                     <input
                       type="checkbox"
-                      checked={selectedProducts.includes(product.id)}
-                      onChange={() => toggleSelectProduct(product.id)}
                       className="rounded border-gray-300 text-primary focus:ring-primary"
+                      checked={selectedProducts.length === products.length}
+                      onChange={toggleSelectAll}
                     />
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Package className="text-primary" size={20} />
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Produto
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Código
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Categoria
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Preço
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Estoque
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Status
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    Ações
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                {filteredProducts.map((product) => (
+                  <tr key={product.id}>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <input
+                        type="checkbox"
+                        className="rounded border-gray-300 text-primary focus:ring-primary"
+                        checked={selectedProducts.includes(product.id)}
+                        onChange={() => toggleSelectProduct(product.id)}
+                      />
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="flex items-center">
+                        <div className="h-10 w-10 flex-shrink-0">
+                          <img
+                            className="h-10 w-10 rounded-full object-cover"
+                            src={product.images[0]?.url || '/placeholder.png'}
+                            alt={product.name}
+                          />
+                        </div>
+                        <div className="ml-4">
+                          <div className="text-sm font-medium text-gray-900">{product.name}</div>
+                          <div className="text-sm text-gray-500">{product.brand}</div>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-medium">{product.name}</p>
-                        <p className="text-sm text-text/60">ID: {product.id}</p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 text-sm">{product.category}</td>
-                  <td className="px-6 py-4 text-sm">
-                    {formatCurrency(product.price)}
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-2">
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="text-sm text-gray-900">{product.codigo}</div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="text-sm text-gray-900">{product.category}</div>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <div className="text-sm text-gray-900">{formatCurrency(product.price)}</div>
+                      {product.compareAtPrice && (
+                        <div className="text-sm text-gray-500 line-through">
+                          {formatCurrency(product.compareAtPrice)}
+                        </div>
+                      )}
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <span
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStockStatusColor(
+                          getStockStatus(product)
+                        )}`}
+                      >
+                        {product.stock} unidades
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap">
+                      <span
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                          product.status === 'active'
+                            ? 'bg-green-100 text-green-800'
+                            : 'bg-red-100 text-red-800'
+                        }`}
+                      >
+                        {product.status === 'active' ? 'Ativo' : 'Inativo'}
+                      </span>
+                    </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                       <button
                         onClick={() => {
-                          setSelectedProduct(product)
-                          setShowStockModal(true)
-                          fetchStockMovements(product.id)
+                          setEditingProduct(product)
+                          setShowAddModal(true)
                         }}
-                        className="flex items-center gap-2 text-sm"
+                        className="text-primary hover:text-primary-dark mr-4"
                       >
-                        <span className={`font-medium ${
-                          getStockStatus(product) === 'out_of_stock'
-                            ? 'text-red-600'
-                            : getStockStatus(product) === 'low_stock'
-                            ? 'text-yellow-600'
-                            : 'text-green-600'
-                        }`}>
-                          {product.stock}
-                        </span>
-                        <span className="text-text/60">
-                          (Min: {product.minStock})
-                        </span>
-                      </button>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <span
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                        product.status === 'active'
-                          ? 'bg-green-100 text-green-800'
-                          : product.status === 'inactive'
-                          ? 'bg-red-100 text-red-800'
-                          : 'bg-gray-100 text-gray-800'
-                      }`}
-                    >
-                      {product.status === 'active' ? 'Ativo' :
-                       product.status === 'inactive' ? 'Inativo' :
-                       'Rascunho'}
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 text-right">
-                    <div className="flex items-center justify-end gap-2">
-                      <button
-                        onClick={() => setEditingProduct(product)}
-                        className="p-2 hover:bg-primary/10 rounded-lg transition-colors"
-                      >
-                        <Pencil className="text-primary" size={20} />
+                        <Pencil size={20} />
                       </button>
                       <button
                         onClick={() => handleDeleteProduct(product.id)}
-                        className="p-2 hover:bg-red-50 rounded-lg transition-colors"
+                        className="text-red-600 hover:text-red-900"
                       >
-                        <Trash className="text-red-600" size={20} />
+                        <Trash size={20} />
                       </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
         </div>
       </div>
 

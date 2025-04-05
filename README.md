@@ -7,7 +7,7 @@ Site institucional e e-commerce da Rottava Agro Pet, desenvolvido com Next.js.
 - Next.js 14
 - TypeScript
 - Tailwind CSS
-- Prisma
+- Sequelize
 - NextAuth.js
 - Zustand
 - React Query

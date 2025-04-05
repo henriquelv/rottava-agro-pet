@@ -1,58 +1,58 @@
 import { NextResponse } from 'next/server'
-import { PrismaClient } from '@prisma/client'
+import { User } from '@/database/models'
 import crypto from 'crypto'
-
-const prisma = new PrismaClient()
+import { sendEmail } from '@/lib/email'
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json()
-    const { email } = body
+    const { email } = await request.json()
 
     if (!email) {
       return NextResponse.json(
-        { message: 'Email é obrigatório' },
+        { error: 'Email é obrigatório' },
         { status: 400 }
       )
     }
 
-    const user = await prisma.user.findUnique({
+    const user = await User.findOne({
       where: { email }
     })
 
     if (!user) {
-      // Por segurança, não informamos se o email existe ou não
       return NextResponse.json(
-        { message: 'Se o email existir, você receberá as instruções em breve' },
-        { status: 200 }
+        { error: 'Usuário não encontrado' },
+        { status: 404 }
       )
     }
 
-    // Gera um token único
-    const resetToken = crypto.randomBytes(32).toString('hex')
-    const resetTokenExpiry = new Date(Date.now() + 3600000) // 1 hora
+    const token = crypto.randomBytes(32).toString('hex')
+    const expires = new Date(Date.now() + 3600000) // 1 hora
 
-    // Atualiza o usuário com o token
-    await prisma.user.update({
-      where: { id: user.id },
-      data: {
-        resetToken,
-        resetTokenExpiry
-      }
+    await User.update({
+      resetPasswordToken: token,
+      resetPasswordExpires: expires
+    }, {
+      where: { id: user.id }
     })
 
-    // TODO: Implementar o envio de email
-    // Por enquanto, apenas simula o envio
-    console.log('Email de recuperação enviado para:', email)
-    console.log('Token:', resetToken)
+    const resetUrl = `${process.env.NEXT_PUBLIC_APP_URL}/reset-password?token=${token}`
 
-    return NextResponse.json({
-      message: 'Se o email existir, você receberá as instruções em breve'
+    await sendEmail({
+      to: email,
+      subject: 'Redefinição de Senha',
+      text: `Para redefinir sua senha, acesse o link: ${resetUrl}`,
+      html: `
+        <p>Para redefinir sua senha, clique no link abaixo:</p>
+        <p><a href="${resetUrl}">Redefinir Senha</a></p>
+        <p>Este link é válido por 1 hora.</p>
+      `
     })
+
+    return NextResponse.json({ message: 'Email de recuperação enviado' })
   } catch (error) {
-    console.error('Erro ao processar recuperação de senha:', error)
+    console.error('Erro ao enviar email de recuperação:', error)
     return NextResponse.json(
-      { message: 'Erro ao processar sua solicitação' },
+      { error: 'Erro ao enviar email de recuperação' },
       { status: 500 }
     )
   }
