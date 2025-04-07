@@ -22,6 +22,9 @@ import { ProductForm } from '@/components/admin/ProductForm'
 import { formatCurrency } from '@/utils/format'
 import { products as initialProducts } from '@/data/products'
 import { Product, StockMovement } from '@/types/product'
+import Link from 'next/link'
+import Image from 'next/image'
+import { formatPrice } from '@/utils/format'
 
 interface Product {
   id: string
@@ -370,13 +373,13 @@ export default function ProductsPage() {
             <UploadSimple size={20} />
             <span>Importar</span>
           </button>
-          <button
-            onClick={() => setShowAddModal(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark"
+          <Link
+            href="/admin/produtos/novo"
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
           >
             <Plus size={20} />
             <span>Novo Produto</span>
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -522,15 +525,12 @@ export default function ProductsPage() {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                      <button
-                        onClick={() => {
-                          setEditingProduct(product)
-                          setShowAddModal(true)
-                        }}
+                      <Link
+                        href={`/admin/produtos/${product.id}`}
                         className="text-primary hover:text-primary-dark mr-4"
                       >
                         <Pencil size={20} />
-                      </button>
+                      </Link>
                       <button
                         onClick={() => handleDeleteProduct(product.id)}
                         className="text-red-600 hover:text-red-900"

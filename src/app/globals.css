@@ -47,10 +47,29 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
+
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --foreground-rgb: 255, 255, 255;
+      --background-start-rgb: 0, 0, 0;
+      --background-end-rgb: 0, 0, 0;
+    }
   }
 
   body {
     @apply text-text bg-background;
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+      )
+      rgb(var(--background-start-rgb));
   }
 }
 
@@ -86,4 +105,71 @@
   .radio {
     @apply h-4 w-4 text-primary-500 focus:ring-primary-500 border-gray-300;
   }
+}
+
+/* Estilos de acessibilidade */
+.contrast {
+  filter: contrast(150%);
+}
+
+.high-contrast {
+  filter: contrast(200%) brightness(120%);
+}
+
+/* Estilos para leitura de tela */
+[aria-live] {
+  outline: 2px solid #4CAF50;
+}
+
+/* Estilos para navegação por teclado */
+:focus {
+  outline: 3px solid #4CAF50;
+  outline-offset: 2px;
+}
+
+/* Estilos para tamanhos de fonte */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 769px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Estilos para alto contraste */
+.high-contrast {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.high-contrast a {
+  color: #FFFF00;
+}
+
+.high-contrast button {
+  background: #FFFF00;
+  color: #000000;
+}
+
+/* Estilos para contraste */
+.contrast {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.contrast a {
+  color: #0000FF;
+}
+
+.contrast button {
+  background: #0000FF;
+  color: #FFFFFF;
 } 

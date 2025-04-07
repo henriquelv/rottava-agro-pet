@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { useAuth } from '@/hooks/AuthContext'
-import { GearSix } from 'phosphor-react'
+import { GearSix, MapPin, Phone, Clock, Truck } from 'phosphor-react'
+import { storeConfig } from '@/config/store'
 
 export function Footer() {
   const { user } = useAuth()
@@ -15,9 +16,23 @@ export function Footer() {
           {/* Sobre */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Sobre Nós</h3>
-            <p className="text-gray-600">
-              A Rottava Agro Pet é sua loja completa de produtos para animais de estimação e agrícolas.
+            <p className="text-gray-600 mb-4">
+              {storeConfig.description}
             </p>
+            <div className="flex items-center text-gray-600 mb-2">
+              <MapPin className="w-5 h-5 mr-2" />
+              <span>{storeConfig.address.street}, {storeConfig.address.number}</span>
+            </div>
+            <div className="flex items-center text-gray-600 mb-2">
+              <Phone className="w-5 h-5 mr-2" />
+              <a href={`tel:${storeConfig.contact.phone}`} className="hover:text-primary">
+                {storeConfig.contact.phone}
+              </a>
+            </div>
+            <div className="flex items-center text-gray-600">
+              <Clock className="w-5 h-5 mr-2" />
+              <span>Seg-Sex: {storeConfig.hours.weekdays}</span>
+            </div>
           </div>
 
           {/* Links Rápidos */}
@@ -47,50 +62,68 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Contato */}
+          {/* Serviços */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contato</h3>
-            <ul className="space-y-2 text-gray-600">
-              <li>Rua Principal, 123</li>
-              <li>Cidade - Estado</li>
-              <li>CEP: 00000-000</li>
-              <li>Tel: (00) 0000-0000</li>
-              <li>Email: contato@rottavaagropet.com.br</li>
+            <h3 className="text-lg font-semibold mb-4">Serviços</h3>
+            <ul className="space-y-2">
+              <li className="flex items-center text-gray-600">
+                <Truck className="w-5 h-5 mr-2" />
+                <span>Entrega no mesmo dia</span>
+              </li>
+              <li>
+                <Link href="/banho-e-tosa" className="text-gray-600 hover:text-primary">
+                  Banho e Tosa Profissional
+                </Link>
+              </li>
+              <li>
+                <Link href="/consultas" className="text-gray-600 hover:text-primary">
+                  Consultas Veterinárias
+                </Link>
+              </li>
+              <li>
+                <Link href="/fidelidade" className="text-gray-600 hover:text-primary">
+                  Programa de Fidelidade
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Redes Sociais */}
+          {/* Horário de Funcionamento */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Redes Sociais</h3>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-600 hover:text-primary">
-                Facebook
-              </a>
-              <a href="#" className="text-gray-600 hover:text-primary">
-                Instagram
-              </a>
-              <a href="#" className="text-gray-600 hover:text-primary">
-                WhatsApp
-              </a>
-            </div>
+            <h3 className="text-lg font-semibold mb-4">Horário de Funcionamento</h3>
+            <ul className="space-y-2">
+              <li className="flex justify-between text-gray-600">
+                <span>Segunda a Sexta:</span>
+                <span>{storeConfig.hours.weekdays}</span>
+              </li>
+              <li className="flex justify-between text-gray-600">
+                <span>Sábado:</span>
+                <span>{storeConfig.hours.saturday}</span>
+              </li>
+              <li className="flex justify-between text-gray-600">
+                <span>Domingo:</span>
+                <span>{storeConfig.hours.sunday}</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        {/* Linha inferior com copyright e botão de admin */}
-        <div className="mt-8 pt-8 border-t border-gray-200">
-          <div className="flex justify-between items-center">
-            <p className="text-gray-600">
-              © {new Date().getFullYear()} Rottava Agro Pet. Todos os direitos reservados.
-            </p>
+        <div className="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-600 text-sm mb-4 md:mb-0">
+            © {new Date().getFullYear()} {storeConfig.name}. Todos os direitos reservados.
+          </p>
+          <div className="flex space-x-4">
             {isAdmin && (
-              <Link 
-                href="/admin/dashboard"
-                className="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
-              >
-                <GearSix size={20} />
-                Administração
+              <Link href="/admin" className="text-gray-600 hover:text-primary">
+                <GearSix className="w-5 h-5" />
               </Link>
             )}
+            <a href={storeConfig.social.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary">
+              Facebook
+            </a>
+            <a href={storeConfig.social.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary">
+              Instagram
+            </a>
           </div>
         </div>
       </div>

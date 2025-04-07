@@ -1,99 +1,117 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { useAuth } from '@/hooks/AuthContext'
-import { Lock, Envelope } from 'phosphor-react'
+import Image from 'next/image'
+import { Lock, User } from 'phosphor-react'
 
-export default function AdminLoginPage() {
+export default function LoginPage() {
   const router = useRouter()
-  const { signIn } = useAuth()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [formData, setFormData] = useState({
+    email: '',
+    password: ''
+  })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setError('')
     setLoading(true)
 
     try {
-      await signIn({ email, password })
-      router.push('/admin/dashboard')
-    } catch (err) {
-      setError('Email ou senha inválidos')
+      // Aqui você irá implementar a autenticação com a API
+      // Por enquanto, vamos apenas simular um delay e redirecionar
+      await new Promise(resolve => setTimeout(resolve, 1000))
+
+      // Validação simples (você deve implementar uma validação mais segura)
+      if (formData.email === 'admin@rottava.com.br' && formData.password === 'admin123') {
+        // Salvar token/sessão
+        localStorage.setItem('adminToken', 'dummy-token')
+        router.push('/admin')
+      } else {
+        throw new Error('Credenciais inválidas')
+      }
+    } catch (error) {
+      alert('Email ou senha inválidos')
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-sm">
-        <h1 className="text-2xl font-bold text-center mb-8">
-          Login Administrativo
-        </h1>
-
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div>
-            <label className="block text-sm font-medium mb-2">
-              Email
-            </label>
-            <div className="relative">
-              <Envelope
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-text/40"
-                size={20}
-              />
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-lg border focus:ring-2 focus:ring-primary/20 transition-shadow"
-                placeholder="admin@rottavaagropet.com.br"
-                required
-              />
-            </div>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full space-y-8">
+        <div>
+          <div className="relative w-32 h-32 mx-auto">
+            <Image
+              src="/logo.png"
+              alt="Rottava Agro Pet"
+              fill
+              className="object-contain"
+            />
           </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-2">
-              Senha
-            </label>
-            <div className="relative">
-              <Lock
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-text/40"
-                size={20}
-              />
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 rounded-lg border focus:ring-2 focus:ring-primary/20 transition-shadow"
-                placeholder="admin123"
-                required
-              />
-            </div>
-          </div>
-
-          {error && (
-            <p className="text-red-600 text-sm">{error}</p>
-          )}
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-2 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {loading ? 'Entrando...' : 'Entrar'}
-          </button>
-        </form>
-
-        <div className="mt-4 text-sm text-gray-600">
-          <p>Credenciais de teste:</p>
-          <p>Email: admin@rottavaagropet.com.br</p>
-          <p>Senha: admin123</p>
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Painel Administrativo
+          </h2>
+          <p className="mt-2 text-center text-sm text-gray-600">
+            Faça login para acessar o painel
+          </p>
         </div>
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="rounded-md shadow-sm -space-y-px">
+            <div>
+              <label htmlFor="email" className="sr-only">
+                Email
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <User className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
+                  placeholder="Email"
+                />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="password" className="sr-only">
+                Senha
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Lock className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autoComplete="current-password"
+                  required
+                  value={formData.password}
+                  onChange={(e) => setFormData(prev => ({ ...prev, password: e.target.value }))}
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 pl-10 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm"
+                  placeholder="Senha"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {loading ? 'Entrando...' : 'Entrar'}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   )

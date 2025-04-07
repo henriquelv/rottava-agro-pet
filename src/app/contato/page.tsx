@@ -24,13 +24,6 @@ export default function Contato() {
     { dia: 'Domingo', horario: 'Fechado' },
   ]
 
-  // Sugestão de novos horários (comentado por enquanto)
-  const novoHorarios = [
-    { dia: 'Segunda a Sexta', horario: '08:30 às 19:00' },
-    { dia: 'Sábado', horario: '08:00 às 16:00' },
-    { dia: 'Domingo', horario: 'Fechado' },
-  ]
-
   return (
     <>
       <Header />
@@ -154,19 +147,6 @@ export default function Contato() {
                         <span>{horario.horario}</span>
                       </div>
                     ))}
-                    <div className="mt-4 p-4 bg-primary/10 rounded-lg">
-                      <p className="text-sm font-medium text-primary">
-                        Sugestão de Novos Horários (em análise):
-                      </p>
-                      <ul className="mt-2 space-y-1 text-sm text-text/80">
-                        <li>• Segunda a Sexta: 08:30 às 19:00</li>
-                        <li>• Sábado: 08:00 às 16:00</li>
-                        <li>• Domingo: Fechado</li>
-                      </ul>
-                      <p className="mt-2 text-xs text-text/60">
-                        * Horário estendido aos sábados para melhor atender nossos clientes
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>

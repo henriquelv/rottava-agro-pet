@@ -1,7 +1,7 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config';
 
-const Cart = sequelize.define('Cart', {
+export const Cart = sequelize.define('Cart', {
   id: {
     type: DataTypes.UUID,
     defaultValue: DataTypes.UUIDV4,
@@ -58,6 +58,4 @@ Cart.associate = (models) => {
     foreignKey: 'userId',
     as: 'user'
   });
-};
-
-export default Cart; 
+}; 

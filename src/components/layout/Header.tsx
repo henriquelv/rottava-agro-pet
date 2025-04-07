@@ -17,38 +17,32 @@ import {
   Clock,
   CaretDown
 } from 'phosphor-react'
+import { storeConfig } from '@/config/store'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   const { user, isAuthenticated, logout } = useAuth()
-  const isAdmin = user?.role === 'admin'
+  const isAdmin = user?.email === 'admin@rottavaagropet.com.br'
 
   return (
     <div>
       <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
         {/* Barra Superior */}
-        <div className="bg-primary text-white py-1">
-          <div className="container flex items-center justify-between text-sm">
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-1">
-                <MapPin size={16} />
-                <span>Rottava, SC</span>
+        <div className="bg-primary text-white py-2">
+          <div className="container mx-auto px-4 flex justify-between items-center">
+            <div className="flex items-center space-x-6">
+              <div className="flex items-center">
+                <Phone className="w-4 h-4 mr-2" />
+                <a href={`tel:${storeConfig.contact.phone}`} className="text-sm hover:underline">
+                  {storeConfig.contact.phone}
+                </a>
               </div>
-              <div className="flex items-center gap-1">
-                <Phone size={16} />
-                <span>(49) 99999-9999</span>
+              <div className="flex items-center">
+                <Clock className="w-4 h-4 mr-2" />
+                <span className="text-sm">Seg-Sex: {storeConfig.hours.weekdays}</span>
               </div>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-1">
-                <Clock size={16} />
-                <span>Seg a Sáb: 8h às 18h</span>
-              </div>
-              <Link href="/sobre" className="hover:text-white/80">
-                Sobre Nós
-              </Link>
             </div>
           </div>
         </div>

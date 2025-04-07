@@ -32,6 +32,15 @@ interface User {
   createdAt: string
 }
 
+interface UserFormData {
+  name: string
+  email: string
+  password: string
+  phone: string
+  role: 'admin' | 'customer'
+  status: 'active' | 'inactive'
+}
+
 export default function UsersPage() {
   const [users, setUsers] = useState<User[]>([
     {
@@ -57,6 +66,14 @@ export default function UsersPage() {
   const [selectedUsers, setSelectedUsers] = useState<string[]>([])
   const [showAddModal, setShowAddModal] = useState(false)
   const [editingUser, setEditingUser] = useState<User | null>(null)
+  const [formData, setFormData] = useState<UserFormData>({
+    name: '',
+    email: '',
+    password: '',
+    phone: '',
+    role: 'customer',
+    status: 'active'
+  })
 
   // Estatísticas
   const stats = [
@@ -94,6 +111,36 @@ export default function UsersPage() {
       className: 'text-red-600 hover:bg-red-50'
     }
   ]
+
+  const handleAddUser = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setLoading(true)
+
+    try {
+      // Aqui você implementaria a chamada à API para criar o usuário
+      const newUser = {
+        id: Math.random().toString(),
+        ...formData,
+        orders: { count: 0, total: 0 },
+        createdAt: new Date().toISOString()
+      }
+
+      setUsers([...users, newUser])
+      setShowAddModal(false)
+      setFormData({
+        name: '',
+        email: '',
+        password: '',
+        phone: '',
+        role: 'customer',
+        status: 'active'
+      })
+    } catch (error) {
+      console.error('Erro ao adicionar usuário:', error)
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div className="space-y-8">
@@ -354,44 +401,50 @@ export default function UsersPage() {
       </div>
 
       {/* Modal de Adicionar/Editar Usuário */}
-      {(showAddModal || editingUser) && (
+      {showAddModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-xl p-6 w-full max-w-lg">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl font-bold text-gray-900">
-                {editingUser ? 'Editar Usuário' : 'Novo Usuário'}
-              </h2>
-              <button
-                onClick={() => {
-                  setShowAddModal(false)
-                  setEditingUser(null)
-                }}
-                className="text-gray-400 hover:text-gray-600"
-              >
-                <CaretDown size={20} />
-              </button>
-            </div>
+          <div className="bg-white rounded-lg p-6 w-full max-w-md">
+            <h2 className="text-xl font-bold mb-4">
+              {editingUser ? 'Editar Usuário' : 'Novo Usuário'}
+            </h2>
 
-            <form className="space-y-4">
+            <form onSubmit={handleAddUser} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Nome
                 </label>
                 <input
                   type="text"
-                  className="w-full px-3 py-2 rounded-lg border focus:ring-2 focus:ring-primary/20"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20"
                   required
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  E-mail
+                  Email
                 </label>
                 <input
                   type="email"
-                  className="w-full px-3 py-2 rounded-lg border focus:ring-2 focus:ring-primary/20"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20"
                   required
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Senha
+                </label>
+                <input
+                  type="password"
+                  value={formData.password}
+                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20"
+                  required={!editingUser}
                 />
               </div>
 
@@ -401,17 +454,9 @@ export default function UsersPage() {
                 </label>
                 <input
                   type="tel"
-                  className="w-full px-3 py-2 rounded-lg border focus:ring-2 focus:ring-primary/20"
-                />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Endereço
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-3 py-2 rounded-lg border focus:ring-2 focus:ring-primary/20"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20"
                 />
               </div>
 
@@ -420,8 +465,9 @@ export default function UsersPage() {
                   Função
                 </label>
                 <select
-                  className="w-full px-3 py-2 rounded-lg border focus:ring-2 focus:ring-primary/20"
-                  required
+                  value={formData.role}
+                  onChange={(e) => setFormData({ ...formData, role: e.target.value as 'admin' | 'customer' })}
+                  className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20"
                 >
                   <option value="customer">Cliente</option>
                   <option value="admin">Administrador</option>
@@ -433,30 +479,29 @@ export default function UsersPage() {
                   Status
                 </label>
                 <select
-                  className="w-full px-3 py-2 rounded-lg border focus:ring-2 focus:ring-primary/20"
-                  required
+                  value={formData.status}
+                  onChange={(e) => setFormData({ ...formData, status: e.target.value as 'active' | 'inactive' })}
+                  className="w-full px-3 py-2 border rounded-lg focus:ring-2 focus:ring-primary/20"
                 >
                   <option value="active">Ativo</option>
                   <option value="inactive">Inativo</option>
                 </select>
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4">
+              <div className="flex justify-end gap-3 mt-6">
                 <button
                   type="button"
-                  onClick={() => {
-                    setShowAddModal(false)
-                    setEditingUser(null)
-                  }}
+                  onClick={() => setShowAddModal(false)}
                   className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded-lg"
                 >
                   Cancelar
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark"
+                  disabled={loading}
+                  className="px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark disabled:opacity-50"
                 >
-                  {editingUser ? 'Salvar' : 'Criar'}
+                  {loading ? 'Salvando...' : editingUser ? 'Salvar' : 'Adicionar'}
                 </button>
               </div>
             </form>
