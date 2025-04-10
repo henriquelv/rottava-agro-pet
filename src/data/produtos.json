@@ -1,0 +1,92 @@
+[
+  {
+    "codigo": "RAC001",
+    "nome": "Ração Golden Special para Cães Adultos Frango e Carne",
+    "slug": "racao-golden-special-caes-adultos-frango-carne",
+    "categoria": "cao",
+    "descricao": "Ração premium para cães adultos, sabor frango e carne. Contém nutrientes essenciais para uma alimentação balanceada e saudável do seu pet. Indicada para cães adultos de todas as raças.",
+    "preco": 159.90,
+    "imagem": "/images/produtos/racao-golden-1.jpg"
+  },
+  {
+    "codigo": "RAC002",
+    "nome": "Ração Whiskas para Gatos Adultos Sabor Peixe",
+    "slug": "racao-whiskas-gatos-adultos-peixe",
+    "categoria": "gato",
+    "descricao": "Ração premium para gatos adultos, sabor peixe. Rica em proteínas e vitaminas essenciais para a saúde do seu felino. Contém ingredientes que ajudam na saúde do trato urinário.",
+    "preco": 89.90,
+    "imagem": "/images/produtos/racao-whiskas-1.jpg"
+  },
+  {
+    "codigo": "ACE001",
+    "nome": "Coleira Antipulgas Seresto para Cães",
+    "slug": "coleira-antipulgas-seresto-caes",
+    "categoria": "acessorios",
+    "descricao": "Coleira antipulgas e carrapatos com proteção de até 8 meses. Eficaz contra pulgas, carrapatos e seus ovos. Resistente à água e sem cheiro.",
+    "preco": 249.90,
+    "imagem": "/images/produtos/coleira-seresto-1.jpg"
+  },
+  {
+    "codigo": "ACE002",
+    "nome": "Cama para Cães Grande Porte Confortável",
+    "slug": "cama-caes-grande-porte-confortavel",
+    "categoria": "acessorios",
+    "descricao": "Cama confortável para cães de grande porte, feita com material de alta qualidade e resistente. Proporciona conforto e bem-estar para seu pet. Lavável em máquina.",
+    "preco": 189.90,
+    "imagem": "/images/produtos/cama-caes-1.jpg"
+  },
+  {
+    "codigo": "ACE003",
+    "nome": "Comedouro Automático para Cães e Gatos",
+    "slug": "comedouro-automatico-caes-gatos",
+    "categoria": "acessorios",
+    "descricao": "Comedouro automático programável para cães e gatos. Ideal para quem precisa deixar o pet sozinho por algumas horas. Capacidade para até 5 refeições.",
+    "preco": 299.90,
+    "imagem": "/images/produtos/comedouro-1.jpg"
+  },
+  {
+    "codigo": "HIG001",
+    "nome": "Shampoo para Cães Pelo Longo",
+    "slug": "shampoo-caes-pelo-longo",
+    "categoria": "higiene",
+    "descricao": "Shampoo especial para cães de pelo longo. Ajuda a desembaraçar e dar brilho ao pelo. Com ingredientes naturais e hipoalergênicos.",
+    "preco": 39.90,
+    "imagem": "/images/produtos/shampoo-1.jpg"
+  },
+  {
+    "codigo": "HIG002",
+    "nome": "Escova para Gatos Autolinpante",
+    "slug": "escova-gatos-autolimpante",
+    "categoria": "higiene",
+    "descricao": "Escova autolimpante para gatos. Remove os pelos soltos e deixa o pelo do seu felino brilhante e saudável. Fácil de limpar com o botão de ejeção de pelos.",
+    "preco": 59.90,
+    "imagem": "/images/produtos/escova-1.jpg"
+  },
+  {
+    "codigo": "BRI001",
+    "nome": "Brinquedo Interativo para Cães",
+    "slug": "brinquedo-interativo-caes",
+    "categoria": "acessorios",
+    "descricao": "Brinquedo interativo para cães que estimula o raciocínio e mantém seu pet entretido. Ideal para prevenir o tédio e comportamentos destrutivos.",
+    "preco": 79.90,
+    "imagem": "/images/produtos/brinquedo-1.jpg"
+  },
+  {
+    "codigo": "RAC003",
+    "nome": "Ração Premier para Gatos Filhotes",
+    "slug": "racao-premier-gatos-filhotes",
+    "categoria": "gato",
+    "descricao": "Ração super premium para gatos filhotes. Contém nutrientes essenciais para o desenvolvimento saudável do seu filhote de gato. Enriquecida com DHA para o desenvolvimento cerebral.",
+    "preco": 109.90,
+    "imagem": "/images/produtos/racao-premier-1.jpg"
+  },
+  {
+    "codigo": "RAC004",
+    "nome": "Ração Royal Canin para Cães Pequenos",
+    "slug": "racao-royal-canin-caes-pequenos",
+    "categoria": "cao",
+    "descricao": "Ração super premium para cães de pequeno porte. Formulada especialmente para atender às necessidades nutricionais de cães de raças pequenas. Croquetes pequenos e fáceis de mastigar.",
+    "preco": 199.90,
+    "imagem": "/images/produtos/racao-royal-1.jpg"
+  }
+] 

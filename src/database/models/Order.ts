@@ -1,8 +1,11 @@
 import { Model, DataTypes } from 'sequelize';
 import sequelize from '../config';
-import { User } from './User';
-import { Product } from './Product';
-import { CartItem } from './Cart';
+
+interface CartItem {
+  productId: string;
+  quantity: number;
+  price: number;
+}
 
 interface OrderItem extends CartItem {
   productSnapshot: {
@@ -67,9 +70,6 @@ class Order extends Model<OrderAttributes> implements OrderAttributes {
   public readonly updatedAt!: Date;
   public cancelledAt?: Date;
   public completedAt?: Date;
-
-  // Associações
-  public user?: User;
 }
 
 Order.init(
@@ -194,10 +194,6 @@ Order.init(
   }
 );
 
-// Definir associações
-Order.belongsTo(User, {
-  foreignKey: 'userId',
-  as: 'user',
-});
+// As associações serão definidas no arquivo index.ts para evitar referências circulares
 
-export { Order, OrderItem }; 
+export { Order, OrderItem, CartItem }; 

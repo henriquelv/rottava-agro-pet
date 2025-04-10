@@ -1,9 +1,11 @@
-import Category from './Category';
-import Product from './Product';
-import Image from './Image';
-import Order from './Order';
-import OrderItem from './OrderItem';
-import User from './User';
+import sequelize from '../config';
+import { User } from './User';
+import { Category } from './Category';
+import { Product } from './Product';
+import { Image } from './Image';
+import { Cart } from './Cart';
+import { OrderItem, Order } from './Order';
+import { Favorite } from './Favorite';
 
 // Associações do Product
 Product.belongsTo(Category, { foreignKey: 'categoryId', as: 'category' });
@@ -28,10 +30,13 @@ OrderItem.belongsTo(Product, { foreignKey: 'productId' });
 User.hasMany(Order, { foreignKey: 'userId' });
 
 export {
+  sequelize,
+  User,
   Category,
   Product,
   Image,
+  Cart,
   Order,
   OrderItem,
-  User
+  Favorite
 }; 

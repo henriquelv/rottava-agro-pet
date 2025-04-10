@@ -1,0 +1,13 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin and private routes
+Disallow: /admin/
+Disallow: /api/
+Disallow: /login
+Disallow: /register
+Disallow: /reset-password
+
+# Sitemap location
+Sitemap: https://rottavaagropet.com.br/sitemap.xml 

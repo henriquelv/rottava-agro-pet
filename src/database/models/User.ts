@@ -138,20 +138,6 @@ User.init(
   }
 );
 
-// Definir associações
-User.hasOne(Cart, {
-  foreignKey: 'userId',
-  as: 'cart',
-});
-
-User.hasMany(Order, {
-  foreignKey: 'userId',
-  as: 'orders',
-});
-
-User.hasMany(Favorite, {
-  foreignKey: 'userId',
-  as: 'favorites',
-});
+// As associações serão definidas no arquivo index.ts para evitar referências circulares
 
 export { User }; 

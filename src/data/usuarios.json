@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "email": "admin@rottavaagropet.com.br",
+    "nome": "Administrador",
+    "senha": "$2a$10$bpBloL9ReXkB37/yQEdVeuEK8aVRjQdTZUP9DFUNjmU4R7dY1yXBC",
+    "role": "admin"
+  },
+  {
+    "id": "2",
+    "email": "cliente@exemplo.com",
+    "nome": "Cliente Teste",
+    "senha": "$2a$10$bpBloL9ReXkB37/yQEdVeuEK8aVRjQdTZUP9DFUNjmU4R7dY1yXBC",
+    "role": "user"
+  }
+] 

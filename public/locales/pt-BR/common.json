@@ -1,0 +1,54 @@
+{
+  "header": {
+    "home": "Início",
+    "products": "Produtos",
+    "about": "Sobre",
+    "contact": "Contato",
+    "search": "Buscar",
+    "cart": "Carrinho",
+    "login": "Entrar",
+    "register": "Cadastrar"
+  },
+  "footer": {
+    "about": "Sobre nós",
+    "contact": "Contato",
+    "terms": "Termos de uso",
+    "privacy": "Política de privacidade",
+    "rights": "Todos os direitos reservados"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "success": "Operação realizada com sucesso",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "delete": "Excluir",
+    "edit": "Editar",
+    "add": "Adicionar",
+    "remove": "Remover",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "price": "Preço",
+    "quantity": "Quantidade",
+    "total": "Total",
+    "continue": "Continuar",
+    "back": "Voltar"
+  },
+  "title": "Rottava Agro Pet",
+  "description": "Sua loja de produtos agropecuários e pet shop",
+  "menu": {
+    "home": "Início",
+    "products": "Produtos",
+    "services": "Serviços",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "buttons": {
+    "login": "Entrar",
+    "register": "Cadastrar",
+    "search": "Buscar",
+    "cart": "Carrinho",
+    "checkout": "Finalizar Compra"
+  }
+} 

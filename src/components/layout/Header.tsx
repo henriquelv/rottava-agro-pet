@@ -108,6 +108,12 @@ export default function Header() {
                 Blog
               </Link>
               <Link
+                href="/historico"
+                className="text-text hover:text-primary transition-colors"
+              >
+                Histórico de Compras
+              </Link>
+              <Link
                 href="/admin/dashboard"
                 className="text-text hover:text-primary transition-colors"
               >
@@ -256,6 +262,9 @@ export default function Header() {
                 </Link>
                 <Link href="/blog" className="block text-text">
                   Blog
+                </Link>
+                <Link href="/historico" className="block text-text">
+                  Histórico de Compras
                 </Link>
                 <Link href="/sobre" className="block text-text">
                   Sobre Nós

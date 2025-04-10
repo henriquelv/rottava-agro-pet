@@ -1,0 +1,54 @@
+{
+  "header": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "contact": "Contact",
+    "search": "Search",
+    "cart": "Cart",
+    "login": "Login",
+    "register": "Register"
+  },
+  "footer": {
+    "about": "About us",
+    "contact": "Contact",
+    "terms": "Terms of use",
+    "privacy": "Privacy policy",
+    "rights": "All rights reserved"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Operation completed successfully",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "remove": "Remove",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "price": "Price",
+    "quantity": "Quantity",
+    "total": "Total",
+    "continue": "Continue",
+    "back": "Back"
+  },
+  "title": "Rottava Agro Pet",
+  "description": "Your agricultural and pet shop store",
+  "menu": {
+    "home": "Home",
+    "products": "Products",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "buttons": {
+    "login": "Login",
+    "register": "Register",
+    "search": "Search",
+    "cart": "Cart",
+    "checkout": "Checkout"
+  }
+} 

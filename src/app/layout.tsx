@@ -2,23 +2,19 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { WavyBackground } from '@/components/layout/WavyBackground'
-import { Providers } from './providers'
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton'
 import { ChatButton } from '@/components/ui/ChatButton'
 import { Newsletter } from '@/components/marketing/Newsletter'
 import { Footer } from '@/components/layout/Footer'
 import Script from 'next/script'
-import { ToastProvider } from '@/hooks/ToastContext'
 import Toast from '@/components/ui/Toast'
-import { SessionProvider } from 'next-auth/react'
 import { Toaster } from 'sonner'
 import AccessibilityBar from '@/components/ui/AccessibilityBar'
 import LanguageSelector from '@/components/ui/LanguageSelector'
-import { I18nextProvider } from 'react-i18next'
-import i18n from '@/i18n/config'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
+import { ClientProviders } from '@/components/layout/ClientProviders'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -106,30 +102,26 @@ export default function RootLayout({
         <meta name="theme-color" content="#15803d" />
       </head>
       <body className={inter.className}>
-        <I18nextProvider i18n={i18n}>
+        <ClientProviders>
           <AccessibilityBar />
           <div className="flex justify-end p-4">
             <LanguageSelector />
           </div>
-          <ToastProvider>
-            <Providers>
-              <WavyBackground>
-                {children}
-                <div className="mt-12">
-                  <Newsletter />
-                </div>
-              </WavyBackground>
-              <WhatsAppButton />
-              <ChatButton />
-              <Footer />
-            </Providers>
-            <Toast />
-          </ToastProvider>
+          <WavyBackground>
+            {children}
+            <div className="mt-12">
+              <Newsletter />
+            </div>
+          </WavyBackground>
+          <WhatsAppButton />
+          <ChatButton />
+          <Footer />
+          <Toast />
           <Toaster position="top-right" />
           <Analytics />
           <SpeedInsights />
           <GoogleAnalytics />
-        </I18nextProvider>
+        </ClientProviders>
       </body>
     </html>
   )

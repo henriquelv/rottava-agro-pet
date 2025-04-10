@@ -11,18 +11,18 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#3b82f6',
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-          950: '#172554'
+          DEFAULT: '#006400',
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#006400',
+          700: '#004d00',
+          800: '#003300',
+          900: '#001a00',
+          950: '#000d00'
         },
         text: {
           DEFAULT: '#1e293b',
@@ -39,7 +39,10 @@ const config: Config = {
           950: '#020617'
         },
         background: '#f8fafc',
-        border: '#e2e8f0'
+        border: '#e2e8f0',
+        secondary: '#004d00',
+        background: '#f9fafb',
+        text: '#1f2937',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif']
@@ -48,7 +51,9 @@ const config: Config = {
         'slide-up': 'slide-up 0.2s ease-out',
         'slide-down': 'slide-down 0.2s ease-out',
         'slide-left': 'slide-left 0.2s ease-out',
-        'slide-right': 'slide-right 0.2s ease-out'
+        'slide-right': 'slide-right 0.2s ease-out',
+        'slide-in': 'slide-in 0.3s ease-out',
+        'slide-out': 'slide-out 0.3s ease-out',
       },
       keyframes: {
         'slide-up': {
@@ -66,7 +71,15 @@ const config: Config = {
         'slide-right': {
           '0%': { transform: 'translateX(-10px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' }
-        }
+        },
+        'slide-in': {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        'slide-out': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
       typography: {
         DEFAULT: {
