@@ -20,7 +20,7 @@ import { useRouter } from 'next/navigation'
 import { SEO } from '@/components/SEO'
 import { Footer } from '@/components/layout/Footer'
 import { HeroCarousel } from '@/components/home/HeroCarousel'
-import { CategoryGrid } from '@/components/home/CategoryGrid'
+import CategoryList from '@/components/CategoryList'
 import { ProductShowcase } from '@/components/home/ProductShowcase'
 import { Testimonials } from '@/components/home/Testimonials'
 import { Newsletter } from '@/components/home/Newsletter'
@@ -51,7 +51,7 @@ export default function HomePage() {
         <HeroCarousel />
 
         {/* Categorias em destaque */}
-        <CategoryGrid />
+        <CategoryList />
 
         {/* Produtos por categoria */}
         <section className="max-w-7xl mx-auto px-4 py-12 space-y-12">

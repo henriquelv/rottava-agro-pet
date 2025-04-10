@@ -1,72 +1,127 @@
 'use client'
 
-import Image from 'next/image'
+import React from 'react'
 import Link from 'next/link'
-import { formatCurrency } from '@/lib/utils'
+import Image from 'next/image'
+import { useCart } from '@/hooks/useCart'
+import { toast } from 'react-hot-toast'
+import { ShoppingCart, Heart } from 'lucide-react'
 
-interface ProductImage {
-  id: string
-  url: string
-}
-
-interface Product {
-  id: string
+interface Produto {
+  codigo: string
   nome: string
   slug: string
+  categoria: string
+  descricao: string
   preco: number
-  precoPromocional?: number | null
-  images: ProductImage[]
+  preco_promocional?: number
+  imagem: string
 }
 
 interface ProductGridProps {
-  products: Product[]
+  produtos: Produto[]
 }
 
-export default function ProductGrid({ products }: ProductGridProps) {
-  if (!products || products.length === 0) {
-    return (
-      <p className="text-center text-gray-500">
-        Nenhum produto encontrado.
-      </p>
-    )
+const ProductGrid: React.FC<ProductGridProps> = ({ produtos }) => {
+  const { addItem } = useCart()
+
+  const handleAddToCart = (produto: Produto, event: React.MouseEvent) => {
+    event.preventDefault()
+    event.stopPropagation()
+    
+    addItem({
+      id: produto.codigo,
+      nome: produto.nome,
+      preco: produto.preco,
+      preco_promocional: produto.preco_promocional,
+      quantidade: 1,
+      imagem: produto.imagem
+    })
+    
+    toast.success(`${produto.nome} adicionado ao carrinho`)
+  }
+
+  const formatPrice = (price: number) => {
+    return price.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    })
   }
 
   return (
-    <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-      {products.map((product) => (
-        <Link 
-          key={product.id} 
-          href={`/produtos/${product.slug}`} 
-          className="group"
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {produtos.map((produto) => (
+        <Link
+          href={`/produtos/${produto.slug}`}
+          key={produto.codigo}
+          className="group relative bg-white rounded-lg overflow-hidden shadow hover:shadow-md transition-shadow border border-gray-200"
         >
-          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200">
+          <div className="relative h-52 bg-gray-100">
             <Image
-              src={product.images[0]?.url || '/images/placeholder.jpg'}
-              alt={product.nome}
-              width={500}
-              height={500}
-              className="h-full w-full object-cover object-center group-hover:opacity-75"
+              src={produto.imagem || '/images/placeholder.jpg'}
+              alt={produto.nome}
+              fill
+              className="object-contain p-4"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
+              priority={false}
             />
           </div>
-          <h3 className="mt-4 text-sm text-gray-700">{product.nome}</h3>
-          <div className="mt-1">
-            {product.precoPromocional ? (
-              <>
-                <span className="text-lg font-medium text-gray-900">
-                  {formatCurrency(product.precoPromocional)}
+          
+          <div className="p-4">
+            <h3 className="text-sm font-medium text-gray-900 line-clamp-2 min-h-[2.5rem]">
+              {produto.nome}
+            </h3>
+            
+            <div className="mt-2">
+              {produto.preco_promocional ? (
+                <div className="flex items-baseline space-x-2">
+                  <span className="text-lg font-bold text-red-600">
+                    {formatPrice(produto.preco_promocional)}
+                  </span>
+                  <span className="text-sm text-gray-500 line-through">
+                    {formatPrice(produto.preco)}
+                  </span>
+                </div>
+              ) : (
+                <span className="text-lg font-bold text-gray-900">
+                  {formatPrice(produto.preco)}
                 </span>
-                <span className="ml-2 text-sm text-gray-500 line-through">
-                  {formatCurrency(product.preco)}
-                </span>
-              </>
-            ) : (
-              <span className="text-lg font-medium text-gray-900">
-                {formatCurrency(product.preco)}
-              </span>
-            )}
+              )}
+            </div>
+            
+            <div className="mt-3 flex justify-between">
+              <button 
+                onClick={(e) => handleAddToCart(produto, e)}
+                className="inline-flex items-center px-3 py-1.5 border border-transparent text-sm rounded-md bg-green-50 text-green-700 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              >
+                <ShoppingCart size={16} className="mr-1" />
+                Comprar
+              </button>
+              
+              <button 
+                className="inline-flex items-center px-2 py-1.5 border border-transparent text-sm rounded-md text-gray-400 hover:text-red-500 focus:outline-none"
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  toast('Funcionalidade em desenvolvimento', {
+                    icon: '🛠️'
+                  })
+                }}
+              >
+                <Heart size={18} />
+              </button>
+            </div>
           </div>
+          
+          {produto.preco_promocional && (
+            <div className="absolute top-0 right-0 bg-red-600 text-white px-2 py-1 text-xs font-bold">
+              {Math.round((1 - produto.preco_promocional / produto.preco) * 100)}% OFF
+            </div>
+          )}
         </Link>
       ))}
     </div>
   )
-} 
+}
+
+export default ProductGrid 
