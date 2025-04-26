@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { CheckCircle, Warning, X, Info } from 'phosphor-react'
+import { CheckCircle, Warning, X, Info } from 'lucide-react'
 
 interface NotificationProps {
   type: 'success' | 'error' | 'info'

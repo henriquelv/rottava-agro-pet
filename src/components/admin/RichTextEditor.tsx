@@ -11,7 +11,7 @@ import {
   Quote,
   ArrowCounterClockwise,
   ArrowClockwise
-} from 'phosphor-react'
+} from 'lucide-react'
 
 interface RichTextEditorProps {
   value: string

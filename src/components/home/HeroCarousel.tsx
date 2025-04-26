@@ -9,21 +9,21 @@ const slides = [
     id: 1,
     title: 'Promoções Imperdíveis',
     description: 'Até 30% de desconto em rações selecionadas',
-    image: '/banners/promocoes.jpg',
+    image: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1920&q=80',
     link: '/produtos/promocoes'
   },
   {
     id: 2,
     title: 'Frete Grátis',
     description: 'Para compras acima de R$ 199 em Caçador',
-    image: '/banners/frete-gratis.jpg',
+    image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=1920&q=80',
     link: '/entrega'
   },
   {
     id: 3,
     title: 'Novidades',
     description: 'Confira os últimos lançamentos para seu pet',
-    image: '/banners/novidades.jpg',
+    image: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&w=1920&q=80',
     link: '/produtos/novidades'
   }
 ]

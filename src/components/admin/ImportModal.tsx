@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { Import, X, FileArrowDown, Check, Warning } from 'phosphor-react'
+import { Import, X, FileArrowDown, Check, Warning } from 'lucide-react'
 
 interface ImportModalProps {
   onClose: () => void

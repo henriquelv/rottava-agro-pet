@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { MagnifyingGlass, FunnelSimple, X } from 'phosphor-react'
+import { MagnifyingGlass, FunnelSimple, X } from 'lucide-react'
 
 interface FilterField {
   name: string

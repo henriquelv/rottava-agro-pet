@@ -1,6 +1,6 @@
 export const imageConfig = {
   baseUrl: process.env.NEXT_PUBLIC_IMAGES_URL || 'http://localhost:3000',
-  productPlaceholder: '/placeholder.jpg',
+  productPlaceholder: '/images/placeholder.jpg',
   sizes: {
     thumbnail: '100x100',
     small: '300x300',
@@ -14,5 +14,6 @@ export const imageConfig = {
 export function getProductImageUrl(imagePath: string, size: keyof typeof imageConfig.sizes = 'medium') {
   if (!imagePath) return imageConfig.productPlaceholder
   if (imagePath.startsWith('http')) return imagePath
-  return `${imageConfig.baseUrl}/images/products/${size}/${imagePath}`
+  const cleanPath = imagePath.replace(/^\/images\/products\//, '')
+  return `${imageConfig.baseUrl}/images/products/${cleanPath}`
 } 

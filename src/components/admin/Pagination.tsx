@@ -1,4 +1,4 @@
-import { CaretLeft, CaretRight } from 'phosphor-react'
+import { CaretLeft, CaretRight } from 'lucide-react'
 
 interface PaginationProps {
   currentPage: number

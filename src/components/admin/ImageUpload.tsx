@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import Image from 'next/image'
 import { useDropzone } from 'react-dropzone'
-import { Upload, X } from 'phosphor-react'
+import { Upload, X } from 'lucide-react'
 
 interface ImageUploadProps {
   value?: string | null

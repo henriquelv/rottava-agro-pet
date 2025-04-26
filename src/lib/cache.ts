@@ -2,6 +2,7 @@ import { logInfo, logError } from './logger'
 import { getCache, setCache, deleteCache, clearCache } from './redis'
 import { addToQueue } from './queue'
 import { addSchema } from './api-docs'
+import { cache } from 'react'
 
 // Tipos de cache
 export type CacheType = 'memory' | 'redis'
@@ -368,7 +369,7 @@ export class Cache {
 }
 
 // Instância padrão
-export const cache = new Cache()
+export const cacheInstance = new Cache()
 
 // Funções de conveniência
 export async function getCached<T>(
@@ -376,13 +377,13 @@ export async function getCached<T>(
   fetcher: () => Promise<T>,
   ttl?: number
 ): Promise<T> {
-  const cached = await cache.get<T>(key)
+  const cached = await cacheInstance.get<T>(key)
   if (cached !== null) {
     return cached
   }
 
   const value = await fetcher()
-  await cache.set(key, value, ttl)
+  await cacheInstance.set(key, value, ttl)
   return value
 }
 
@@ -449,4 +450,46 @@ addSchema('CacheResponse', {
     },
   },
   required: ['key', 'value', 'ttl', 'provider', 'cachedAt'],
+})
+
+// Cache para dados que não mudam frequentemente
+export const getCachedData = cache(async (key: string, fetchFn: () => Promise<any>) => {
+  try {
+    const cachedData = await fetch(`/api/cache/${key}`)
+    if (cachedData.ok) {
+      return await cachedData.json()
+    }
+  } catch (error) {
+    console.error('Erro ao buscar dados do cache:', error)
+  }
+
+  const data = await fetchFn()
+  
+  // Salvar no cache
+  try {
+    await fetch('/api/cache', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ key, data }),
+    })
+  } catch (error) {
+    console.error('Erro ao salvar dados no cache:', error)
+  }
+
+  return data
+})
+
+// Cache para imagens
+export const getCachedImage = cache(async (src: string) => {
+  try {
+    const response = await fetch(`/api/image?src=${encodeURIComponent(src)}`)
+    if (response.ok) {
+      return response.url
+    }
+  } catch (error) {
+    console.error('Erro ao buscar imagem do cache:', error)
+  }
+  return src
 }) 

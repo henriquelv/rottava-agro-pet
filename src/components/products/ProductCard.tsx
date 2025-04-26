@@ -19,40 +19,39 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const imageUrl = getProductImageUrl(product.images[0])
+  const mainImage = product.images[0] || '/images/placeholder.jpg'
 
   return (
-    <div className="group relative bg-white rounded-lg shadow-sm overflow-hidden">
-      <Link href={`/produtos/${product.slug}`} className="block aspect-square relative">
-        <Image
-          src={imageUrl}
-          alt={product.name}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-300"
-          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
-        />
-      </Link>
-      
-      <button 
-        className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white text-gray-600 hover:text-primary transition-colors"
-        aria-label="Adicionar aos favoritos"
-      >
-        <Heart size={20} />
-      </button>
-
-      <div className="p-4">
-        <Link href={`/produtos/${product.slug}`} className="block">
-          <h3 className="text-sm font-medium text-text line-clamp-2 group-hover:text-primary transition-colors">
+    <Link href={`/produtos/${product.slug}`} className="group">
+      <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+        <div className="relative aspect-square">
+          <Image
+            src={getProductImageUrl(mainImage)}
+            alt={product.name}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            onError={(e) => {
+              e.currentTarget.src = '/images/placeholder.jpg'
+            }}
+          />
+        </div>
+        <div className="p-4">
+          <h3 className="text-lg font-semibold text-gray-800 group-hover:text-primary transition-colors">
             {product.name}
           </h3>
-          <p className="mt-1 text-xs text-text/60">{product.category}</p>
-          <p className="mt-2 text-lg font-bold text-text">{formatCurrency(product.price)}</p>
-        </Link>
-
-        <button className="mt-3 w-full py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
-          Adicionar ao Carrinho
-        </button>
+          <div className="mt-2 flex items-center justify-between">
+            <span className="text-xl font-bold text-primary">
+              {formatCurrency(product.price)}
+            </span>
+            <button
+              type="button"
+              className="p-2 text-gray-400 hover:text-primary transition-colors"
+            >
+              <Heart size={24} weight="regular" />
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </Link>
   )
 } 

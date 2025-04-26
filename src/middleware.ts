@@ -1,5 +1,5 @@
-import { withAuth } from 'next-auth/middleware'
 import { NextResponse } from 'next/server'
+import type { NextRequest } from 'next/server'
 import { getToken } from 'next-auth/jwt'
 
 // Implementação simplificada de rate limit para Edge Runtime
@@ -11,63 +11,55 @@ const rateLimit = {
   }
 }
 
-export default withAuth(
-  async function middleware(req) {
-    try {
-      // Rate limiting
-      const ip = req.ip ?? '127.0.0.1'
-      const { success } = await rateLimit.limit(ip)
-      
-      if (!success) {
-        return new NextResponse('Too Many Requests', { status: 429 })
-      }
+export async function middleware(request: NextRequest) {
+  const token = await getToken({ req: request })
+  const { pathname } = request.nextUrl
 
-      // Verificar token
-      const token = await getToken({ req })
-      
-      // Redirecionar usuários autenticados da página de login
-      if (token && req.nextUrl.pathname === '/login') {
-        return NextResponse.redirect(new URL('/admin', req.url))
-      }
-      
-      // Proteger rotas administrativas
-      if (req.nextUrl.pathname.startsWith('/admin')) {
-        if (!token) {
-          return NextResponse.redirect(new URL('/login', req.url))
-        }
-        
-        if (token.role !== 'admin') {
-          return NextResponse.redirect(new URL('/login', req.url))
-        }
-      }
-
-      // Headers de segurança
-      const response = NextResponse.next()
-      
-      response.headers.set('X-Frame-Options', 'DENY')
-      response.headers.set('X-Content-Type-Options', 'nosniff')
-      response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
-      response.headers.set('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
-      response.headers.set('X-XSS-Protection', '1; mode=block')
-      response.headers.set('Strict-Transport-Security', 'max-age=31536000; includeSubDomains')
-      
-      return response
-    } catch (error) {
-      console.error('Middleware error:', error)
-      return NextResponse.redirect(new URL('/error', req.url))
-    }
-  },
-  {
-    callbacks: {
-      authorized: ({ token }) => !!token
+  // Proteger rotas de admin
+  if (pathname.startsWith('/admin')) {
+    if (!token) {
+      return NextResponse.redirect(new URL('/login', request.url))
     }
   }
-)
+
+  // Proteger rotas de checkout
+  if (pathname.startsWith('/checkout')) {
+    if (!token) {
+      return NextResponse.redirect(new URL('/login', request.url))
+    }
+  }
+
+  // Proteger rotas de perfil
+  if (pathname.startsWith('/perfil')) {
+    if (!token) {
+      return NextResponse.redirect(new URL('/login', request.url))
+    }
+  }
+
+  // Headers de segurança
+  const response = NextResponse.next()
+  response.headers.set('X-Frame-Options', 'DENY')
+  response.headers.set('X-Content-Type-Options', 'nosniff')
+  response.headers.set('X-XSS-Protection', '1; mode=block')
+  response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
+  response.headers.set(
+    'Content-Security-Policy',
+    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https:;"
+  )
+
+  return response
+}
 
 export const config = {
   matcher: [
-    '/admin/:path*',
-    '/login',
-    '/api/:path*'
-  ]
+    /*
+     * Match all request paths except for the ones starting with:
+     * - api (API routes)
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     * - public (public files)
+     */
+    '/((?!api|_next/static|_next/image|favicon.ico|public).*)',
+  ],
 } 

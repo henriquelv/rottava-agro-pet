@@ -108,7 +108,7 @@ export default function Header() {
                 Blog
               </Link>
               <Link
-                href="/historico"
+                href="/history"
                 className="text-text hover:text-primary transition-colors"
               >
                 Histórico de Compras
@@ -135,7 +135,14 @@ export default function Header() {
               )}
 
               <Link
-                href="/carrinho"
+                href="/history"
+                className="p-2 text-text hover:text-primary transition-colors"
+              >
+                <Clock size={24} />
+              </Link>
+
+              <Link
+                href="/cart"
                 className="p-2 text-text hover:text-primary transition-colors relative"
               >
                 <ShoppingCart size={24} />
@@ -263,7 +270,7 @@ export default function Header() {
                 <Link href="/blog" className="block text-text">
                   Blog
                 </Link>
-                <Link href="/historico" className="block text-text">
+                <Link href="/history" className="block text-text">
                   Histórico de Compras
                 </Link>
                 <Link href="/sobre" className="block text-text">

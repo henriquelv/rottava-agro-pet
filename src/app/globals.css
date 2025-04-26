@@ -62,7 +62,7 @@
   }
 
   body {
-    @apply text-text bg-background;
+    @apply text-base bg-background;
     color: rgb(var(--foreground-rgb));
     background: linear-gradient(
         to bottom,
@@ -74,6 +74,10 @@
 }
 
 @layer components {
+  .bg-background {
+    @apply bg-neutral-100;
+  }
+
   .btn-primary {
     @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-2 px-4 rounded transition-colors;
   }
@@ -172,4 +176,10 @@
 .contrast button {
   background: #0000FF;
   color: #FFFFFF;
+}
+
+@layer utilities {
+  .bg-background {
+    @apply bg-neutral-100;
+  }
 } 

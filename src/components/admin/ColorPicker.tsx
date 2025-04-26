@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { CaretDown } from 'phosphor-react'
+import { CaretDown } from 'lucide-react'
 
 interface ColorPickerProps {
   value?: string

@@ -1,6 +1,6 @@
 'use client'
 
-import { PawPrint } from 'phosphor-react'
+import { PawPrint } from 'lucide-react'
 
 interface ProductImagePlaceholderProps {
   name: string

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useRef } from 'react'
-import { MagnifyingGlass, X, Package } from 'phosphor-react'
+import { MagnifyingGlass, X, Package } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { Product } from '@/types/product'
 import Image from 'next/image'

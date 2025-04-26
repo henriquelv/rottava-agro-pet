@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaClockRotateLeft, FaCheck, FaGears, FaTruck, FaHouseCircleCheck, FaBan, FaMoneyBillTransfer } from "react-icons/fa6";
+import { FaClockRotateLeft, FaCheck, FaGears, FaTruck, FaHouseCircleCheck, FaBan, FaMoneyBillTransfer, FaHandHoldingHand } from "react-icons/fa6";
 
 interface PurchaseStatusProps {
   status: string;
@@ -40,6 +40,11 @@ const statusMap: Record<string, { label: string; color: string, icon: React.Reac
     label: 'Reembolsado', 
     color: 'bg-gray-100 text-gray-800 border-gray-300',
     icon: <FaMoneyBillTransfer className="mr-1" />
+  },
+  'retirada': { 
+    label: 'Retirada na Loja', 
+    color: 'bg-orange-100 text-orange-800 border-orange-300',
+    icon: <FaHandHoldingHand className="mr-1" />
   },
 };
 

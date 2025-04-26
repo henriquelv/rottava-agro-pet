@@ -6,6 +6,54 @@ import Image from 'next/image'
 import { useCart } from '@/hooks/useCart'
 import { toast } from 'react-hot-toast'
 import { ShoppingCart, Heart } from 'lucide-react'
+import { ProductCard } from './ProductCard'
+import { ProductGridSkeleton } from './ui/Skeleton'
+
+interface Product {
+  id: string
+  nome: string
+  preco: number
+  precoPromocional?: number
+  imagem: string
+  slug: string
+  categoria: string
+}
+
+interface ProductGridProps {
+  products: Product[]
+  isLoading?: boolean
+}
+
+export function ProductGrid({ products, isLoading = false }: ProductGridProps) {
+  if (isLoading) {
+    return <ProductGridSkeleton count={8} />
+  }
+
+  if (products.length === 0) {
+    return (
+      <div className="text-center py-12">
+        <p className="text-gray-600">Nenhum produto encontrado</p>
+      </div>
+    )
+  }
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          id={product.id}
+          nome={product.nome}
+          preco={product.preco}
+          precoPromocional={product.precoPromocional}
+          imagem={product.imagem}
+          slug={product.slug}
+          categoria={product.categoria}
+        />
+      ))}
+    </div>
+  )
+}
 
 interface Produto {
   codigo: string

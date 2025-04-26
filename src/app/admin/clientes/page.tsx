@@ -54,7 +54,7 @@ const mockCustomers: Customer[] = [
   }
 ]
 
-export default function CustomersPage() {
+export default function AdminClientes() {
   const [searchTerm, setSearchTerm] = useState('')
   const [customers] = useState<Customer[]>(mockCustomers)
 
@@ -65,56 +65,49 @@ export default function CustomersPage() {
   )
 
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-2xl font-bold">Clientes</h1>
-        <p className="text-text/60">
-          Gerencie os clientes e visualize suas informações
-        </p>
+    <div className="container mx-auto px-4 py-8">
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-3xl font-bold">Gerenciamento de Clientes</h1>
+        <div className="flex gap-4">
+          <input
+            type="text"
+            placeholder="Buscar cliente..."
+            className="px-4 py-2 rounded-lg border focus:ring-2 focus:ring-green-600"
+          />
+          <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700">
+            Exportar
+          </button>
+        </div>
       </div>
-
-      {/* Busca */}
-      <div className="relative">
-        <MagnifyingGlass
-          className="absolute left-3 top-1/2 -translate-y-1/2 text-text/40"
-          size={20}
-        />
-        <input
-          type="text"
-          placeholder="Buscar clientes por nome, email ou telefone..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full pl-10 pr-4 py-2 rounded-lg border focus:ring-2 focus:ring-primary/20 transition-shadow"
-        />
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-gray-600">Total de Clientes</h3>
+          <p className="text-3xl font-bold text-gray-900">523</p>
+        </div>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-gray-600">Clientes Ativos</h3>
+          <p className="text-3xl font-bold text-green-600">450</p>
+        </div>
+        <div className="bg-white p-6 rounded-lg shadow-md">
+          <h3 className="text-lg font-semibold text-gray-600">Novos Clientes (30 dias)</h3>
+          <p className="text-3xl font-bold text-blue-600">73</p>
+        </div>
       </div>
-
-      {/* Lista de Clientes */}
-      <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+      <div className="bg-white rounded-lg shadow-md">
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="min-w-full">
             <thead>
-              <tr className="bg-background">
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Cliente
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Contato
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Endereço
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Pedidos
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Total Gasto
-                </th>
-                <th className="px-6 py-3 text-left text-sm font-medium text-text/60">
-                  Último Pedido
-                </th>
+              <tr className="bg-gray-50">
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nome</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Telefone</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Pedidos</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Ações</th>
               </tr>
             </thead>
-            <tbody className="divide-y">
+            <tbody className="bg-white divide-y divide-gray-200">
               {filteredCustomers.map((customer) => (
                 <tr key={customer.id}>
                   <td className="px-6 py-4">
@@ -154,6 +147,12 @@ export default function CustomersPage() {
                   </td>
                   <td className="px-6 py-4 text-sm">
                     {new Date(customer.lastOrder).toLocaleDateString('pt-BR')}
+                  </td>
+                  <td className="px-6 py-4 text-sm">
+                    <div className="flex items-center gap-2">
+                      <button className="text-blue-600 hover:text-blue-800">Editar</button>
+                      <button className="text-red-600 hover:text-red-800">Excluir</button>
+                    </div>
                   </td>
                 </tr>
               ))}

@@ -1,157 +1,160 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { useCart } from '@/context/CartContext';
-import { FaCartPlus, FaHeart, FaRegHeart } from 'react-icons/fa';
-import { toast } from 'react-toastify';
+'use client'
+
+import Link from 'next/link'
+import { useCart } from '@/contexts/CartContext'
+import { useToast } from '@/contexts/ToastContext'
+import { formatPrice } from '@/utils/format'
+import { ShoppingCart, Heart } from 'phosphor-react'
+import { useState } from 'react'
+import { OptimizedImage } from './ui/OptimizedImage'
 
 interface ProductCardProps {
-  id: string;
-  name: string;
-  price: number;
-  imageUrl: string;
-  description: string;
-  quantity_available: number;
-  category: string;
-  brand?: string;
-  onSale?: boolean;
-  salePrice?: number;
+  id: string
+  nome: string
+  preco: number
+  precoPromocional?: number
+  imagem: string
+  slug: string
+  categoria: string
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({
+export function ProductCard({
   id,
-  name,
-  price,
-  imageUrl,
-  description,
-  quantity_available,
-  category,
-  brand,
-  onSale,
-  salePrice
-}) => {
-  const router = useRouter();
-  const { addToCart, addToFavorites, removeFromFavorites, isFavorite } = useCart();
-  const [isHovered, setIsHovered] = useState(false);
-  
-  const displayPrice = onSale && salePrice ? salePrice : price;
-  const outOfStock = quantity_available <= 0;
+  nome,
+  preco,
+  precoPromocional,
+  imagem,
+  slug,
+  categoria,
+}: ProductCardProps) {
+  const { addToCart } = useCart()
+  const { showToast } = useToast()
+  const [isHovered, setIsHovered] = useState(false)
+  const [isAddingToCart, setIsAddingToCart] = useState(false)
+  const [isFavorite, setIsFavorite] = useState(false)
 
-  const handleAddToCart = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    
-    if (outOfStock) {
-      toast.error('Produto sem estoque');
-      return;
+  const handleAddToCart = async () => {
+    setIsAddingToCart(true)
+    try {
+      await addToCart({
+        id,
+        nome,
+        preco,
+        precoPromocional,
+        imagem,
+        quantidade: 1,
+      })
+      showToast(`${nome} adicionado ao carrinho!`, 'success')
+    } catch (error) {
+      showToast('Erro ao adicionar ao carrinho', 'error')
+    } finally {
+      setIsAddingToCart(false)
     }
-    
-    addToCart({
-      id,
-      name,
-      price: displayPrice,
-      quantity: 1
-    });
-  };
+  }
 
-  const handleFavoriteToggle = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (isFavorite(id)) {
-      removeFromFavorites(id);
-    } else {
-      addToFavorites(id, name);
-    }
-  };
-
-  const handleCardClick = () => {
-    router.push(`/produto/${id}`);
-  };
-
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const target = e.target as HTMLImageElement;
-    target.src = '/placeholder-image.jpg';
-  };
+  const handleFavoriteToggle = () => {
+    setIsFavorite(!isFavorite)
+    showToast(
+      `${nome} ${isFavorite ? 'removido dos' : 'adicionado aos'} favoritos`,
+      isFavorite ? 'info' : 'success'
+    )
+  }
 
   return (
-    <div 
-      className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:shadow-xl cursor-pointer transform hover:-translate-y-1"
-      onClick={handleCardClick}
+    <article
+      className="group relative flex flex-col bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      role="article"
+      aria-label={`Produto: ${nome}`}
     >
-      <div className="relative w-full h-48">
-        <Image
-          src={imageUrl}
-          alt={name}
+      <Link
+        href={`/produtos/${categoria}/${slug}`}
+        className="block relative aspect-square overflow-hidden"
+        aria-label={`Ver detalhes do produto ${nome}`}
+      >
+        <OptimizedImage
+          src={imagem}
+          alt={nome}
           fill
-          style={{ objectFit: 'cover' }}
+          className={`transition-transform duration-300 ${
+            isHovered ? 'scale-105' : 'scale-100'
+          }`}
+          sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
           priority={false}
-          onError={handleImageError}
+          quality={75}
         />
-        {outOfStock && (
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <span className="text-white font-bold">Sem estoque</span>
-          </div>
-        )}
-        <button 
-          onClick={handleFavoriteToggle}
-          className="absolute top-2 right-2 p-2 rounded-full bg-white shadow-md transition-colors"
-          aria-label={isFavorite(id) ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
+      </Link>
+
+      <div className="p-4 flex flex-col flex-1">
+        <Link
+          href={`/produtos/${categoria}/${slug}`}
+          className="block mb-2"
+          aria-label={`Ver detalhes do produto ${nome}`}
         >
-          {isFavorite(id) ? (
-            <FaHeart className="text-red-500 text-xl" />
-          ) : (
-            <FaRegHeart className="text-gray-400 hover:text-red-500 text-xl" />
-          )}
-        </button>
-        {onSale && (
-          <div className="absolute top-0 left-0 bg-red-500 text-white px-2 py-1 text-xs font-bold">
-            PROMOÇÃO
-          </div>
-        )}
-      </div>
-      
-      <div className="p-4">
-        <h3 className="text-lg font-semibold mb-1 truncate">{name}</h3>
-        <p className="text-gray-600 text-sm mb-2 line-clamp-2">{description}</p>
-        
-        <div className="flex items-center justify-between mt-3">
-          <div>
-            {onSale && salePrice ? (
-              <div>
-                <span className="text-gray-400 line-through text-sm">R$ {price.toFixed(2)}</span>
-                <span className="font-bold text-red-500 ml-2">R$ {salePrice.toFixed(2)}</span>
-              </div>
+          <h3 className="text-lg font-semibold text-gray-900 line-clamp-2 hover:text-primary transition-colors">
+            {nome}
+          </h3>
+        </Link>
+
+        <div className="mt-auto">
+          <div className="flex items-center gap-2 mb-4">
+            {precoPromocional ? (
+              <>
+                <span className="text-lg font-bold text-primary">
+                  {formatPrice(precoPromocional)}
+                </span>
+                <span className="text-sm text-gray-500 line-through">
+                  {formatPrice(preco)}
+                </span>
+              </>
             ) : (
-              <span className="font-bold text-gray-800">R$ {price.toFixed(2)}</span>
+              <span className="text-lg font-bold text-primary">
+                {formatPrice(preco)}
+              </span>
             )}
           </div>
-          
-          <button
-            onClick={handleAddToCart}
-            disabled={outOfStock}
-            className={`p-2 rounded-full ${
-              outOfStock 
-                ? 'bg-gray-300 cursor-not-allowed' 
-                : 'bg-green-500 hover:bg-green-600'
-            } transition-colors`}
-            aria-label="Adicionar ao carrinho"
-          >
-            <FaCartPlus className="text-white text-xl" />
-          </button>
-        </div>
-        
-        {isHovered && quantity_available > 0 && quantity_available <= 5 && (
-          <p className="text-sm text-orange-500 mt-2">
-            Apenas {quantity_available} {quantity_available === 1 ? 'unidade' : 'unidades'} em estoque!
-          </p>
-        )}
-        
-        {brand && (
-          <p className="text-xs text-gray-500 mt-2">Marca: {brand}</p>
-        )}
-      </div>
-    </div>
-  );
-};
 
-export default ProductCard; 
+          <div className="flex gap-2">
+            <button
+              onClick={handleAddToCart}
+              disabled={isAddingToCart}
+              className={`flex-1 flex items-center justify-center gap-2 py-2 px-4 rounded-lg ${
+                isAddingToCart
+                  ? 'bg-gray-300 cursor-not-allowed'
+                  : 'bg-primary hover:bg-primary/90'
+              } text-white transition-colors`}
+              aria-label={`Adicionar ${nome} ao carrinho`}
+              aria-busy={isAddingToCart}
+            >
+              <ShoppingCart
+                size={20}
+                weight={isAddingToCart ? 'fill' : 'regular'}
+                className={isAddingToCart ? 'animate-spin' : ''}
+              />
+              <span className="font-medium">
+                {isAddingToCart ? 'Adicionando...' : 'Comprar'}
+              </span>
+            </button>
+
+            <button
+              onClick={handleFavoriteToggle}
+              className={`p-2 rounded-lg ${
+                isFavorite
+                  ? 'bg-red-50 text-red-500'
+                  : 'bg-gray-100 hover:bg-gray-200 text-gray-600'
+              } transition-colors`}
+              aria-label={`${isFavorite ? 'Remover dos' : 'Adicionar aos'} favoritos`}
+            >
+              <Heart
+                size={20}
+                weight={isFavorite ? 'fill' : 'regular'}
+                className={isFavorite ? 'animate-pulse' : ''}
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </article>
+  )
+} 

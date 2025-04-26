@@ -1,5 +1,5 @@
 import React from 'react'
-import { MagnifyingGlass, CaretDown } from 'phosphor-react'
+import { MagnifyingGlass, CaretDown } from 'lucide-react'
 
 interface DashboardFiltersProps {
   onPeriodChange: (period: string) => void
