@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { formatPrice } from '@/utils/format'
 import { ShoppingCart, Heart } from 'phosphor-react'
-import { useCart } from '@/hooks/useCart'
+import { useCart } from '@/hooks/CartContext'
 import { useAuth } from '@/hooks/useAuth'
 
 interface ProductImage {
@@ -44,26 +44,13 @@ interface ProductCardProps {
     category?: {
       slug: string
     }
-    /** quantidade total em estoque */
-    estoque?: number
-    variants?: ProductVariant[]
   }
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { addItem } = useCart()
+  const { addToCart } = useCart()
   const { isAuthenticated } = useAuth()
   const mainImage = product?.images?.[0]?.url || '/images/placeholder.jpg'
-  const stock =
-    (product as any).estoque ??
-    product?.variants?.reduce(
-      (sum: number, v: ProductVariant) => sum + v.stockQuantity,
-      0
-    ) ?? 0
-
-  if (stock <= 0) {
-    return null
-  }
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -71,11 +58,11 @@ export default function ProductCard({ product }: ProductCardProps) {
       id: product.id,
       nome: product.nome,
       preco: product.preco,
-      preco_promocional: product.precoPromocional,
+      precoPromocional: product.precoPromocional,
       imagem: mainImage,
-      stock
+      quantidade: 1
     }
-    addItem(cartItem)
+    addToCart(cartItem)
   }
 
   const handleAddToWishlist = (e: React.MouseEvent) => {
@@ -88,7 +75,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-transform hover:-translate-y-1 hover:shadow-xl">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       <Link href={`/produtos/produto/${product.slug}`}>
         <div className="relative aspect-square">
           <Image
@@ -106,7 +93,6 @@ export default function ProductCard({ product }: ProductCardProps) {
             {product.nome}
           </h3>
         </Link>
-        <p className="text-sm text-gray-600 mb-2">Estoque: {stock}</p>
 
         <div className="flex items-baseline gap-2 mb-4">
           <span className="text-2xl font-bold text-primary">
@@ -122,11 +108,10 @@ export default function ProductCard({ product }: ProductCardProps) {
         <div className="flex gap-2">
           <button
             onClick={handleAddToCart}
-            disabled={stock <= 0}
-            className={`flex-1 py-2 rounded-lg flex items-center justify-center gap-2 transition-colors ${stock <= 0 ? 'bg-gray-300 cursor-not-allowed' : 'bg-primary text-white hover:bg-primary-dark'}`}
+            className="flex-1 bg-primary text-white py-2 rounded-lg hover:bg-primary-dark transition-colors flex items-center justify-center gap-2"
           >
             <ShoppingCart size={20} />
-            {stock <= 0 ? 'Esgotado' : 'Adicionar'}
+            Adicionar ao Carrinho
           </button>
           <button
             onClick={handleAddToWishlist}
@@ -139,4 +124,4 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
     </div>
   )
-}
+} 

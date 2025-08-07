@@ -20,7 +20,6 @@ i18n
       }
     },
     fallbackLng: 'pt-BR',
-    lng: 'pt-BR',
     debug: process.env.NODE_ENV === 'development',
     interpolation: {
       escapeValue: false

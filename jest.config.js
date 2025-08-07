@@ -21,9 +21,6 @@ const customJestConfig = {
     '!src/**/_*.{js,jsx,ts,tsx}',
     '!src/**/*.test.{js,jsx,ts,tsx}',
     '!src/**/index.{js,jsx,ts,tsx}',
-    '!src/app/**',
-    '!src/components/ProductGrid.tsx',
-    '!src/lib/**',
   ],
   coverageThreshold: {
     global: {
