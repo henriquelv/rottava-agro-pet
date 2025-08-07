@@ -1,11 +1,10 @@
 import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
 
 interface Item {
   id: string
   nome: string
   preco: number
-  preco_promocional?: number
+  precoPromocional?: number
   quantidade: number
   imagem: string
   /** quantidade máxima disponível em estoque */
@@ -20,7 +19,8 @@ interface Purchase {
 interface CartState {
   items: Item[]
   history: Purchase[]
-  addItem: (item: Omit<Item, 'quantidade'>) => void
+  total: number
+  addItem: (item: Omit<Item, 'quantidade'> & { quantidade?: number }) => void
   removeItem: (id: string) => void
   updateQuantity: (id: string, quantidade: number) => void
   clearCart: () => void
@@ -30,30 +30,38 @@ interface CartState {
   getHistory: () => Purchase[]
 }
 
-export const useCart = create<CartState>()(
-  persist(
-    (set, get) => ({
-      items: [],
-      history: [],
+export const useCart = create<CartState>((set, get) => {
+  const initialItems = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem('cart') || '[]') : []
+  return {
+    items: initialItems,
+    history: [],
+    total: initialItems.reduce(calcTotal, 0),
       addItem: (item) => {
         const items = get().items
         const existingItem = items.find((i) => i.id === item.id)
+        const qty = item.quantidade || 1
 
         if (existingItem) {
-          const newQty = existingItem.quantidade + 1
+          const newQty = existingItem.quantidade + qty
           if (item.stock && newQty > item.stock) return
           set({
             items: items.map((i) =>
               i.id === item.id ? { ...i, quantidade: newQty } : i
-            )
+            ),
           })
         } else {
-          if (item.stock && item.stock < 1) return
-          set({ items: [...items, { ...item, quantidade: 1 }] })
+          if (item.stock && item.stock < qty) return
+          set({ items: [...items, { ...item, quantidade: qty }] })
         }
+        const newTotal = get().items.reduce(calcTotal, 0)
+        set({ total: newTotal })
+        localStorage.setItem('cart', JSON.stringify(get().items))
       },
       removeItem: (id) => {
         set({ items: get().items.filter((item) => item.id !== id) })
+        const newTotal = get().items.reduce(calcTotal, 0)
+        set({ total: newTotal })
+        localStorage.setItem('cart', JSON.stringify(get().items))
       },
       updateQuantity: (id, quantidade) => {
         if (quantidade <= 0) {
@@ -68,34 +76,34 @@ export const useCart = create<CartState>()(
               return { ...item, quantidade: item.stock }
             }
             return { ...item, quantidade }
-          })
+          }),
         })
+        const newTotal = get().items.reduce(calcTotal, 0)
+        set({ total: newTotal })
+        localStorage.setItem('cart', JSON.stringify(get().items))
       },
       savePurchase: () => {
         const current = get().items
         if (current.length === 0) return
         const newPurchase: Purchase = {
           items: current,
-          date: new Date().toISOString()
+          date: new Date().toISOString(),
         }
         set({ history: [...get().history, newPurchase] })
       },
       clearCart: () => {
-        set({ items: [] })
+        set({ items: [], total: 0 })
+        localStorage.setItem('cart', JSON.stringify([]))
       },
-      getTotal: () => {
-        return get().items.reduce((total, item) => {
-          const preco = item.preco_promocional || item.preco
-          return total + preco * item.quantidade
-        }, 0)
-      },
+      getTotal: () => get().total,
       getItemCount: () => {
         return get().items.reduce((count, item) => count + item.quantidade, 0)
       },
-      getHistory: () => get().history
-    }),
-    {
-      name: 'cart-storage'
-    }
-  )
-)
+      getHistory: () => get().history,
+  }
+})
+
+function calcTotal(total: number, item: Item) {
+  const preco = item.precoPromocional || item.preco
+  return total + preco * item.quantidade
+}
