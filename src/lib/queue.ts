@@ -1,6 +1,5 @@
 import { logInfo, logError } from './logger'
 import { Queue, Worker, Job } from 'bullmq'
-import { redis } from './redis'
 import { addSchema } from './api-docs'
 
 // Configuração do sistema de filas
@@ -230,23 +229,6 @@ export const backupQueue = new QueueManager()
 export const reportQueue = new QueueManager()
 
 // Funções de conveniência
-export async function addToQueue(queueType: QueueType, data: QueueData): Promise<QueueResponse> {
-  switch (queueType) {
-    case 'email':
-      return emailQueue.addJob(queueType, data)
-    case 'notification':
-      return notificationQueue.addJob(queueType, data)
-    case 'backup':
-      return backupQueue.addJob(queueType, data)
-    case 'report':
-      return reportQueue.addJob(queueType, data)
-  }
-}
-
-export async function addBulkToQueue(queueType: QueueType, data: QueueData[]): Promise<QueueResponse[]> {
-  return Promise.all(data.map((item) => addToQueue(queueType, item)))
-}
-
 // Adiciona schemas para documentação
 addSchema('QueueData', {
   type: 'object',
