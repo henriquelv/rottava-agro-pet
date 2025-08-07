@@ -18,7 +18,7 @@ export default function LanguageSelector() {
       >
         <Globe size={24} />
         <span className="hidden md:block">
-          Idioma: {i18n.language === 'pt-BR' ? 'Português' : 'English'}
+          {i18n.language === 'pt-BR' ? 'Português' : 'English'}
         </span>
       </button>
       <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg hidden group-hover:block">

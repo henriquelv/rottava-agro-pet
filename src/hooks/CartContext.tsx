@@ -1,6 +1,11 @@
 'use client'
-import { ReactNode } from 'react'
-export function CartProvider({ children }: { children: ReactNode }) {
-  return <>{children}</>
+import { createContext, useContext, useState, ReactNode } from 'react'
+
+const CartContext = createContext(null)
+
+export const CartProvider = ({ children }: { children: ReactNode }) => {
+  const [cart, setCart] = useState([])
+  return <CartContext.Provider value={{ cart, setCart }}>{children}</CartContext.Provider>
 }
-export { useCart } from './useCart'
+
+export const useCart = () => useContext(CartContext) 
