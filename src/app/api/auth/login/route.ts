@@ -4,11 +4,21 @@ import { ZodError } from "zod";
 import { db, hasDatabase } from "@/lib/db";
 import { createSession } from "@/lib/auth";
 import { loginSchema } from "@/lib/schemas";
+import { demoAccounts, demoMode } from "@/lib/config";
 
 export async function POST(request: Request) {
-  if (!hasDatabase()) return NextResponse.json({ message: "A autenticação aguarda a configuração segura do banco." }, { status: 503 });
   try {
-    const input = loginSchema.parse(await request.json()); const sql = db();
+    const input = loginSchema.parse(await request.json());
+    if (demoMode) {
+      const demo = demoAccounts.find((account) => account.email === input.email);
+      if (demo && input.password === "Rottava@123") {
+        const roles: Record<string,string> = { Cliente: "customer", Operador: "operator", Atendente: "attendant", "Serviços": "services", Entregador: "driver", Financeiro: "finance", Gestor: "manager" };
+        await createSession({ sub: `demo-${roles[demo.role]}`, email: demo.email, name: `${demo.role} Demonstração`, role: roles[demo.role] });
+        return NextResponse.json({ destination: demo.destination });
+      }
+    }
+    if (!hasDatabase()) return NextResponse.json({ message: "Use uma das contas de demonstração exibidas nesta página." }, { status: 503 });
+    const sql = db();
     const [account] = await sql`SELECT id,email,name,role,status,password_hash FROM accounts WHERE email=${input.email}`;
     const valid = account && account.status === "active" && await compare(input.password, account.password_hash);
     if (!valid) return NextResponse.json({ message: "E-mail ou senha inválidos." }, { status: 401 });

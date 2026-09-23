@@ -4,7 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { ArrowRight, Bath, CalendarDays, CheckCircle2, Clock3, Leaf, MapPin, PackageCheck, PawPrint, ShieldCheck, ShoppingBag, Sparkles, Truck } from "lucide-react";
 import { getSession } from "@/lib/auth";
 import { db, getProduct, hasDatabase, listProducts } from "@/lib/db";
-import { integrations, store } from "@/lib/config";
+import { demoMode, integrations, store } from "@/lib/config";
 import { money, dateTime } from "@/lib/format";
 import { ProductBuy, ProductCard, CartView, CheckoutView, ChatView } from "@/components/storefront";
 import { AuthForm } from "@/components/auth-forms";
@@ -17,12 +17,12 @@ type Props = { params: Promise<{ path?: string[] }>; searchParams: Promise<Recor
 export default async function RouterPage({ params, searchParams }: Props) {
   const segments = (await params).path || []; const path = "/" + segments.join("/"); const query = await searchParams; const session = await getSession();
   if (path === "/") return <Home />;
-  if (path === "/produtos") return <Catalog search={typeof query.busca === "string" ? query.busca : ""} />;
+  if (path === "/produtos") return <Catalog search={typeof query.busca === "string" ? query.busca : ""} category={typeof query.categoria === "string" ? query.categoria : ""} brand={typeof query.marca === "string" ? query.marca : ""} sort={typeof query.ordem === "string" ? query.ordem : ""} />;
   if (segments[0] === "produto" && segments[1]) return <ProductPage slug={segments[1]} />;
   if (path === "/carrinho") return <SimplePage eyebrow="SUA SELEÇÃO" title="Carrinho" text="Revise cada escolha antes de seguir."><CartView signedIn={Boolean(session)} /></SimplePage>;
   if (path === "/checkout") { if (!session) redirect("/entrar?retorno=/checkout"); return <SimplePage eyebrow="COMPRA SEGURA" title="Finalizar pedido" text="Tudo claro, revisável e confirmado no servidor."><CheckoutView /></SimplePage>; }
   if (path === "/banho-e-tosa") return <Services />;
-  if (path === "/atendimento") return <SimplePage eyebrow="SITE E WHATSAPP, A MESMA LÓGICA" title="Como podemos cuidar hoje?" text="Atendimento guiado, com preços e ações vindos dos serviços da loja."><ChatView /></SimplePage>;
+  if (path === "/atendimento") return <ChatPage />;
   if (path === "/entrar") return <AuthForm mode="login" />;
   if (path === "/cadastro") return <AuthForm mode="register" />;
   if (path === "/recuperar-senha") return <AuthForm mode="reset" />;
@@ -51,10 +51,13 @@ async function Home() {
   </>;
 }
 
-async function Catalog({ search }: { search: string }) {
-  const products = await listProducts(search);
-  return <div className="page-wrap"><PageHero eyebrow="CATÁLOGO ROTTAVA" title={search ? `Resultados para “${search}”` : "Boas escolhas começam aqui."} text="Preços públicos, variações claras e disponibilidade confirmada antes do pedido." actions={<form action="/produtos" className="catalog-search"><input name="busca" defaultValue={search} placeholder="Buscar por produto ou marca" /><button className="button primary">Buscar</button></form>} /><div className="filter-row"><button className="active">Todos</button><button>Pet</button><button>Casa & jardim</button><button>Marcas</button></div>{products.length ? <div className="product-grid catalog-grid">{products.map((p) => <ProductCard key={p.id} product={p} />)}</div> : <EmptyState title={search ? "Nenhum produto encontrado" : "Catálogo ainda não publicado"} text={search ? "Tente outro nome ou limpe a busca." : "A integração com o catálogo real precisa ser configurada. A loja não exibe itens ou preços de demonstração em produção."} action={search ? { href: "/produtos", label: "Limpar busca" } : { href: "/atendimento", label: "Pedir ajuda" }} />}</div>;
+async function Catalog({ search, category, brand, sort }: { search: string; category: string; brand: string; sort: string }) {
+  const products = await listProducts(search, { category, brand, sort }); const brands = [...new Set((await listProducts()).map((p) => p.brand).filter(Boolean))] as string[];
+  const query = (cat = category) => `/produtos?${new URLSearchParams(Object.entries({ busca: search, categoria: cat, marca: brand, ordem: sort }).filter(([,v]) => v)).toString()}`;
+  return <div className="page-wrap"><PageHero eyebrow="CATÁLOGO ROTTAVA" title={search ? `Resultados para “${search}”` : "Boas escolhas começam aqui."} text="Preços públicos, variações claras e disponibilidade confirmada antes do pedido." actions={<form action="/produtos" className="catalog-search"><input name="busca" defaultValue={search} placeholder="Buscar por produto ou marca" /><button className="button primary">Buscar</button></form>} />{demoMode && <p className="demo-caption">Catálogo demonstrativo — os nomes, marcas, preços e estoques abaixo servem apenas para testar a experiência.</p>}<div className="catalog-tools"><div className="filter-row"><Link className={!category ? "active" : ""} href={query("")}>Todos</Link><Link className={category === "pet" ? "active" : ""} href={query("pet")}>Pet</Link><Link className={category === "casa-jardim" ? "active" : ""} href={query("casa-jardim")}>Casa & jardim</Link><Link className={category === "cuidados" ? "active" : ""} href={query("cuidados")}>Cuidados</Link></div><form action="/produtos" className="catalog-selects"><input type="hidden" name="busca" value={search} /><input type="hidden" name="categoria" value={category} /><select name="marca" defaultValue={brand} aria-label="Filtrar por marca"><option value="">Todas as marcas</option>{brands.map((item) => <option key={item}>{item}</option>)}</select><select name="ordem" defaultValue={sort} aria-label="Ordenar produtos"><option value="">Relevância</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option></select><button>Aplicar</button></form></div><p className="result-count">{products.length} {products.length === 1 ? "produto" : "produtos"}</p>{products.length ? <div className="product-grid catalog-grid">{products.map((p) => <ProductCard key={p.id} product={p} />)}</div> : <EmptyState title="Nenhum produto encontrado" text="Tente combinar outros filtros ou limpe a busca." action={{ href: "/produtos", label: "Limpar filtros" }} />}</div>;
 }
+
+async function ChatPage() { const products = await listProducts(); return <SimplePage eyebrow="SITE E WHATSAPP, A MESMA LÓGICA" title="Como podemos cuidar hoje?" text="Atendimento guiado, com preços e ações vindos dos mesmos serviços da loja."><ChatView products={products.slice(0, 3)} /></SimplePage>; }
 
 async function ProductPage({ slug }: { slug: string }) {
   const product = await getProduct(slug); if (!product) notFound();
@@ -98,16 +101,19 @@ async function OrderDetail({ id, accountId }: { id: string; accountId: string })
   return <div className="page-wrap narrow"><Link className="back-link" href="/minha-conta/pedidos">← Meus pedidos</Link><div className="order-heading"><div><span className="eyebrow">PEDIDO #{order.number}</span><h1>{money(order.total_cents)}</h1><p>{dateTime(order.created_at)}</p></div><div><Status tone="warn">{String(order.operational_state).replaceAll("_", " ")}</Status><Status>{String(order.payment_state).replaceAll("_", " ")}</Status></div></div><div className="order-items">{items.map((item) => <div key={item.id}><div><b>{item.name_snapshot}</b><span>{item.variant_snapshot} · {item.quantity} un.</span></div><strong>{money(item.line_total_cents)}</strong></div>)}</div><ConfigNotice>Pedido recebido. Aguarde a confirmação de disponibilidade da loja. O pagamento e a situação operacional são controlados separadamente.</ConfigNotice></div>;
 }
 
-async function OrderConfirmation({ id, sessionId }: { id: string; sessionId: string }) { return <OrderDetail id={id} accountId={sessionId} />; }
+async function OrderConfirmation({ id, sessionId }: { id: string; sessionId: string }) {
+  if (id.startsWith("demo-")) return <div className="page-wrap narrow"><div className="demo-confirm"><CheckCircle2 /><span className="eyebrow">PEDIDO DEMONSTRATIVO</span><h1>Fluxo concluído.</h1><p>O pedido de teste foi criado uma única vez. Nenhuma cobrança, reserva ou comunicação real foi realizada.</p><div><Status tone="warn">aguardando disponibilidade</Status><Status>presencial a receber</Status></div><Link className="button primary" href="/produtos">Continuar testando <ArrowRight /></Link></div></div>;
+  return <OrderDetail id={id} accountId={sessionId} />;
+}
 
 async function AdminPage({ path, role }: { path: string; role: string }) {
   const sql = hasDatabase() ? db() : null; let content: React.ReactNode;
   if (path === "/admin") {
-    const [metrics] = sql ? await sql`SELECT count(*)::int total, count(*) FILTER (WHERE operational_state='aguardando_disponibilidade')::int pending FROM orders` : [{ total: 0, pending: 0 }];
+    const [metrics] = sql ? await sql`SELECT count(*)::int total, count(*) FILTER (WHERE operational_state='aguardando_disponibilidade')::int pending FROM orders` : [{ total: demoMode ? 12 : 0, pending: demoMode ? 4 : 0 }];
     content = <><AdminTitle eyebrow="OPERAÇÃO EM TEMPO REAL" title="Bom trabalho. O que precisa de atenção?" /><div className="metric-grid"><article><span>Pedidos a validar</span><strong>{metrics.pending}</strong><small>Disponibilidade pendente</small></article><article><span>Pedidos registrados</span><strong>{metrics.total}</strong><small>Histórico persistente</small></article><article><span>Integrações ativas</span><strong>{Object.values(integrations).filter(Boolean).length}/5</strong><small>Veja os conectores</small></article></div><AdminReadiness /></>;
   } else if (path === "/admin/integracoes") content = <><AdminTitle eyebrow="SAÚDE DO SISTEMA" title="Integrações e reconciliação" /><div className="integration-list">{Object.entries(integrations).map(([name, active]) => <div key={name}><span className={active ? "dot active" : "dot"} /><div><b>{name}</b><small>{active ? "Configurada" : "Aguardando credenciais e homologação"}</small></div><Status tone={active ? "ok" : "warn"}>{active ? "Ativa" : "Pendente"}</Status></div>)}</div></>;
   else if (path === "/admin/pedidos") {
-    const orders = sql ? await sql`SELECT o.*,a.name customer_name FROM orders o JOIN accounts a ON a.id=o.account_id ORDER BY o.created_at DESC LIMIT 100` : [];
+    const orders = sql ? await sql`SELECT o.*,a.name customer_name FROM orders o JOIN accounts a ON a.id=o.account_id ORDER BY o.created_at DESC LIMIT 100` : demoMode ? [{ id:"demo-order", number:1042, customer_name:"Cliente Demonstração", operational_state:"em_separacao", payment_state:"presencial_a_receber", total_cents:17670 }] : [];
     content = <><AdminTitle eyebrow="FILA OPERACIONAL" title="Pedidos" />{orders.length ? <div className="admin-table"><div className="table-head"><span>Pedido</span><span>Cliente</span><span>Operação</span><span>Financeiro</span><span>Total</span></div>{orders.map((o) => <Link href={`/admin/pedidos/${o.id}`} key={o.id}><span>#{o.number}</span><b>{o.customer_name}</b><Status>{String(o.operational_state).replaceAll("_", " ")}</Status><Status>{String(o.payment_state).replaceAll("_", " ")}</Status><strong>{money(o.total_cents)}</strong></Link>)}</div> : <EmptyState title="Nenhum pedido na fila" text="Pedidos reais aparecerão aqui quando forem criados." />}</>;
   } else content = <><AdminTitle eyebrow="MÓDULO OPERACIONAL" title={AdminLabel(path)} /><ConfigNotice>Este módulo está pronto para receber dados, mas depende das definições comerciais ou da integração correspondente. Nenhum dado de demonstração é usado.</ConfigNotice><AdminReadiness /></>;
   return <AdminShell role={role}>{content}</AdminShell>;

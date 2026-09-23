@@ -11,6 +11,22 @@ Aplicação full-stack do e-commerce da Rottava, construída a partir do pacote 
 
 Sem banco configurado, a vitrine continua acessível em modo seguro e exibe estados de configuração em vez de dados fictícios. Pagamento, WhatsApp, mapas e legado só são marcados como ativos quando suas variáveis e contratos forem homologados.
 
+## Modo de demonstração
+
+Defina `DEMO_MODE=true` e `NEXT_PUBLIC_DEMO_MODE=true` para habilitar produtos, pedidos e perfis claramente identificados como dados de teste. Todas as contas usam a senha `Rottava@123`:
+
+| Papel | E-mail |
+|---|---|
+| Cliente | `cliente@rottava.test` |
+| Operador | `operador@rottava.test` |
+| Atendente | `atendimento@rottava.test` |
+| Serviços | `servicos@rottava.test` |
+| Entregador | `entregador@rottava.test` |
+| Financeiro | `financeiro@rottava.test` |
+| Gestor | `gestor@rottava.test` |
+
+O modo demonstração não cobra, reserva estoque, envia mensagens nem declara integrações externas como ativas.
+
 ## Comandos
 
 - `npm run dev`: desenvolvimento

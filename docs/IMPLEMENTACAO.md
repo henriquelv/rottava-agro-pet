@@ -6,6 +6,7 @@
 - Catálogo persistente, carrinho local versionado, contas, pedidos idempotentes, pets, endereços e agendamentos.
 - Autorização por papel e separação entre estados operacional e financeiro.
 - Estados honestos para integrações ainda não homologadas.
+- Modo de demonstração isolado, com catálogo mock, filtros, chatbot transacional, checkout sem cobrança e perfis por papel.
 
 ## Integrações configuráveis
 
