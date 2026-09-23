@@ -1,10 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
+import "./quality.css";
 import { Header, MobileDock, Footer } from "@/components/chrome";
 import { AppProviders } from "@/components/app-providers";
 import { getSession } from "@/lib/auth";
 import { demoMode, store } from "@/lib/config";
+import { RouteTransition } from "@/components/motion-ui";
 
 const display = DM_Serif_Display({ subsets: ["latin"], weight: "400", variable: "--font-display" });
 const body = Geist({ subsets: ["latin"], variable: "--font-body" });
@@ -24,7 +26,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
       <a className="skip" href="#conteudo">Pular para o conteúdo</a>
       {demoMode && <div className="demo-bar"><b>MODO DEMONSTRAÇÃO</b><span>Produtos, preços, pedidos e contas desta versão são dados de teste.</span></div>}
       <Header session={session} />
-      <main id="conteudo">{children}</main>
+      <main id="conteudo"><RouteTransition>{children}</RouteTransition></main>
       <Footer />
       <MobileDock session={session} />
     </AppProviders>

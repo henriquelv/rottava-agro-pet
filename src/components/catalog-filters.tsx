@@ -1,25 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { useQueryStates, parseAsString } from "nuqs";
 import { Drawer } from "vaul";
-import { Filter, SlidersHorizontal, X } from "lucide-react";
+import { Check, ChevronDown, Filter, SlidersHorizontal, X } from "lucide-react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
-const categories = [["", "Todos"], ["pet", "Pet"], ["casa-jardim", "Casa & jardim"], ["cuidados", "Cuidados"]] as const;
+export type CatalogFacet = { value: string; label: string; count: number };
 
-export function CatalogFilters({ brands, total }: { brands: string[]; total: number }) {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [filters, setFilters] = useQueryStates({ categoria: parseAsString.withDefault(""), marca: parseAsString.withDefault(""), ordem: parseAsString.withDefault("") }, { shallow: false });
-  const active = Number(Boolean(filters.categoria)) + Number(Boolean(filters.marca)) + Number(Boolean(filters.ordem));
-  const panel = <div className="filter-panel">
-    <div className="filter-panel-heading"><div><span className="eyebrow">REFINE A BUSCA</span><h2>Filtros</h2></div>{active > 0 && <button onClick={() => setFilters({ categoria: "", marca: "", ordem: "" })}>Limpar tudo</button>}</div>
-    <fieldset><legend>Universo</legend>{categories.map(([value, label]) => <label key={label}><input type="radio" name="categoria" checked={filters.categoria === value} onChange={() => setFilters({ categoria: value })} /><span>{label}</span></label>)}</fieldset>
-    <fieldset><legend>Marca</legend><label><input type="radio" name="marca" checked={!filters.marca} onChange={() => setFilters({ marca: "" })} /><span>Todas as marcas</span></label>{brands.map((brand) => <label key={brand}><input type="radio" name="marca" checked={filters.marca === brand} onChange={() => setFilters({ marca: brand })} /><span>{brand}</span></label>)}</fieldset>
+type FilterPanelProps = {
+  active: number;
+  brands: CatalogFacet[];
+  categories: CatalogFacet[];
+  filters: { categoria: string; marca: string; ordem: string };
+  scope: string;
+  update: (values: Partial<{ categoria: string; marca: string; ordem: string }>) => void;
+};
+
+function FilterPanel({ active, brands, categories, filters, scope, update }: FilterPanelProps) {
+  return <div className="filter-panel">
+    <div className="filter-panel-heading"><div><span className="eyebrow">CATÁLOGO</span><h2>Filtrar</h2></div>{active > 0 && <button onClick={() => update({ categoria: "", marca: "" })}>Limpar</button>}</div>
+    <fieldset><legend>Categoria</legend><label><input type="radio" name={`categoria-${scope}`} checked={!filters.categoria} onChange={() => update({ categoria: "" })} /><span>Todos</span><small>{categories.reduce((sum, item) => sum + item.count, 0)}</small></label>{categories.map((item) => <label key={item.value}><input type="radio" name={`categoria-${scope}`} checked={filters.categoria === item.value} onChange={() => update({ categoria: item.value })} /><span>{item.label}</span><small>{item.count}</small></label>)}</fieldset>
+    <fieldset><legend>Marca</legend><label><input type="radio" name={`marca-${scope}`} checked={!filters.marca} onChange={() => update({ marca: "" })} /><span>Todas</span><small>{brands.reduce((sum, item) => sum + item.count, 0)}</small></label>{brands.map((item) => <label key={item.value}><input type="radio" name={`marca-${scope}`} checked={filters.marca === item.value} onChange={() => update({ marca: item.value })} /><span>{item.label}</span><small>{item.count}</small></label>)}</fieldset>
   </div>;
+}
+
+export function CatalogFilters({ brands, categories, total }: { brands: CatalogFacet[]; categories: CatalogFacet[]; total: number }) {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [pending, startTransition] = useTransition();
+  const reduced = useReducedMotion();
+  const [filters, setFilters] = useQueryStates({ categoria: parseAsString.withDefault(""), marca: parseAsString.withDefault(""), ordem: parseAsString.withDefault("") }, { shallow: false, history: "push" });
+  const active = Number(Boolean(filters.categoria)) + Number(Boolean(filters.marca));
+  const update = (values: Partial<typeof filters>) => startTransition(() => { void setFilters(values); });
+  const categoryLabel = categories.find((item) => item.value === filters.categoria)?.label;
+
   return <>
-    <div className="catalog-mobile-tools"><button onClick={() => setMobileOpen(true)}><Filter /> Filtrar {active > 0 && <b>{active}</b>}</button><label><SlidersHorizontal /><select aria-label="Ordenar" value={filters.ordem} onChange={(event) => setFilters({ ordem: event.target.value })}><option value="">Mais relevantes</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option></select></label></div>
-    <aside className="catalog-sidebar">{panel}</aside>
-    <div className="catalog-list-head"><span>{total} {total === 1 ? "produto" : "produtos"}</span><label>Ordenar por <select value={filters.ordem} onChange={(event) => setFilters({ ordem: event.target.value })}><option value="">Mais relevantes</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option></select></label></div>
-    <Drawer.Root open={mobileOpen} onOpenChange={setMobileOpen}><Drawer.Portal><Drawer.Overlay className="drawer-overlay" /><Drawer.Content className="filter-drawer"><header><Drawer.Title>Filtrar produtos</Drawer.Title><Drawer.Close aria-label="Fechar"><X /></Drawer.Close></header>{panel}<button className="button primary wide" onClick={() => setMobileOpen(false)}>Ver {total} produtos</button></Drawer.Content></Drawer.Portal></Drawer.Root>
+    <div className="catalog-mobile-tools"><button onClick={() => setMobileOpen(true)}><Filter aria-hidden="true" /> Filtros {active > 0 && <b>{active}</b>}</button><label><SlidersHorizontal aria-hidden="true" /><select aria-label="Ordenar produtos" value={filters.ordem} onChange={(event) => update({ ordem: event.target.value })}><option value="">Relevância</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option></select><ChevronDown aria-hidden="true" /></label></div>
+    <motion.aside className="catalog-sidebar" animate={{ opacity: pending ? .55 : 1 }} transition={{ duration: reduced ? 0 : .18 }}><FilterPanel active={active} brands={brands} categories={categories} filters={filters} scope="desktop" update={update} /></motion.aside>
+    <div className="catalog-toolbar"><div><b>{total}</b><span>{total === 1 ? "produto" : "produtos"}</span></div><AnimatePresence initial={false}>{filters.categoria && <motion.button initial={reduced ? false : { opacity: 0, scale: .9 }} animate={{ opacity: 1, scale: 1 }} exit={reduced ? undefined : { opacity: 0, scale: .9 }} onClick={() => update({ categoria: "" })}>{categoryLabel}<X aria-hidden="true" /></motion.button>}{filters.marca && <motion.button initial={reduced ? false : { opacity: 0, scale: .9 }} animate={{ opacity: 1, scale: 1 }} exit={reduced ? undefined : { opacity: 0, scale: .9 }} onClick={() => update({ marca: "" })}>{filters.marca}<X aria-hidden="true" /></motion.button>}</AnimatePresence><label><span>Ordenar</span><select value={filters.ordem} onChange={(event) => update({ ordem: event.target.value })}><option value="">Mais relevantes</option><option value="price-asc">Menor preço</option><option value="price-desc">Maior preço</option></select><ChevronDown aria-hidden="true" /></label></div>
+    <Drawer.Root open={mobileOpen} onOpenChange={setMobileOpen}><Drawer.Portal><Drawer.Overlay className="drawer-overlay" /><Drawer.Content className="filter-drawer" aria-describedby="filter-description"><header><div><Drawer.Title>Filtrar produtos</Drawer.Title><p id="filter-description">Refine o catálogo usando os dados disponíveis.</p></div><Drawer.Close aria-label="Fechar filtros"><X aria-hidden="true" /></Drawer.Close></header><FilterPanel active={active} brands={brands} categories={categories} filters={filters} scope="mobile" update={update} /><button className="button primary wide" onClick={() => setMobileOpen(false)}><Check aria-hidden="true" /> Ver {total} produtos</button></Drawer.Content></Drawer.Portal></Drawer.Root>
   </>;
 }

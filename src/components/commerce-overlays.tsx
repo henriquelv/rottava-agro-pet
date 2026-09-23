@@ -2,13 +2,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Command } from "cmdk";
 import { Drawer } from "vaul";
 import { ArrowRight, Minus, Plus, Search, ShoppingBag, Trash2, X } from "lucide-react";
 import { money } from "@/lib/format";
 import { useCart } from "./cart";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 type SearchResult = { id: string; name: string; slug: string; brand: string | null; category_name: string | null; min_price_cents: number | null };
 
@@ -18,6 +19,8 @@ export function SearchPalette() {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<SearchResult[]>([]);
   const [loading, setLoading] = useState(false);
+  const input = useRef<HTMLInputElement>(null);
+  const reduced = useReducedMotion();
 
   useEffect(() => {
     function shortcut(event: KeyboardEvent) {
@@ -28,6 +31,7 @@ export function SearchPalette() {
   }, []);
   useEffect(() => {
     if (!open) return;
+    if (window.matchMedia("(min-width: 761px)").matches) window.setTimeout(() => input.current?.focus(), 40);
     const controller = new AbortController();
     const timer = window.setTimeout(async () => {
       setLoading(true);
@@ -40,22 +44,24 @@ export function SearchPalette() {
   }, [query, open]);
   function visit(href: string) { setOpen(false); router.push(href); }
   return <>
-    <button className="search-trigger" onClick={() => setOpen(true)} aria-label="Abrir busca"><Search /><span>Busque rações, cuidados, jardim…</span><kbd>Ctrl K</kbd></button>
-    {open && <div className="search-overlay" role="presentation" onMouseDown={(event) => event.target === event.currentTarget && setOpen(false)}>
+    <button className="search-trigger" onClick={() => setOpen(true)} aria-label="Abrir busca"><Search aria-hidden="true" /><span>Busque rações, cuidados, jardim…</span><kbd>Ctrl&nbsp;K</kbd></button>
+    <AnimatePresence>{open && <motion.div className="search-overlay" role="presentation" initial={reduced ? false : { opacity: 0 }} animate={{ opacity: 1 }} exit={reduced ? undefined : { opacity: 0 }} onMouseDown={(event) => event.target === event.currentTarget && setOpen(false)}>
+      <motion.div initial={reduced ? false : { opacity: 0, y: -16, scale: .985 }} animate={{ opacity: 1, y: 0, scale: 1 }} exit={reduced ? undefined : { opacity: 0, y: -10, scale: .99 }} transition={{ type: "spring", stiffness: 360, damping: 34 }}>
       <Command className="search-command" shouldFilter={false} label="Busca de produtos">
-        <div className="search-input-row"><Search /><Command.Input autoFocus value={query} onValueChange={setQuery} placeholder="O que você procura?" /><button onClick={() => setOpen(false)} aria-label="Fechar busca"><X /></button></div>
+        <div className="search-input-row"><Search aria-hidden="true" /><Command.Input ref={input} value={query} onValueChange={setQuery} placeholder="Busque por produto ou marca…" /><button onClick={() => setOpen(false)} aria-label="Fechar busca"><X aria-hidden="true" /></button></div>
         <Command.List>
           {loading && <Command.Loading>Consultando o catálogo…</Command.Loading>}
           {!loading && <Command.Empty>Nenhum item encontrado. Tente outro termo.</Command.Empty>}
           <Command.Group heading={query ? "Resultados no catálogo" : "Sugestões para começar"}>
             {results.map((product) => <Command.Item key={product.id} value={product.id} onSelect={() => visit(`/produto/${product.slug}`)}>
-              <span className="search-result-mark">R</span><div><b>{product.name}</b><small>{[product.category_name, product.brand].filter(Boolean).join(" · ")}</small></div><strong>{money(product.min_price_cents)}</strong><ArrowRight />
+              <span className="search-result-mark">R</span><div><b>{product.name}</b><small>{[product.category_name, product.brand].filter(Boolean).join(" · ")}</small></div><strong>{money(product.min_price_cents)}</strong><ArrowRight aria-hidden="true" />
             </Command.Item>)}
           </Command.Group>
-          <Command.Item value={`all-${query}`} onSelect={() => visit(`/produtos${query ? `?busca=${encodeURIComponent(query)}` : ""}`)} className="search-all">Ver catálogo completo <ArrowRight /></Command.Item>
+          <Command.Item value={`all-${query}`} onSelect={() => visit(`/produtos${query ? `?busca=${encodeURIComponent(query)}` : ""}`)} className="search-all">Ver catálogo completo <ArrowRight aria-hidden="true" /></Command.Item>
         </Command.List>
       </Command>
-    </div>}
+      </motion.div>
+    </motion.div>}</AnimatePresence>
   </>;
 }
 
