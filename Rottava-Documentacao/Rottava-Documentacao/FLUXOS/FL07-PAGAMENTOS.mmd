@@ -1,0 +1,29 @@
+flowchart TD
+  subgraph L0["Cliente"]
+    direction TB
+    a["P07: iniciar pagamento"]
+    h["Ver resultado e próximo passo"]
+  end
+  subgraph L1["Aplicação"]
+    direction TB
+    b["Criar tentativa com chave única"]
+    e["Deduplicar e validar evento"]
+    f["Atualizar condição do pedido"]
+  end
+  subgraph L2["Provedor"]
+    direction TB
+    c["Processar Pix ou cartão"]
+    d["Enviar evento autenticado"]
+  end
+  subgraph L3["Financeiro"]
+    direction TB
+    g["Reconciliar exceções"]
+  end
+  a --> b
+  b --> c
+  c --> d
+  d --> e
+  e -->|"consistente"| f
+  e -->|"divergência"| g
+  f --> h
+  g --> h

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000"><rect width="100%" height="100%" fill="#e8f0f0"/>
+<text x="30" y="46.6" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0a4a55" font-weight="700">WF10 • Separação e operação do pedido</text>
+<text x="30" y="77.0" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#427a7e" font-weight="400">Wireframe operacional • dados ilustrativos</text>
+<rect x="22" y="110" width="232" height="862" rx="8" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="42" y="156.2" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#fff" font-weight="700">ROTTAVA</text>
+<text x="42" y="225.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Visão geral</text>
+<text x="42" y="288.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Pedidos</text>
+<text x="42" y="351.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Entregas</text>
+<text x="42" y="414.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Agenda</text>
+<text x="42" y="477.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Atendimento</text>
+<text x="42" y="540.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Catálogo</text>
+<text x="42" y="603.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Financeiro</text>
+<text x="42" y="666.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Configurações</text>
+<text x="288" y="144.6" font-family="DejaVu Sans, sans-serif" font-size="32" fill="#0a4a55" font-weight="700">Pedido [número]</text>
+<text x="290" y="186.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#06858e" font-weight="400">Operacional: [estado]     Financeiro: [estado]</text>
+<rect x="286" y="226" width="724" height="470" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="311" y="274.8" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#0a4a55" font-weight="700">Conferência dos itens</text>
+<rect x="310" y="315" width="675" height="61" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="328" y="350.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="400">[ ]  Produto • variante • quantidade</text>
+<rect x="310" y="393" width="675" height="61" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="328" y="428.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="400">[ ]  Produto • variante • quantidade</text>
+<rect x="310" y="471" width="675" height="61" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="328" y="506.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="400">[ ]  Produto • variante • quantidade</text>
+<rect x="310" y="549" width="675" height="61" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="328" y="584.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="400">[ ]  Produto • variante • quantidade</text>
+<rect x="1038" y="226" width="362" height="470" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="1059" y="274.0" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#0a4a55" font-weight="700">Recebimento</text>
+<text x="1059" y="324.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="400">Entrega ou retirada</text>
+<text x="1059" y="351.75" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="400">Endereço contratado</text>
+<text x="1059" y="379.3" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="400">Valor e forma de cobrança</text>
+<text x="1059" y="406.84999999999997" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="400">Integração com a loja</text>
+<rect x="310" y="729" width="315" height="44" rx="6" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="324" y="754.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="700">Concluir separação</text>
+<rect x="646" y="729" width="314" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="660" y="754.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Registrar problema</text>
+<rect x="286" y="806" width="1114" height="140" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="310" y="853.2" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#0a4a55" font-weight="700">Histórico de ações e notas internas</text>
+<text x="310" y="897.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#427a7e" font-weight="400">Operador • data/hora • ação • motivo quando aplicável</text>
+</svg>

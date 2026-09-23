@@ -1,0 +1,30 @@
+flowchart TD
+  subgraph L0["Cliente"]
+    direction TB
+    a["C07 e C08: pet e serviço"]
+    c["Escolher horário e confirmar"]
+    h["Retirar pet e acertar pagamento"]
+  end
+  subgraph L1["Agenda"]
+    direction TB
+    b["Consultar capacidade e preço"]
+    d["Reservar e confirmar atomicamente"]
+  end
+  subgraph L2["Equipe"]
+    direction TB
+    e["M10: receber pet"]
+    f["Executar serviço"]
+    i["Concluir atendimento"]
+  end
+  subgraph L3["Aplicação"]
+    direction TB
+    g["Avisar que está pronto"]
+  end
+  a --> b
+  b --> c
+  c --> d
+  d -->|"confirmado"| e
+  e --> f
+  f --> g
+  g --> h
+  h --> i

@@ -1,0 +1,31 @@
+flowchart TD
+  subgraph L0["Cliente"]
+    direction TB
+    a["P02 e P03: selecionar produto"]
+    b["P05 e P06: revisar compra"]
+    i["P08 e C03: acompanhar"]
+  end
+  subgraph L1["Aplicação"]
+    direction TB
+    c["Validar e registrar intenção"]
+    f["Confirmar disponibilidade"]
+  end
+  subgraph L2["Integrações"]
+    direction TB
+    d["Disponibilidade confirmável?"]
+    g["Processar forma de pagamento"]
+  end
+  subgraph L3["Loja"]
+    direction TB
+    e["Conferir estoque quando necessário"]
+    h["Separar pedido elegível"]
+  end
+  a --> b
+  b --> c
+  c -->|"válido"| d
+  d -->|"conferência manual"| e
+  d -->|"reserva confiável"| f
+  e -->|"disponível"| f
+  f --> g
+  g -->|"condição atendida"| h
+  h --> i

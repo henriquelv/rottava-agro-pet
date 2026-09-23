@@ -1,0 +1,30 @@
+flowchart TD
+  subgraph L0["Aplicação"]
+    direction TB
+    a["Persistir mudança e evento"]
+    h["Atualizar estado confirmado"]
+  end
+  subgraph L1["Fila"]
+    direction TB
+    b["Processar evento pendente"]
+    d["Classificar retorno"]
+    f["Repetir de forma idempotente"]
+  end
+  subgraph L2["Sistema externo"]
+    direction TB
+    c["Executar contrato permitido"]
+    e["Consultar referência externa"]
+  end
+  subgraph L3["Operação"]
+    direction TB
+    g["M15: resolver divergência"]
+  end
+  a --> b
+  b --> c
+  c --> d
+  d -->|"sucesso confirmado"| h
+  d -->|"resultado incerto"| e
+  e -->|"não executado; retentar"| f
+  e -->|"já executado"| h
+  f -->|"limite ou conflito"| g
+  g -->|"reconciliado"| h

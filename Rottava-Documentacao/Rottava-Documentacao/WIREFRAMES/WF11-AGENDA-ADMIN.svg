@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000"><rect width="100%" height="100%" fill="#e8f0f0"/>
+<text x="30" y="46.6" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0a4a55" font-weight="700">WF11 • Agenda operacional</text>
+<text x="30" y="77.0" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#427a7e" font-weight="400">Wireframe operacional • dados ilustrativos</text>
+<rect x="22" y="110" width="232" height="862" rx="8" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="42" y="156.2" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#fff" font-weight="700">ROTTAVA</text>
+<text x="42" y="225.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Visão geral</text>
+<text x="42" y="288.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Pedidos</text>
+<text x="42" y="351.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Entregas</text>
+<text x="42" y="414.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Agenda</text>
+<text x="42" y="477.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Atendimento</text>
+<text x="42" y="540.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Catálogo</text>
+<text x="42" y="603.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Financeiro</text>
+<text x="42" y="666.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Configurações</text>
+<text x="287" y="143.0" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#0a4a55" font-weight="700">Banho e tosa • [data selecionada]</text>
+<rect x="1120" y="116" width="280" height="44" rx="6" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="1134" y="141.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="700">Novo agendamento</text>
+<rect x="358" y="196" width="319" height="725" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="378" y="238.4" font-family="DejaVu Sans, sans-serif" font-size="23" fill="#0a4a55" font-weight="700">Recurso A</text>
+<polyline points="368,293 668,293" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="368,414 668,414" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="368,535 668,535" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="368,656 668,656" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="368,777 668,777" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<rect x="698" y="196" width="319" height="725" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="718" y="238.4" font-family="DejaVu Sans, sans-serif" font-size="23" fill="#0a4a55" font-weight="700">Recurso B</text>
+<polyline points="708,293 1008,293" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="708,414 1008,414" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="708,535 1008,535" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="708,656 1008,656" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="708,777 1008,777" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<rect x="1038" y="196" width="319" height="725" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="1058" y="238.4" font-family="DejaVu Sans, sans-serif" font-size="23" fill="#0a4a55" font-weight="700">Recurso C</text>
+<polyline points="1048,293 1348,293" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="1048,414 1348,414" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="1048,535 1348,535" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="1048,656 1348,656" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<polyline points="1048,777 1348,777" fill="none" stroke="#cde0e2" stroke-width="1"/>
+<text x="288" y="312.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#427a7e" font-weight="400">[1]</text>
+<text x="288" y="433.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#427a7e" font-weight="400">[2]</text>
+<text x="288" y="554.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#427a7e" font-weight="400">[3]</text>
+<text x="288" y="675.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#427a7e" font-weight="400">[4]</text>
+<text x="288" y="796.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#427a7e" font-weight="400">[5]</text>
+<rect x="370" y="301" width="294" height="99" rx="8" fill="#c9e5e7" stroke="#06858e"/>
+<text x="384" y="334.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="700">[Pet] • [serviço]</text>
+<text x="384" y="370.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">[estado] • [duração]</text>
+<rect x="710" y="424" width="294" height="99" rx="8" fill="#c9e5e7" stroke="#06858e"/>
+<text x="724" y="457.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="700">[Pet] • [serviço]</text>
+<text x="724" y="493.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">[estado] • [duração]</text>
+<rect x="1050" y="302" width="294" height="99" rx="8" fill="#c9e5e7" stroke="#06858e"/>
+<text x="1064" y="335.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="700">[Pet] • [serviço]</text>
+<text x="1064" y="371.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">[estado] • [duração]</text>
+<rect x="370" y="667" width="294" height="99" rx="8" fill="#c9e5e7" stroke="#06858e"/>
+<text x="384" y="700.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="700">[Pet] • [serviço]</text>
+<text x="384" y="736.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">[estado] • [duração]</text>
+<rect x="1050" y="667" width="294" height="99" rx="8" fill="#c9e5e7" stroke="#06858e"/>
+<text x="1064" y="700.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="700">[Pet] • [serviço]</text>
+<text x="1064" y="736.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">[estado] • [duração]</text>
+<text x="288" y="967.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">Capacidade e duração configuradas • lista alternativa disponível no celular</text>
+</svg>

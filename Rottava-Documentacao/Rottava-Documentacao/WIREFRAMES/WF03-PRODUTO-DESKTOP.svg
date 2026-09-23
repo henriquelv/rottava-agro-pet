@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000"><rect width="100%" height="100%" fill="#e8f0f0"/>
+<text x="38" y="44.8" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#0a4a55" font-weight="700">WF03 • Produto / desktop</text>
+<text x="38" y="75.0" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#427a7e" font-weight="400">Wireframe de estrutura • conteúdo ilustrativo, sem dados reais da loja</text>
+<rect x="30" y="101" width="1380" height="72" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="54" y="143.4" font-family="DejaVu Sans, sans-serif" font-size="23" fill="#0a4a55" font-weight="700">ROTTAVA</text>
+<rect x="280" y="115" width="660" height="42" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="300" y="140.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">O que seu pet precisa?</text>
+<text x="1010" y="140.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="400">Serviços   Conta   Carrinho</text>
+<text x="50" y="219.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">Produtos / Categoria / Nome</text>
+<text x="50" y="297.0" font-family="DejaVu Sans, sans-serif" font-size="40" fill="#0a4a55" font-weight="700">Nome do produto</text>
+<text x="50" y="342.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="400">Descrição curta e informações do cadastro.</text>
+<text x="50" y="373.25" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="400">Variante e unidade de venda explícitas.</text>
+<text x="50" y="436.2" font-family="DejaVu Sans, sans-serif" font-size="34" fill="#0a4a55" font-weight="700">R$ [preço da variante]</text>
+<text x="50" y="475.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">Embalagem / tamanho / sabor</text>
+<rect x="50" y="496" width="146" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="64" y="521.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Opção A</text>
+<rect x="210" y="496" width="146" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="224" y="521.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Opção B</text>
+<rect x="370" y="496" width="160" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="384" y="521.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Quantidade</text>
+<rect x="50" y="558" width="480" height="44" rx="6" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="64" y="583.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="700">Adicionar ao carrinho</text>
+<rect x="50" y="616" width="480" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="64" y="641.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Comprar pelo WhatsApp</text>
+<rect x="50" y="692" width="560" height="44" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="65" y="718.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#0a4a55" font-weight="400">Descrição e características  +</text>
+<rect x="50" y="744" width="560" height="44" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="65" y="770.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#0a4a55" font-weight="400">Entrega ou retirada  +</text>
+<rect x="50" y="796" width="560" height="44" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="65" y="822.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#0a4a55" font-weight="400">Informações complementares  +</text>
+<rect x="680" y="237" width="690" height="559" rx="8" fill="#c9e5e7" stroke="#c9e5e7"/>
+<text x="882" y="472.4" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#427a7e" font-weight="400">FOTO PRINCIPAL</text>
+<text x="815" y="516.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#427a7e" font-weight="400">Galeria de fotos reais do produto</text>
+<rect x="390" y="918" width="660" height="56" rx="20" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="425" y="949.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="400">Início</text>
+<text x="549" y="949.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="400">Produtos</text>
+<text x="673" y="949.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="400">Carrinho</text>
+<text x="797" y="949.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="400">Serviços</text>
+<text x="921" y="949.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="400">Conta</text>
+</svg>

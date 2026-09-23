@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000"><rect width="100%" height="100%" fill="#e8f0f0"/>
+<text x="38" y="44.8" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#0a4a55" font-weight="700">WF05 • Checkout / desktop</text>
+<text x="38" y="75.0" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#427a7e" font-weight="400">Wireframe de estrutura • conteúdo ilustrativo, sem dados reais da loja</text>
+<rect x="30" y="101" width="1380" height="72" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="54" y="143.4" font-family="DejaVu Sans, sans-serif" font-size="23" fill="#0a4a55" font-weight="700">ROTTAVA</text>
+<rect x="280" y="115" width="660" height="42" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="300" y="140.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">O que seu pet precisa?</text>
+<text x="1010" y="140.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="400">Serviços   Conta   Carrinho</text>
+<text x="50" y="223.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="700">Dados  /  Recebimento  /  Pagamento  /  Revisão</text>
+<rect x="40" y="257" width="835" height="590" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="65" y="304.4" font-family="DejaVu Sans, sans-serif" font-size="28" fill="#0a4a55" font-weight="700">Como você quer receber?</text>
+<rect x="65" y="335" width="290" height="44" rx="6" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="79" y="360.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="700">Entrega própria</text>
+<rect x="372" y="335" width="290" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="386" y="360.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Retirar na loja</text>
+<text x="65" y="426.2" font-family="DejaVu Sans, sans-serif" font-size="14" fill="#427a7e" font-weight="400">Endereço selecionado</text>
+<rect x="65" y="438" width="750" height="48" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="77" y="465.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="400">Rua, número, bairro • Caçador SC</text>
+<rect x="65" y="505" width="255" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="79" y="530.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Alterar endereço</text>
+<text x="65" y="598.4" font-family="DejaVu Sans, sans-serif" font-size="23" fill="#0a4a55" font-weight="700">Forma de pagamento</text>
+<rect x="65" y="631" width="220" height="44" rx="6" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="79" y="656.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="700">Pix</text>
+<rect x="309" y="631" width="220" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="323" y="656.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Cartão</text>
+<rect x="553" y="631" width="220" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="567" y="656.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Presencial</text>
+<text x="65" y="724.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#427a7e" font-weight="400">Presencial: mostrar local e momento da cobrança conforme política</text>
+<text x="65" y="751.75" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#427a7e" font-weight="400">aprovada. Frete muda ao alterar o endereço.</text>
+<rect x="910" y="257" width="490" height="590" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="935" y="305.6" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0a4a55" font-weight="700">Resumo da compra</text>
+<text x="935" y="371.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="400">Itens e quantidades</text>
+<text x="935" y="437.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="400">Subtotal: R$ [valor]</text>
+<text x="935" y="503.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="400">Frete: R$ [cotação]</text>
+<text x="935" y="569.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="700">Total: R$ [total]</text>
+<text x="935" y="648.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#427a7e" font-weight="400">Revisar valores e recebimento antes de</text>
+<text x="935" y="674.5" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#427a7e" font-weight="400">confirmar.</text>
+<rect x="935" y="726" width="430" height="44" rx="6" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="949" y="751.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="700">Confirmar pedido</text>
+</svg>

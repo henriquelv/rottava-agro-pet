@@ -1,0 +1,30 @@
+flowchart TD
+  subgraph L0["Cliente"]
+    direction TB
+    a["Escolher intenção por botão"]
+    d["Vincular conta com senha"]
+    f["Confirmar resumo completo"]
+  end
+  subgraph L1["Bot e canal"]
+    direction TB
+    b["Consultar dados existentes"]
+    e["Coletar recebimento e pagamento"]
+    h["Apresentar pagamento e status"]
+  end
+  subgraph L2["Aplicação"]
+    direction TB
+    c["Montar carrinho central"]
+    g["Criar pedido idempotente"]
+  end
+  subgraph L3["Atendente"]
+    direction TB
+    i["Assumir quando solicitado"]
+  end
+  a --> b
+  b --> c
+  c --> d
+  d -->|"verificado"| e
+  e --> f
+  f -->|"aceite"| g
+  g --> h
+  b -->|"dado ausente ou pedido humano"| i

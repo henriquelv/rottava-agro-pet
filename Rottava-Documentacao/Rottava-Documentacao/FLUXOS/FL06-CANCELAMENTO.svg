@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="1578" viewBox="0 0 1360 1578"><rect width="100%" height="100%" fill="#e8f0f0"/>
+<text x="36" y="54.0" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#0a4a55" font-weight="700">FL06  Solicitação e cancelamento</text>
+<text x="36" y="89.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#427a7e" font-weight="400">Fluxo funcional por responsável • proposta v1 • não é BPMN executável</text>
+<rect x="36" y="115" width="304" height="1408" rx="4" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="52" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Cliente</text>
+<rect x="356" y="115" width="304" height="1408" rx="4" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="372" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Atendimento</text>
+<rect x="676" y="115" width="304" height="1408" rx="4" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="692" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Operação</text>
+<rect x="996" y="115" width="304" height="1408" rx="4" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="1012" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Financeiro</text>
+<polyline points="188.0,327 188.0,344.0 508.0,344.0 508.0,361" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="508.0,361 503.20574461395796,352.22417438109625 512.794255386042,352.22417438109625" fill="#76a6aa"/>
+<polyline points="508.0,493 508.0,510.0 828.0,510.0 828.0,527" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="828.0,527 823.205744613958,518.2241743810963 832.794255386042,518.2241743810963" fill="#76a6aa"/>
+<polyline points="828.0,659 828.0,676.0 508.0,676.0 508.0,693" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="508.0,693 503.20574461395796,684.2241743810963 512.794255386042,684.2241743810963" fill="#76a6aa"/>
+<polyline points="508.0,825 508.0,842.0 828.0,842.0 828.0,859" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="828.0,859 823.205744613958,850.2241743810963 832.794255386042,850.2241743810963" fill="#76a6aa"/>
+<rect x="378" y="839" width="67.6" height="24" rx="2" fill="#e8f0f0" stroke="#e8f0f0"/>
+<text x="382" y="851.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#427a7e" font-weight="400">aprovado</text>
+<polyline points="508.0,825 508.0,839 354,839 354,1342 188.0,1342 188.0,1357" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="188.0,1357 183.20574461395796,1348.2241743810962 192.79425538604204,1348.2241743810962" fill="#76a6aa"/>
+<rect x="58" y="839" width="132.4" height="24" rx="2" fill="#e8f0f0" stroke="#e8f0f0"/>
+<text x="62" y="851.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#427a7e" font-weight="400">negado com motivo</text>
+<polyline points="828.0,991 828.0,1008.0 1148.0,1008.0 1148.0,1025" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="1148.0,1025 1143.205744613958,1016.2241743810963 1152.794255386042,1016.2241743810963" fill="#76a6aa"/>
+<polyline points="1148.0,1157 1148.0,1174.0 1148.0,1174.0 1148.0,1191" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="1148.0,1191 1143.205744613958,1182.2241743810962 1152.794255386042,1182.2241743810962" fill="#76a6aa"/>
+<rect x="1018" y="1171" width="146.8" height="24" rx="2" fill="#e8f0f0" stroke="#e8f0f0"/>
+<text x="1022" y="1183.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#427a7e" font-weight="400">há valor a devolver</text>
+<polyline points="1148.0,1157 1148.0,1171 994,1171 994,1342 188.0,1342 188.0,1357" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="188.0,1357 183.20574461395796,1348.2241743810962 192.79425538604204,1348.2241743810962" fill="#76a6aa"/>
+<rect x="58" y="1171" width="96.4" height="24" rx="2" fill="#e8f0f0" stroke="#e8f0f0"/>
+<text x="62" y="1183.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#427a7e" font-weight="400">sem cobrança</text>
+<polyline points="1148.0,1323 1148.0,1340.0 188.0,1340.0 188.0,1357" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="188.0,1357 183.20574461395796,1348.2241743810962 192.79425538604204,1348.2241743810962" fill="#76a6aa"/>
+<rect x="50" y="195" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="64" y="220.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">C11: abrir solicitação</text>
+<text x="64" y="244.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Tipo, motivo e pedido vinculado.</text>
+<rect x="370" y="361" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="384" y="386.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Verificar estado e política</text>
+<text x="384" y="410.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Não confundir solicitação com</text>
+<text x="384" y="428.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">aprovação.</text>
+<rect x="690" y="527" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="704" y="552.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Coordenar separação ou</text>
+<text x="704" y="573.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">entrega</text>
+<text x="704" y="597.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Parar expedição ou organizar retorno.</text>
+<rect x="370" y="693" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="384" y="718.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Registrar decisão e</text>
+<text x="384" y="739.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">comunicar</text>
+<text x="384" y="763.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Motivo e próximo passo.</text>
+<rect x="690" y="859" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="704" y="884.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Efetivar cancelamento</text>
+<text x="704" y="905.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">elegível</text>
+<text x="704" y="929.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Liberar reserva uma vez; preservar</text>
+<text x="704" y="947.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">histórico.</text>
+<rect x="1010" y="1025" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="1024" y="1050.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Verificar valores recebidos</text>
+<text x="1024" y="1074.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Solicitar estorno quando devido.</text>
+<rect x="1010" y="1191" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="1024" y="1216.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Conciliar resultado</text>
+<text x="1024" y="1237.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">financeiro</text>
+<text x="1024" y="1261.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Falha permanece como pendência.</text>
+<rect x="50" y="1357" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="64" y="1382.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Consultar resolução</text>
+<text x="64" y="1406.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Cancelamento e estorno com estados</text>
+<text x="64" y="1424.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">próprios.</text>
+<text x="36" y="1554.2" font-family="DejaVu Sans, sans-serif" font-size="14" fill="#427a7e" font-weight="400">Rottava Pet Casa e Jardim • 23/09/2026</text>
+</svg>

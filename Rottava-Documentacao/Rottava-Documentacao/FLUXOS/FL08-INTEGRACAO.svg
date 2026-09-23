@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1360" height="1578" viewBox="0 0 1360 1578"><rect width="100%" height="100%" fill="#e8f0f0"/>
+<text x="36" y="54.0" font-family="DejaVu Sans, sans-serif" font-size="30" fill="#0a4a55" font-weight="700">FL08  Integração e recuperação de falha</text>
+<text x="36" y="89.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#427a7e" font-weight="400">Fluxo funcional por responsável • proposta v1 • não é BPMN executável</text>
+<rect x="36" y="115" width="304" height="1408" rx="4" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="52" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Aplicação</text>
+<rect x="356" y="115" width="304" height="1408" rx="4" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="372" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Fila</text>
+<rect x="676" y="115" width="304" height="1408" rx="4" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="692" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Sistema externo</text>
+<rect x="996" y="115" width="304" height="1408" rx="4" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="1012" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Operação</text>
+<polyline points="188.0,327 188.0,344.0 508.0,344.0 508.0,361" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="508.0,361 503.20574461395796,352.22417438109625 512.794255386042,352.22417438109625" fill="#76a6aa"/>
+<polyline points="508.0,493 508.0,510.0 828.0,510.0 828.0,527" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="828.0,527 823.205744613958,518.2241743810963 832.794255386042,518.2241743810963" fill="#76a6aa"/>
+<polyline points="828.0,659 828.0,676.0 508.0,676.0 508.0,693" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="508.0,693 503.20574461395796,684.2241743810963 512.794255386042,684.2241743810963" fill="#76a6aa"/>
+<polyline points="508.0,825 508.0,839 354,839 354,1342 188.0,1342 188.0,1357" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="188.0,1357 183.20574461395796,1348.2241743810962 192.79425538604204,1348.2241743810962" fill="#76a6aa"/>
+<rect x="58" y="839" width="139.6" height="24" rx="2" fill="#e8f0f0" stroke="#e8f0f0"/>
+<text x="62" y="851.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#427a7e" font-weight="400">sucesso confirmado</text>
+<polyline points="508.0,825 508.0,842.0 828.0,842.0 828.0,859" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="828.0,859 823.205744613958,850.2241743810963 832.794255386042,850.2241743810963" fill="#76a6aa"/>
+<rect x="378" y="839" width="132.4" height="24" rx="2" fill="#e8f0f0" stroke="#e8f0f0"/>
+<text x="382" y="851.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#427a7e" font-weight="400">resultado incerto</text>
+<polyline points="828.0,991 828.0,1008.0 508.0,1008.0 508.0,1025" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="508.0,1025 503.20574461395796,1016.2241743810963 512.794255386042,1016.2241743810963" fill="#76a6aa"/>
+<rect x="378" y="1005" width="175.6" height="24" rx="2" fill="#e8f0f0" stroke="#e8f0f0"/>
+<text x="382" y="1017.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#427a7e" font-weight="400">não executado; retentar</text>
+<polyline points="828.0,991 828.0,1005 674,1005 674,1342 188.0,1342 188.0,1357" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="188.0,1357 183.20574461395796,1348.2241743810962 192.79425538604204,1348.2241743810962" fill="#76a6aa"/>
+<rect x="58" y="1005" width="96.4" height="24" rx="2" fill="#e8f0f0" stroke="#e8f0f0"/>
+<text x="62" y="1017.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#427a7e" font-weight="400">já executado</text>
+<polyline points="508.0,1157 508.0,1174.0 1148.0,1174.0 1148.0,1191" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="1148.0,1191 1143.205744613958,1182.2241743810962 1152.794255386042,1182.2241743810962" fill="#76a6aa"/>
+<rect x="378" y="1171" width="139.6" height="24" rx="2" fill="#e8f0f0" stroke="#e8f0f0"/>
+<text x="382" y="1183.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#427a7e" font-weight="400">limite ou conflito</text>
+<polyline points="1148.0,1323 1148.0,1340.0 188.0,1340.0 188.0,1357" fill="none" stroke="#76a6aa" stroke-width="2"/>
+<polygon points="188.0,1357 183.20574461395796,1348.2241743810962 192.79425538604204,1348.2241743810962" fill="#76a6aa"/>
+<rect x="58" y="1337" width="96.4" height="24" rx="2" fill="#e8f0f0" stroke="#e8f0f0"/>
+<text x="62" y="1349.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#427a7e" font-weight="400">reconciliado</text>
+<rect x="50" y="195" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="64" y="220.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Persistir mudança e evento</text>
+<text x="64" y="244.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Transação na base do projeto.</text>
+<rect x="370" y="361" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="384" y="386.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Processar evento pendente</text>
+<text x="384" y="410.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Chave de operação e correlação.</text>
+<rect x="690" y="527" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="704" y="552.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Executar contrato</text>
+<text x="704" y="573.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">permitido</text>
+<text x="704" y="597.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Leitura ou escrita previamente</text>
+<text x="704" y="615.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">homologada.</text>
+<rect x="370" y="693" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="384" y="718.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Classificar retorno</text>
+<text x="384" y="742.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Sucesso, falha recuperável ou</text>
+<text x="384" y="760.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">resultado incerto.</text>
+<rect x="690" y="859" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="704" y="884.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Consultar referência</text>
+<text x="704" y="905.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">externa</text>
+<text x="704" y="929.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Após timeout, antes de nova</text>
+<text x="704" y="947.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">tentativa.</text>
+<rect x="370" y="1025" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="384" y="1050.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Repetir de forma</text>
+<text x="384" y="1071.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">idempotente</text>
+<text x="384" y="1095.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Retentativa limitada ou fila de</text>
+<text x="384" y="1113.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">revisão.</text>
+<rect x="1010" y="1191" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="1024" y="1216.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">M15: resolver divergência</text>
+<text x="1024" y="1240.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Registrar evidência e IDs externos.</text>
+<rect x="50" y="1357" width="276" height="132" rx="6" fill="#f2f7f7" stroke="#06858e"/>
+<text x="64" y="1382.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Atualizar estado</text>
+<text x="64" y="1403.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">confirmado</text>
+<text x="64" y="1427.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Sem duplicar efeitos já executados.</text>
+<text x="36" y="1554.2" font-family="DejaVu Sans, sans-serif" font-size="14" fill="#427a7e" font-weight="400">Rottava Pet Casa e Jardim • 23/09/2026</text>
+</svg>

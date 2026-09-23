@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="1110" viewBox="0 0 430 1110"><rect width="100%" height="100%" fill="#e8f0f0"/>
+<text x="20" y="38.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="700">WF06 • Chat de compra</text>
+<text x="20" y="67.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Wireframe • dados ilustrativos</text>
+<rect x="14" y="89" width="402" height="54" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="28" y="123.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">ROTTAVA</text>
+<text x="315" y="122.0" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#0a4a55" font-weight="400">Menu</text>
+<rect x="20" y="166" width="389" height="75" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="34" y="200.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="700">Assistente Rottava</text>
+<text x="34" y="226.2" font-family="DejaVu Sans, sans-serif" font-size="14" fill="#427a7e" font-weight="400">Atendimento automático</text>
+<rect x="20" y="265" width="354" height="109" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="35" y="298.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#0a4a55" font-weight="400">Como posso ajudar? Você pode</text>
+<text x="35" y="324.5" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#0a4a55" font-weight="400">usar os botões ou escrever.</text>
+<rect x="20" y="393" width="125" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="34" y="418.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Comprar</text>
+<rect x="153" y="393" width="125" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="167" y="418.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Serviços</text>
+<rect x="286" y="393" width="125" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="300" y="417.2" font-family="DejaVu Sans, sans-serif" font-size="14" fill="#0a4a55" font-weight="700">Mais opções</text>
+<rect x="61" y="459" width="348" height="64" rx="8" fill="#c9e5e7" stroke="#c9e5e7"/>
+<text x="78" y="493.6" font-family="DejaVu Sans, sans-serif" font-size="17" fill="#0a4a55" font-weight="400">Quero encontrar um produto</text>
+<rect x="20" y="549" width="300" height="247" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<rect x="32" y="561" width="276" height="136" rx="4" fill="#c9e5e7" stroke="#c9e5e7"/>
+<text x="44" y="603.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">FOTO DO</text>
+<text x="44" y="626.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">PRODUTO</text>
+<text x="34" y="721.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Nome do produto</text>
+<text x="34" y="745.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Variante • embalagem</text>
+<text x="34" y="777.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#0a4a55" font-weight="700">R$ [preço]</text>
+<rect x="20" y="816" width="186" height="44" rx="6" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="34" y="841.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="700">Adicionar</text>
+<rect x="220" y="816" width="187" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="234" y="841.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Ver detalhes</text>
+<rect x="20" y="888" width="388" height="71" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="33" y="917.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Carrinho • [itens] • R$ [total]</text>
+<text x="33" y="946.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Revisar antes de confirmar</text>
+<rect x="20" y="987" width="388" height="63" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="35" y="1019.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">Digite sua mensagem…</text>
+</svg>

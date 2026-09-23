@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000"><rect width="100%" height="100%" fill="#e8f0f0"/>
+<text x="30" y="46.6" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0a4a55" font-weight="700">WF09 • Painel da operação</text>
+<text x="30" y="77.0" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#427a7e" font-weight="400">Wireframe operacional • dados ilustrativos</text>
+<rect x="22" y="110" width="232" height="862" rx="8" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="42" y="156.2" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#fff" font-weight="700">ROTTAVA</text>
+<text x="42" y="225.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Visão geral</text>
+<text x="42" y="288.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Pedidos</text>
+<text x="42" y="351.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Entregas</text>
+<text x="42" y="414.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Agenda</text>
+<text x="42" y="477.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Atendimento</text>
+<text x="42" y="540.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Catálogo</text>
+<text x="42" y="603.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Financeiro</text>
+<text x="42" y="666.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#fff" font-weight="400">Configurações</text>
+<rect x="286" y="110" width="348" height="142" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="307" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Pedidos a separar</text>
+<text x="307" y="207.8" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#06858e" font-weight="400">[quantidade]</text>
+<rect x="658" y="110" width="348" height="142" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="679" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Entregas ativas</text>
+<text x="679" y="207.8" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#06858e" font-weight="400">[quantidade]</text>
+<rect x="1030" y="110" width="348" height="142" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="1051" y="153.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">Serviços do dia</text>
+<text x="1051" y="207.8" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#06858e" font-weight="400">[quantidade]</text>
+<rect x="286" y="281" width="723" height="425" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="308" y="326.0" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#0a4a55" font-weight="700">Pedidos que exigem ação</text>
+<rect x="307" y="367" width="680" height="54" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="322" y="398.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#0a4a55" font-weight="400">[pedido]  •  [modalidade]  •  [estado]</text>
+<rect x="307" y="439" width="680" height="54" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="322" y="470.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#0a4a55" font-weight="400">[pedido]  •  [modalidade]  •  [estado]</text>
+<rect x="307" y="511" width="680" height="54" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="322" y="542.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#0a4a55" font-weight="400">[pedido]  •  [modalidade]  •  [estado]</text>
+<rect x="307" y="583" width="680" height="54" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="322" y="614.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#0a4a55" font-weight="400">[pedido]  •  [modalidade]  •  [estado]</text>
+<rect x="1035" y="281" width="365" height="425" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="1055" y="327.0" font-family="DejaVu Sans, sans-serif" font-size="25" fill="#0a4a55" font-weight="700">Alertas</text>
+<text x="1055" y="380.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#427a7e" font-weight="400">Integração com erro</text>
+<text x="1055" y="407.75" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#427a7e" font-weight="400">Pagamento a conciliar</text>
+<text x="1055" y="435.3" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#427a7e" font-weight="400">Localização desatualizada</text>
+<rect x="286" y="732" width="1114" height="213" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="309" y="777.2" font-family="DejaVu Sans, sans-serif" font-size="24" fill="#0a4a55" font-weight="700">Próximos agendamentos e fila de atendimento</text>
+<text x="309" y="833.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#427a7e" font-weight="400">Atalhos abrem a operação já filtrada. Indicadores não tratam pedido criado como receita recebida.</text>
+</svg>

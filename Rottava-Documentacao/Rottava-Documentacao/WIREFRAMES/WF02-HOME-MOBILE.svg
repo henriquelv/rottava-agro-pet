@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="1110" viewBox="0 0 430 1110"><rect width="100%" height="100%" fill="#e8f0f0"/>
+<text x="20" y="38.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="700">WF02 • Home / celular</text>
+<text x="20" y="67.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Wireframe • dados ilustrativos</text>
+<rect x="14" y="89" width="402" height="54" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="28" y="123.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">ROTTAVA</text>
+<text x="315" y="122.0" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#0a4a55" font-weight="400">Menu</text>
+<rect x="20" y="159" width="390" height="44" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="32" y="186.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">Buscar produtos</text>
+<text x="20" y="280.2" font-family="DejaVu Sans, sans-serif" font-size="59" fill="#0a4a55" font-weight="700">ROTTAVA</text>
+<text x="20" y="329.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="400">Seu pet, sua casa, seu jardim.</text>
+<rect x="20" y="366" width="186" height="44" rx="6" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="34" y="391.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="700">Ver produtos</text>
+<rect x="220" y="366" width="186" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="234" y="391.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Banho e tosa</text>
+<text x="20" y="466.6" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#0a4a55" font-weight="700">Encontre por categoria</text>
+<rect x="20" y="492" width="115" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="34" y="517.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Cães</text>
+<rect x="148" y="492" width="115" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="162" y="517.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Gatos</text>
+<rect x="276" y="492" width="130" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="290" y="517.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Outros</text>
+<text x="20" y="582.6" font-family="DejaVu Sans, sans-serif" font-size="22" fill="#0a4a55" font-weight="700">Produtos em destaque</text>
+<rect x="20" y="608" width="188" height="244" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<rect x="32" y="620" width="164" height="133" rx="4" fill="#c9e5e7" stroke="#c9e5e7"/>
+<text x="44" y="662.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">FOTO DO</text>
+<text x="44" y="685.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">PRODUTO</text>
+<text x="34" y="777.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Nome do produto</text>
+<text x="34" y="801.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Variante • embalagem</text>
+<text x="34" y="833.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#0a4a55" font-weight="700">R$ [preço]</text>
+<rect x="220" y="608" width="188" height="244" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<rect x="232" y="620" width="164" height="133" rx="4" fill="#c9e5e7" stroke="#c9e5e7"/>
+<text x="244" y="662.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">FOTO DO</text>
+<text x="244" y="685.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">PRODUTO</text>
+<text x="234" y="777.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Nome do produto</text>
+<text x="234" y="801.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Variante • embalagem</text>
+<text x="234" y="833.4" font-family="DejaVu Sans, sans-serif" font-size="18" fill="#0a4a55" font-weight="700">R$ [preço]</text>
+<rect x="20" y="876" width="388" height="73" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="34" y="912.2" font-family="DejaVu Sans, sans-serif" font-size="19" fill="#0a4a55" font-weight="700">Faixa de marcas</text>
+<text x="34" y="935.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Movimento com opção de pausa</text>
+<rect x="14" y="1038" width="402" height="58" rx="18" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="28" y="1070.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#fff" font-weight="400">Início</text>
+<text x="106" y="1070.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#fff" font-weight="400">Produtos</text>
+<text x="184" y="1070.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#fff" font-weight="400">Carrinho</text>
+<text x="262" y="1070.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#fff" font-weight="400">Serviços</text>
+<text x="340" y="1070.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#fff" font-weight="400">Conta</text>
+</svg>

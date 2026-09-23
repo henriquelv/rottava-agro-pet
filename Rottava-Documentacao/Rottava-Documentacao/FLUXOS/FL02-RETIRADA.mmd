@@ -1,0 +1,28 @@
+flowchart TD
+  subgraph L0["Cliente"]
+    direction TB
+    a["Escolher retirada"]
+    e["Comparecer e identificar pedido"]
+  end
+  subgraph L1["Aplicação"]
+    direction TB
+    b["Confirmar elegibilidade"]
+    d["Avisar pronto para retirada"]
+    h["Atualizar histórico"]
+  end
+  subgraph L2["Operação"]
+    direction TB
+    c["Separar e conferir itens"]
+    g["Entregar mercadoria"]
+  end
+  subgraph L3["Caixa"]
+    direction TB
+    f["Verificar pagamento"]
+  end
+  a --> b
+  b --> c
+  c --> d
+  d --> e
+  e --> f
+  f -->|"quitado ou exceção autorizada"| g
+  g --> h

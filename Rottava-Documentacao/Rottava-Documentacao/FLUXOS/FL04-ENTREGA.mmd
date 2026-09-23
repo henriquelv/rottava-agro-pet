@@ -1,0 +1,31 @@
+flowchart TD
+  subgraph L0["Despachante"]
+    direction TB
+    a["M07: criar e atribuir rota"]
+    h["Conferir ocorrência ou caixa"]
+  end
+  subgraph L1["Entregador"]
+    direction TB
+    b["E01 e E02: iniciar rota"]
+    e["Chegar e conferir destinatário"]
+    f["E03: registrar prova e cobrança"]
+  end
+  subgraph L2["Aplicação"]
+    direction TB
+    c["Receber posições e eventos"]
+    g["Aceitar conclusão idempotente"]
+    i["Encerrar acesso ao rastreamento"]
+  end
+  subgraph L3["Cliente"]
+    direction TB
+    d["C04: acompanhar entrega"]
+  end
+  a --> b
+  b --> c
+  c --> d
+  d --> e
+  e -->|"destinatário encontrado"| f
+  f --> g
+  g -->|"conciliação independente"| h
+  g -->|"entrega concluída"| i
+  e -->|"ausente ou problema"| h

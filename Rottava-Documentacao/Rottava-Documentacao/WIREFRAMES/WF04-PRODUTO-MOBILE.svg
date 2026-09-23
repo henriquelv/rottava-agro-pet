@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="1110" viewBox="0 0 430 1110"><rect width="100%" height="100%" fill="#e8f0f0"/>
+<text x="20" y="38.8" font-family="DejaVu Sans, sans-serif" font-size="21" fill="#0a4a55" font-weight="700">WF04 • Produto / celular</text>
+<text x="20" y="67.4" font-family="DejaVu Sans, sans-serif" font-size="13" fill="#427a7e" font-weight="400">Wireframe • dados ilustrativos</text>
+<rect x="14" y="89" width="402" height="54" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="28" y="123.0" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#0a4a55" font-weight="700">ROTTAVA</text>
+<text x="315" y="122.0" font-family="DejaVu Sans, sans-serif" font-size="15" fill="#0a4a55" font-weight="400">Menu</text>
+<text x="20" y="187.6" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#0a4a55" font-weight="700">Nome do produto</text>
+<rect x="20" y="211" width="388" height="268" rx="8" fill="#c9e5e7" stroke="#c9e5e7"/>
+<text x="111" y="340.6" font-family="DejaVu Sans, sans-serif" font-size="27" fill="#427a7e" font-weight="400">FOTO REAL</text>
+<text x="20" y="528.6" font-family="DejaVu Sans, sans-serif" font-size="32" fill="#0a4a55" font-weight="700">R$ [preço]</text>
+<text x="20" y="567.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#427a7e" font-weight="400">Escolha a variante</text>
+<rect x="20" y="589" width="182" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="34" y="614.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Opção A</text>
+<rect x="219" y="589" width="187" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="233" y="614.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Opção B</text>
+<text x="20" y="667.2" font-family="DejaVu Sans, sans-serif" font-size="14" fill="#427a7e" font-weight="400">Quantidade</text>
+<rect x="20" y="679" width="388" height="48" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="32" y="706.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="400">1</text>
+<rect x="20" y="754" width="388" height="44" rx="6" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="34" y="779.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#fff" font-weight="700">Adicionar ao carrinho</text>
+<rect x="20" y="813" width="388" height="44" rx="6" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="34" y="838.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="700">Comprar pelo WhatsApp</text>
+<rect x="20" y="879" width="388" height="48" rx="8" fill="#f2f7f7" stroke="#cde0e2"/>
+<text x="33" y="906.8" font-family="DejaVu Sans, sans-serif" font-size="16" fill="#0a4a55" font-weight="400">Descrição e características  +</text>
+<rect x="14" y="1038" width="402" height="58" rx="18" fill="#0a4a55" stroke="#0a4a55"/>
+<text x="28" y="1070.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#fff" font-weight="400">Início</text>
+<text x="106" y="1070.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#fff" font-weight="400">Produtos</text>
+<text x="184" y="1070.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#fff" font-weight="400">Carrinho</text>
+<text x="262" y="1070.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#fff" font-weight="400">Serviços</text>
+<text x="340" y="1070.6" font-family="DejaVu Sans, sans-serif" font-size="12" fill="#fff" font-weight="400">Conta</text>
+</svg>

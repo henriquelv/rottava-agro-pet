@@ -1,0 +1,30 @@
+flowchart TD
+  subgraph L0["Cliente"]
+    direction TB
+    a["C11: abrir solicitação"]
+    h["Consultar resolução"]
+  end
+  subgraph L1["Atendimento"]
+    direction TB
+    b["Verificar estado e política"]
+    d["Registrar decisão e comunicar"]
+  end
+  subgraph L2["Operação"]
+    direction TB
+    c["Coordenar separação ou entrega"]
+    e["Efetivar cancelamento elegível"]
+  end
+  subgraph L3["Financeiro"]
+    direction TB
+    f["Verificar valores recebidos"]
+    g["Conciliar resultado financeiro"]
+  end
+  a --> b
+  b --> c
+  c --> d
+  d -->|"aprovado"| e
+  d -->|"negado com motivo"| h
+  e --> f
+  f -->|"há valor a devolver"| g
+  f -->|"sem cobrança"| h
+  g --> h
