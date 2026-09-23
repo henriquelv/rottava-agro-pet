@@ -7,6 +7,7 @@ node_modules
 coverage
 *.log
 Thumbs.db
+.tmp-review/
 next-env.d.ts
 
 .vercel

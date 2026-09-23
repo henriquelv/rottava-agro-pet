@@ -4,16 +4,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Minus, Plus, ShoppingBag, Trash2, Check, LoaderCircle, Send, PawPrint, Leaf, Sparkles } from "lucide-react";
+import { ArrowRight, Minus, Plus, ShoppingBag, Trash2, Check, LoaderCircle, Send, PawPrint, Leaf, Sparkles, Heart, Star, ShieldCheck, Truck, RotateCcw } from "lucide-react";
+import { toast } from "sonner";
 import type { Product } from "@/lib/db";
 import { money } from "@/lib/format";
 import { useCart } from "./cart";
+import { useFavorites } from "./favorites";
 
 export function ProductCard({ product }: { product: Product }) {
   const variant = product.variants[0];
+  const favorites = useFavorites(); const favorite = favorites.has(product.id);
   return <article className="product-card">
-    <Link href={`/produto/${product.slug}`} className="product-image">{product.image_url ? <Image unoptimized src={product.image_url} alt="" fill sizes="(max-width: 700px) 50vw, 25vw" /> : <ProductArt product={product} />}</Link>
-    <div className="product-meta"><span>{product.category_name || "Pet"}{product.brand && ` · ${product.brand}`}</span><h3><Link href={`/produto/${product.slug}`}>{product.name}</Link></h3><div><b>{money(product.min_price_cents)}</b>{variant && <QuickAdd product={product} variant={variant} />}</div></div>
+    <div className="product-media">{product.badge && <span className="product-badge">{product.badge}</span>}<button className={`favorite-button ${favorite ? "active" : ""}`} onClick={() => { favorites.toggle(product.id); toast(favorite ? "Removido dos favoritos" : "Guardado nos favoritos"); }} aria-label={favorite ? `Remover ${product.name} dos favoritos` : `Favoritar ${product.name}`}><Heart fill={favorite ? "currentColor" : "none"} /></button><Link href={`/produto/${product.slug}`} className="product-image">{product.image_url ? <Image unoptimized src={product.image_url} alt={product.name} fill sizes="(max-width: 700px) 50vw, 25vw" /> : <ProductArt product={product} />}</Link>{variant && <QuickAdd product={product} variant={variant} label />}</div>
+    <div className="product-meta"><span>{product.brand || product.category_name || "Rottava"}</span><h3><Link href={`/produto/${product.slug}`}>{product.name}</Link></h3>{product.rating && <div className="rating"><Star fill="currentColor" /><b>{product.rating.toFixed(1)}</b><small>({product.reviews_count})</small></div>}<div className="price-row"><div>{product.compare_at_cents && <del>{money(product.compare_at_cents)}</del>}<b>{money(product.min_price_cents)}</b></div></div></div>
   </article>;
 }
 
@@ -23,9 +26,9 @@ function ProductArt({ product }: { product: Product }) {
   return <span className={`image-placeholder product-art ${category.includes("Jardim") ? "garden" : category === "Cuidados" ? "care" : "pet"}`}><i /><Icon /><small>COLEÇÃO DEMO</small><b>{product.name.split(" ").slice(0, 2).join(" ")}</b></span>;
 }
 
-function QuickAdd({ product, variant }: { product: Product; variant: Product["variants"][number] }) {
+function QuickAdd({ product, variant, label = false }: { product: Product; variant: Product["variants"][number]; label?: boolean }) {
   const { add } = useCart(); const [done, setDone] = useState(false);
-  return <button className="round-add" onClick={() => { add({ variantId: variant.id, productSlug: product.slug, name: product.name, variant: variant.label, priceCents: variant.price_cents, imageUrl: product.image_url }); setDone(true); setTimeout(() => setDone(false), 1400); }} aria-label={`Adicionar ${product.name} ao carrinho`}>{done ? <Check size={17} /> : <Plus size={18} />}</button>;
+  return <button className={label ? "quick-add" : "round-add"} onClick={() => { add({ variantId: variant.id, productSlug: product.slug, name: product.name, variant: variant.label, priceCents: variant.price_cents, imageUrl: product.image_url }, { open: true }); setDone(true); toast.success(`${product.name} entrou no carrinho`); setTimeout(() => setDone(false), 1400); }} aria-label={`Adicionar ${product.name} ao carrinho`}>{done ? <><Check size={17} /> {label && "Adicionado"}</> : <><Plus size={18} /> {label && "Adicionar rápido"}</>}</button>;
 }
 
 export function ProductBuy({ product }: { product: Product }) {
@@ -33,9 +36,15 @@ export function ProductBuy({ product }: { product: Product }) {
   const variant = product.variants.find((v) => v.id === selected);
   if (!variant) return <p className="unavailable">Este produto não possui uma variante vendável no momento.</p>;
   return <div className="buy-box"><fieldset><legend>Escolha a variação</legend><div className="variant-grid">{product.variants.map((v) => <button type="button" className={selected === v.id ? "selected" : ""} key={v.id} onClick={() => setSelected(v.id)}><span>{v.label}</span><b>{money(v.price_cents)}</b></button>)}</div></fieldset>
-    <div className="buy-row"><div><small>Valor atual</small><strong>{money(variant.price_cents)}</strong><span>{variant.stock_quantity == null ? "Disponibilidade confirmada no pedido" : variant.stock_quantity > 0 ? "Disponível" : "Indisponível"}</span></div><button className="button primary" disabled={variant.stock_quantity === 0} onClick={() => { add({ variantId: variant.id, productSlug: product.slug, name: product.name, variant: variant.label, priceCents: variant.price_cents, imageUrl: product.image_url }); setDone(true); }}>{done ? <><Check /> Adicionado</> : <><ShoppingBag /> Adicionar</>}</button></div>
+    <div className="buy-row"><div><small>Valor atual</small><strong>{money(variant.price_cents)}</strong><span>{variant.stock_quantity == null ? "Disponibilidade confirmada no pedido" : variant.stock_quantity > 0 ? `${variant.stock_quantity} unidades disponíveis para teste` : "Indisponível"}</span></div><button className="button primary" disabled={variant.stock_quantity === 0} onClick={() => { add({ variantId: variant.id, productSlug: product.slug, name: product.name, variant: variant.label, priceCents: variant.price_cents, imageUrl: product.image_url }, { open: true }); setDone(true); toast.success("Produto adicionado ao carrinho"); }}>{done ? <><Check /> Adicionado</> : <><ShoppingBag /> Adicionar ao carrinho</>}</button></div>
+    <div className="purchase-assurances"><span><ShieldCheck /> Compra protegida</span><span><Truck /> Retirada após confirmação</span><span><RotateCcw /> Revisão antes do pedido</span></div>
     {done && <Link className="text-link" href="/carrinho">Revisar carrinho <ArrowRight size={16} /></Link>}
   </div>;
+}
+
+export function FavoritesView({ products }: { products: Product[] }) {
+  const { ids } = useFavorites(); const selected = products.filter((product) => ids.includes(product.id));
+  return selected.length ? <div className="product-grid catalog-grid">{selected.map((product) => <ProductCard key={product.id} product={product} />)}</div> : <div className="empty-cart"><Heart /><h2>Guarde o que chamou sua atenção.</h2><p>Use o coração nos produtos para montar sua seleção. Ela fica salva neste dispositivo.</p><Link className="button primary" href="/produtos">Descobrir produtos</Link></div>;
 }
 
 export function CartView({ signedIn }: { signedIn: boolean }) {

@@ -16,6 +16,7 @@ export function db() {
 export type Product = {
   id: string; name: string; slug: string; description: string | null; brand: string | null;
   image_url: string | null; category_name: string | null; min_price_cents: number | null;
+  compare_at_cents?: number | null; badge?: string | null; rating?: number | null; reviews_count?: number | null;
   variants: { id: string; sku: string; label: string; unit: string; price_cents: number; stock_quantity: number | null }[];
 };
 
@@ -36,6 +37,9 @@ export const demoProducts: Product[] = [
 
 function mock(id: string, name: string, slug: string, category: string, brand: string, price: number, variants: string[]): Product {
   return { id, name, slug, category_name: category, brand, min_price_cents: price, image_url: null,
+    compare_at_cents: price > 5000 ? Math.round(price * 1.18) : null,
+    badge: slug.includes("racao") || slug.includes("horta") ? "Mais pedido" : slug.includes("cama") || slug.includes("vaso") ? "Novidade" : null,
+    rating: 4.8, reviews_count: 18 + Math.abs(slug.length * 7 % 83),
     description: `Produto demonstrativo para validar navegação, variantes, carrinho e checkout. As informações comerciais serão substituídas pelo catálogo real da loja.`,
     variants: variants.map((label, index) => ({ id: `${id.slice(0, 24)}${String(index + 1).padStart(12, "0")}`, sku: `DEMO-${slug.slice(0, 12)}-${index + 1}`, label, unit: "un", price_cents: price + index * Math.round(price * .65), stock_quantity: 8 - index })) };
 }
@@ -43,7 +47,8 @@ function mock(id: string, name: string, slug: string, category: string, brand: s
 export async function listProducts(search = "", filters: { category?: string; brand?: string; sort?: string } = {}): Promise<Product[]> {
   if (!hasDatabase()) {
     if (!demoMode) return [];
-    let result = demoProducts.filter((p) => !search || `${p.name} ${p.brand}`.toLowerCase().includes(search.toLowerCase()));
+    const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+    let result = demoProducts.filter((p) => !search || normalize(`${p.name} ${p.brand}`).includes(normalize(search)));
     if (filters.category) result = result.filter((p) => p.category_name?.toLowerCase().replaceAll(" & ", "-").replaceAll(" ", "-") === filters.category);
     if (filters.brand) result = result.filter((p) => p.brand === filters.brand);
     if (filters.sort === "price-asc") result = [...result].sort((a,b) => (a.min_price_cents || 0) - (b.min_price_cents || 0));
