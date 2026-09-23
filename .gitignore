@@ -8,3 +8,5 @@ coverage
 *.log
 Thumbs.db
 next-env.d.ts
+
+.vercel
