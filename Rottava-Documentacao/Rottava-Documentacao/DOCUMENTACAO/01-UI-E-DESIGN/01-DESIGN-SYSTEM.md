@@ -29,3 +29,22 @@ Preservar a paleta não significa usar qualquer combinação. Verificar contrast
 ## Tema e animação
 
 Modo claro é proposta inicial para loja; escuro é variação documentada. O cliente ainda decide se haverá seletor. Glyph Portal somente na home, com atalho Ver produtos e fallback estático. Slider de marcas pausa por interação e respeita redução de movimento. Dock não interfere no teclado virtual nem cobre checkout. Não reproduzir animação de entrada ao voltar de um produto.
+
+## Gramática visual implementada
+
+A loja usa uma única família tipográfica de interface em todas as jornadas. Mudanças entre superfícies claras e escuras servem à hierarquia, mas não alteram escala, peso, raio, espaçamento ou comportamento dos componentes. Teal identifica marca, foco e ação principal; tons naturais e fotografias trazem contexto; fundos tecnológicos, brilhos neon e símbolos decorativos não fazem parte da linguagem da Rottava.
+
+### Ícones
+
+- Usar ícones apenas quando comunicarem ação, navegação, categoria ou estado.
+- Manter traço, tamanho óptico e alinhamento consistentes dentro de cada conjunto; padrão de 16–20 px na interface e área interativa mínima de 44 × 44 px.
+- Botões somente com ícone exigem nome acessível; ícones decorativos usam `aria-hidden`.
+- Evitar estrelas, brilhos e símbolos associados genericamente a “IA”, exceto quando representarem uma informação real aprovada, como avaliação existente no banco.
+- Estado ativo deve combinar cor, fundo ou rótulo; nunca depender apenas da troca de ícone.
+
+### Menus e seletores
+
+- Catálogo, agente e ordenação usam o componente visual próprio `SelectMenu`, com teclado, foco visível, Escape, clique externo e indicação da opção selecionada.
+- Menus compartilham fundo branco, borda `border`, raio de 8–10 px, sombra baixa e estados hover/focus da paleta.
+- Não usar o seletor nativo como elemento visual principal quando ele quebrar a identidade entre sistemas operacionais.
+- No celular, listas extensas devem abrir em sheet ou drawer; opções curtas podem usar o mesmo menu responsivo.
