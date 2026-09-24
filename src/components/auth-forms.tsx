@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import { Eye, EyeOff, LoaderCircle, ArrowRight } from "lucide-react";
+import { Eye, EyeOff, LoaderCircle, ArrowRight } from "@/components/icons";
 import { demoAccounts } from "@/lib/config";
 
 export function AuthForm({ mode }: { mode: "login" | "register" | "reset" }) {

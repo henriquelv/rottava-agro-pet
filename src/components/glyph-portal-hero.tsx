@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
-import { ArrowDown, ArrowRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "@/components/icons";
 import { motion, type MotionValue, useReducedMotion, useScroll, useTransform } from "motion/react";
 
 const letters = "ROTTAVA".split("");

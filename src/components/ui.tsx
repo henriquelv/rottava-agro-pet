@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, CircleAlert, CheckCircle2, Settings2 } from "lucide-react";
+import { ArrowRight, CircleAlert, CheckCircle2, Settings2 } from "@/components/icons";
 
 export function PageHero({ eyebrow, title, text, actions }: { eyebrow: string; title: string; text: string; actions?: React.ReactNode }) {
   return <section className="page-hero"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{text}</p>{actions && <div className="hero-actions">{actions}</div>}</section>;

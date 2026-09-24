@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import "./quality.css";
+import "./brand.css";
 import { Header, MobileDock, Footer } from "@/components/chrome";
 import { AppProviders } from "@/components/app-providers";
 import { getSession } from "@/lib/auth";

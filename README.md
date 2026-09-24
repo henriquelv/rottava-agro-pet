@@ -2,6 +2,8 @@
 
 Aplicação full-stack do e-commerce da Rottava, construída a partir do pacote funcional em `Rottava-Documentacao/`. O projeto usa Next.js App Router, PostgreSQL e sessões assinadas, com separação entre vitrine pública, conta, administração e entregador.
 
+A interface usa um design system próprio, CSS autoral, Motion para microinterações e um conjunto local de ícones SVG. Não depende de Lucide React nem de kits visuais como shadcn, Material UI ou Bootstrap.
+
 ## Rodar localmente
 
 1. Copie `.env.example` para `.env.local` e preencha `DATABASE_URL` e `AUTH_SECRET`.

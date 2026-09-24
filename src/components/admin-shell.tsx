@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, ShoppingBasket, PackageSearch, Truck, CalendarDays, MessagesSquare, UsersRound, WalletCards, PlugZap, FileText, ShieldCheck, Settings, LogOut, PawPrint, Route } from "lucide-react";
+import { LayoutDashboard, ShoppingBasket, PackageSearch, Truck, CalendarDays, MessagesSquare, UsersRound, WalletCards, PlugZap, FileText, ShieldCheck, Settings, LogOut, PawPrint, Route } from "@/components/icons";
 
 const nav = [
   ["/admin", "Visão geral", LayoutDashboard], ["/admin/pedidos", "Pedidos", ShoppingBasket], ["/admin/catalogo", "Catálogo", PackageSearch], ["/admin/frete", "Frete", Truck], ["/admin/entregas", "Entregas", Route], ["/admin/agenda", "Agenda", CalendarDays], ["/admin/servicos", "Serviços", PawPrint], ["/admin/atendimento", "Atendimento", MessagesSquare], ["/admin/clientes", "Clientes", UsersRound], ["/admin/financeiro", "Financeiro", WalletCards], ["/admin/integracoes", "Integrações", PlugZap], ["/admin/conteudo", "Conteúdo", FileText], ["/admin/equipe", "Equipe", ShieldCheck], ["/admin/configuracoes", "Configurações", Settings],

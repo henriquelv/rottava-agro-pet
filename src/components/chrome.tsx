@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Home, Search, ShoppingBag, Sparkles, UserRound, MapPin, ArrowUpRight, Heart, ChevronDown, ShieldCheck, Headphones, Truck } from "lucide-react";
+import { Home, Search, ShoppingBag, Sparkles, UserRound, MapPin, ArrowUpRight, Heart, ChevronDown, ShieldCheck, Headphones, Truck } from "@/components/icons";
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import type { Session } from "@/lib/auth";
 import { Logo } from "./logo";

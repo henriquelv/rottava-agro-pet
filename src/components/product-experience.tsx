@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { ChevronDown, ImageIcon } from "lucide-react";
+import { ChevronDown, ImageIcon } from "@/components/icons";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import type { Product } from "@/lib/catalog-types";
 
@@ -23,4 +23,3 @@ export function ProductDetails({ details }: { details: Detail[] }) {
   const reduced = useReducedMotion();
   return <div className="product-detail-list">{details.map((detail, index) => <section key={detail.title} className={open === index ? "open" : ""}><button onClick={() => setOpen(open === index ? -1 : index)} aria-expanded={open === index}><span>{detail.title}</span><motion.span animate={{ rotate: open === index ? 180 : 0 }} transition={{ duration: reduced ? 0 : .22 }}><ChevronDown aria-hidden="true" /></motion.span></button><AnimatePresence initial={false}>{open === index && <motion.div initial={reduced ? false : { height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={reduced ? undefined : { height: 0, opacity: 0 }} transition={{ duration: .28, ease: [.2, .75, .25, 1] }}><p>{detail.content}</p></motion.div>}</AnimatePresence></section>)}</div>;
 }
-

@@ -6,10 +6,11 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Command } from "cmdk";
 import { Drawer } from "vaul";
-import { ArrowRight, Minus, Plus, Search, ShoppingBag, Trash2, X } from "lucide-react";
+import { ArrowRight, Minus, Plus, Search, ShoppingBag, Trash2, X } from "@/components/icons";
 import { money } from "@/lib/format";
 import { useCart } from "./cart";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { toast } from "sonner";
 
 type SearchResult = { id: string; name: string; slug: string; brand: string | null; category_name: string | null; min_price_cents: number | null };
 
@@ -67,13 +68,14 @@ export function SearchPalette() {
 
 export function MiniCart() {
   const cart = useCart();
+  function remove(item: (typeof cart.items)[number]) { cart.update(item.variantId, 0); toast("Produto removido", { action: { label: "Desfazer", onClick: () => cart.add({ variantId: item.variantId, productSlug: item.productSlug, name: item.name, variant: item.variant, priceCents: item.priceCents, imageUrl: item.imageUrl }, { quantity: item.quantity }) } }); }
   return <Drawer.Root direction="right" open={cart.isOpen} onOpenChange={(open) => open ? cart.open() : cart.close()}>
     <Drawer.Portal><Drawer.Overlay className="drawer-overlay" /><Drawer.Content className="cart-drawer" aria-describedby={undefined}>
       <header><div><span className="eyebrow">SUA SELEÇÃO</span><Drawer.Title>{cart.count ? `${cart.count} ${cart.count === 1 ? "item" : "itens"}` : "Carrinho vazio"}</Drawer.Title></div><Drawer.Close aria-label="Fechar carrinho"><X /></Drawer.Close></header>
       <div className="mini-cart-lines">{cart.items.length ? cart.items.map((item) => <article key={item.variantId}>
         <div className="mini-thumb">{item.imageUrl ? <Image src={item.imageUrl} alt="" fill sizes="72px" /> : <span>R</span>}</div>
         <div className="mini-copy"><Link onClick={cart.close} href={`/produto/${item.productSlug}`}>{item.name}</Link><small>{item.variant}</small><b>{money(item.priceCents)}</b><div className="mini-quantity"><button onClick={() => cart.update(item.variantId, item.quantity - 1)} aria-label="Diminuir"><Minus /></button><output>{item.quantity}</output><button onClick={() => cart.update(item.variantId, item.quantity + 1)} aria-label="Aumentar"><Plus /></button></div></div>
-        <button className="mini-remove" onClick={() => cart.update(item.variantId, 0)} aria-label="Remover"><Trash2 /></button>
+        <button className="mini-remove" onClick={() => remove(item)} aria-label="Remover"><Trash2 /></button>
       </article>) : <div className="mini-empty"><ShoppingBag /><h3>Seu carrinho está leve.</h3><p>Há boas escolhas esperando no catálogo.</p><Drawer.Close asChild><Link className="button primary" href="/produtos">Explorar produtos</Link></Drawer.Close></div>}</div>
       {cart.items.length > 0 && <footer><div><span>Subtotal</span><strong>{money(cart.subtotal)}</strong></div><small>Frete e disponibilidade são confirmados no checkout.</small><Drawer.Close asChild><Link className="button primary wide" href="/carrinho">Revisar carrinho <ArrowRight /></Link></Drawer.Close></footer>}
     </Drawer.Content></Drawer.Portal>
