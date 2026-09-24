@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Home, Search, ShoppingBag, Sparkles, UserRound, MapPin, ArrowUpRight, Heart, ChevronDown, ShieldCheck, Headphones, Truck } from "@/components/icons";
+import { Home, Search, ShoppingBag, PawPrint, UserRound, MapPin, ArrowUpRight, Heart, ChevronDown, ShieldCheck, Headphones, Truck } from "@/components/icons";
 import { AnimatePresence, motion, useMotionValueEvent, useReducedMotion, useScroll } from "motion/react";
 import type { Session } from "@/lib/auth";
 import { Logo } from "./logo";
@@ -30,7 +30,7 @@ export function Header({ session }: { session: Session | null }) {
   </motion.header><MiniCart /></>;
 }
 
-const dock = [{ href: "/", label: "Início", icon: Home }, { href: "/produtos", label: "Produtos", icon: Search }, { href: "/carrinho", label: "Carrinho", icon: ShoppingBag }, { href: "/banho-e-tosa", label: "Serviços", icon: Sparkles }, { href: "/minha-conta", label: "Conta", icon: UserRound }];
+const dock = [{ href: "/", label: "Início", icon: Home }, { href: "/produtos", label: "Produtos", icon: Search }, { href: "/carrinho", label: "Carrinho", icon: ShoppingBag }, { href: "/banho-e-tosa", label: "Serviços", icon: PawPrint }, { href: "/minha-conta", label: "Conta", icon: UserRound }];
 export function MobileDock({ session }: { session: Session | null }) {
   const path = usePathname(); const { count } = useCart();
   return <nav className="mobile-dock" aria-label="Navegação móvel">{dock.map((item) => {

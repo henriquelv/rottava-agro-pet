@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Minus, Plus, ShoppingBag, Trash2, Check, LoaderCircle, Send, PawPrint, Leaf, Sparkles, Heart, Star, ShieldCheck, Truck, RotateCcw, X } from "@/components/icons";
+import { ArrowRight, Minus, Plus, ShoppingBag, Trash2, Check, LoaderCircle, Send, PawPrint, Leaf, Heart, ShieldCheck, Truck, RotateCcw, X } from "@/components/icons";
 import { toast } from "sonner";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import type { Product } from "@/lib/db";
@@ -18,13 +18,13 @@ export function ProductCard({ product }: { product: Product }) {
   const primary = product.images[0] || product.image_url; const secondary = product.images[1];
   return <motion.article layout className="product-card" initial={{ opacity: 0, scale: .985 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true, margin: "-40px" }} whileHover={{ y: -5 }} transition={{ duration: .32, ease: [.2, .75, .25, 1] }}>
     <div className="product-media">{product.demo?.badge && <span className="product-badge">{product.demo.badge}</span>}<motion.button whileTap={{ scale: .88 }} className={`favorite-button ${favorite ? "active" : ""}`} onClick={() => { favorites.toggle(product.id); toast(favorite ? "Removido dos favoritos" : "Guardado nos favoritos"); }} aria-label={favorite ? `Remover ${product.name} dos favoritos` : `Favoritar ${product.name}`}><Heart fill={favorite ? "currentColor" : "none"} aria-hidden="true" /></motion.button><Link href={`/produto/${product.slug}`} className={`product-image ${secondary ? "has-secondary" : ""}`}>{primary ? <><Image className="product-primary-image" unoptimized={primary.startsWith("http")} src={primary} alt={product.name} fill sizes="(max-width: 700px) 50vw, 25vw" />{secondary && <Image className="product-secondary-image" unoptimized={secondary.startsWith("http")} src={secondary} alt="" fill sizes="(max-width: 700px) 50vw, 25vw" />}</> : <ProductArt product={product} />}</Link>{variant && <QuickAdd product={product} variant={variant} label />}</div>
-    <div className="product-meta"><span>{product.brand || product.category_name || "Rottava"}</span><h3><Link href={`/produto/${product.slug}`}>{product.name}</Link></h3><p className="product-card-variant">{variant?.label || "Opção a confirmar"}</p>{product.demo?.rating && <div className="rating" aria-label={`Avaliação demonstrativa ${product.demo.rating} de 5`}><Star fill="currentColor" aria-hidden="true" /><b>{product.demo.rating.toFixed(1)}</b><small>({product.demo.reviewsCount})</small></div>}<div className="price-row"><div>{product.demo?.compareAtCents && <del>{money(product.demo.compareAtCents)}</del>}<b>{money(product.min_price_cents)}</b>{product.demo?.compareAtCents && product.min_price_cents && <mark>-{Math.round((1 - product.min_price_cents / product.demo.compareAtCents) * 100)}%</mark>}</div></div></div>
+    <div className="product-meta"><span>{product.brand || product.category_name || "Rottava"}</span><h3><Link href={`/produto/${product.slug}`}>{product.name}</Link></h3><p className="product-card-variant">{variant?.label || "Opção a confirmar"}</p>{product.demo?.rating && <div className="rating" aria-label={`Avaliação demonstrativa ${product.demo.rating} de 5`}><b>{product.demo.rating.toFixed(1)} / 5</b><small>{product.demo.reviewsCount} avaliações</small></div>}<div className="price-row"><div>{product.demo?.compareAtCents && <del>{money(product.demo.compareAtCents)}</del>}<b>{money(product.min_price_cents)}</b>{product.demo?.compareAtCents && product.min_price_cents && <mark>-{Math.round((1 - product.min_price_cents / product.demo.compareAtCents) * 100)}%</mark>}</div></div></div>
   </motion.article>;
 }
 
 function ProductArt({ product }: { product: Product }) {
   const category = product.category_name || "Pet";
-  const Icon = category.includes("Jardim") ? Leaf : category === "Cuidados" ? Sparkles : PawPrint;
+  const Icon = category.includes("Jardim") ? Leaf : PawPrint;
   return <span className={`image-placeholder product-art ${category.includes("Jardim") ? "garden" : category === "Cuidados" ? "care" : "pet"}`}><i /><Icon aria-hidden="true" /><small>{product.demo ? "FIXTURE DEMO" : "IMAGEM EM PREPARAÇÃO"}</small><b>{product.name.split(" ").slice(0, 2).join(" ")}</b></span>;
 }
 

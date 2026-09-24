@@ -41,8 +41,6 @@ const paths = {
   ShoppingBag: "M5 8h14l1 13H4L5 8Zm4 0V6a3 3 0 0 1 6 0v2",
   ShoppingBasket: "M3 10h18l-2 11H5L3 10Zm4 0 5-7 5 7M8 14v3m4-3v3m4-3v3",
   SlidersHorizontal: "M4 6h5m4 0h7M9 3v6M4 12h10m4 0h2m-6-3v6M4 18h2m4 0h10m-14-3v6",
-  Sparkles: "m12 2 1.4 4.6L18 8l-4.6 1.4L12 14l-1.4-4.6L6 8l4.6-1.4L12 2Zm-6 11 .8 2.2L9 16l-2.2.8L6 19l-.8-2.2L3 16l2.2-.8L6 13Zm12 2 1 2.8 3 1.2-3 1.2L18 23l-1-2.8-3-1.2 3-1.2 1-2.8Z",
-  Star: "m12 2 3 6 6.5 1-4.8 4.6 1.2 6.4-5.9-3-5.9 3 1.2-6.4L2.5 9 9 8l3-6Z",
   Trash2: "M4 7h16M9 7V4h6v3m3 0-1 14H7L6 7m4 4v6m4-6v6",
   Truck: "M3 5h11v12H3V5Zm11 4h4l3 4v4h-7V9ZM8 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z",
   UserRound: "M12 12a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm-8 9a8 8 0 0 1 16 0",
@@ -97,8 +95,6 @@ export const ShieldCheck = makeIcon("ShieldCheck");
 export const ShoppingBag = makeIcon("ShoppingBag");
 export const ShoppingBasket = makeIcon("ShoppingBasket");
 export const SlidersHorizontal = makeIcon("SlidersHorizontal");
-export const Sparkles = makeIcon("Sparkles");
-export const Star = makeIcon("Star");
 export const Trash2 = makeIcon("Trash2");
 export const Truck = makeIcon("Truck");
 export const UserRound = makeIcon("UserRound");

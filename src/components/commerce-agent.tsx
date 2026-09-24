@@ -3,11 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
-import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
-import { ArrowRight, Check, Send, ShoppingBag, Sparkles } from "@/components/icons";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { ArrowRight, Check, Send, ShoppingBag } from "@/components/icons";
 import type { Product } from "@/lib/catalog-types";
 import { money } from "@/lib/format";
 import { useCart } from "@/components/cart";
+import { SelectMenu } from "@/components/select-menu";
 
 type Prompt = { label: string; query: string };
 
@@ -53,10 +54,6 @@ export function CommerceAgent({ products, demo }: { products: Product[]; demo: b
   const [selection, setSelection] = useState<Record<string, string>>({});
   const [added, setAdded] = useState<string | null>(null);
   const reduced = useReducedMotion();
-  const pointerX = useMotionValue(0);
-  const pointerY = useMotionValue(0);
-  const auraX = useSpring(pointerX, { stiffness: 90, damping: 24 });
-  const auraY = useSpring(pointerY, { stiffness: 90, damping: 24 });
   const cart = useCart();
   const answer = useMemo(() => findProducts(products, submittedQuery), [products, submittedQuery]);
   const visible = submittedQuery ? answer.products : products.slice(0, 3);
@@ -86,21 +83,10 @@ export function CommerceAgent({ products, demo }: { products: Product[]; demo: b
     window.setTimeout(() => setAdded(null), 1500);
   }
 
-  return <section
-    className="commerce-agent-hero"
-    aria-labelledby="agent-title"
-    onPointerMove={(event) => {
-      if (reduced) return;
-      const bounds = event.currentTarget.getBoundingClientRect();
-      pointerX.set(event.clientX - bounds.left - 170);
-      pointerY.set(event.clientY - bounds.top - 170);
-    }}
-  >
-    <motion.div className="agent-aura" aria-hidden="true" style={{ x: auraX, y: auraY }} />
-    <div className="agent-word" aria-hidden="true">{"ROTTAVA".split("").map((letter, index) => <motion.span key={`${letter}-${index}`} initial={reduced ? false : { y: index % 2 ? -30 : 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: .05 * index, duration: .65, ease: [.16, 1, .3, 1] }}>{letter}</motion.span>)}</div>
+  return <section className="commerce-agent-hero" aria-labelledby="agent-title">
     <div className="agent-intro">
-      <span className="agent-kicker"><Sparkles aria-hidden="true" /> AGENTE ROTTAVA · COMPRA ASSISTIDA</span>
-      <h1 id="agent-title">Diga o que está<br />faltando <em>por aí.</em></h1>
+      <span className="agent-kicker"><i aria-hidden="true" /> AGENTE ROTTAVA · COMPRA ASSISTIDA</span>
+      <h1 id="agent-title">Encontre o produto certo conversando.</h1>
       <p>O agente consulta o catálogo, aproxima as opções e coloca a variante escolhida no seu carrinho. Você revisa tudo antes de confirmar.</p>
       <div className="agent-facts" aria-label="Como o agente trabalha"><span><b>01</b> Você conta</span><span><b>02</b> Ele encontra</span><span><b>03</b> Você decide</span></div>
       <Link className="agent-skip" href="/produtos">Prefiro explorar o catálogo <ArrowRight aria-hidden="true" /></Link>
@@ -126,14 +112,14 @@ export function CommerceAgent({ products, demo }: { products: Product[]; demo: b
           const image = product.images[0] || product.image_url;
           return <motion.article layout key={product.id} initial={reduced ? false : { opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: reduced ? 0 : index * .07 }}>
             <Link href={`/produto/${product.slug}`} className="agent-product-image">{image ? <Image src={image} alt={product.name} fill sizes="120px" unoptimized={image.startsWith("http")} /> : <span>R</span>}</Link>
-            <div><small>{product.brand || product.category_name}</small><Link href={`/produto/${product.slug}`}><b>{product.name}</b></Link>{product.variants.length > 1 ? <label><span className="sr-only">Opção de {product.name}</span><select value={variant?.id} onChange={(event) => setSelection((current) => ({ ...current, [product.id]: event.target.value }))}>{product.variants.map((option) => <option key={option.id} value={option.id} disabled={option.stock_quantity === 0}>{option.label} · {money(option.price_cents)}</option>)}</select></label> : <span>{variant?.label}</span>}</div>
+            <div><small>{product.brand || product.category_name}</small><Link href={`/produto/${product.slug}`}><b>{product.name}</b></Link>{product.variants.length > 1 ? <SelectMenu className="agent-variant-menu" label={`Opção de ${product.name}`} value={variant?.id || ""} onChange={(value) => setSelection((current) => ({ ...current, [product.id]: value }))} options={product.variants.map((option) => ({ value: option.id, label: `${option.label} · ${money(option.price_cents)}`, disabled: option.stock_quantity === 0 }))} /> : <span>{variant?.label}</span>}</div>
             <div className="agent-product-action"><strong>{money(variant?.price_cents)}</strong><button onClick={() => addProduct(product)} disabled={!variant || variant.stock_quantity === 0}>{added === product.id ? <Check aria-hidden="true" /> : <ShoppingBag aria-hidden="true" />}<span>{added === product.id ? "No carrinho" : "Adicionar"}</span></button></div>
           </motion.article>;
         })}
       </motion.div>}
       {!isThinking && !serviceIntent && visible.length === 0 && <div className="agent-empty"><small>CATÁLOGO EM SINCRONIZAÇÃO</small><b>Posso chamar a equipe.</b><p>A loja ainda não publicou produtos vendáveis. Não vou sugerir itens, preços ou estoque inexistentes.</p><Link href="/atendimento">Abrir atendimento <ArrowRight aria-hidden="true" /></Link></div>}
 
-      <form className="agent-input" onSubmit={submit}><label className="sr-only" htmlFor="agent-query">O que você procura?</label><input id="agent-query" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Ex.: ração para um cão adulto" autoComplete="off" /><button aria-label="Encontrar no catálogo" disabled={!query.trim() || isThinking}><span>Encontrar</span><Send aria-hidden="true" /></button></form>
+      <form className="agent-input" onSubmit={submit}><label className="sr-only" htmlFor="agent-query">O que você procura?</label><input id="agent-query" name="agent-query" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Ex.: ração para um cão adulto…" autoComplete="off" /><button aria-label="Encontrar no catálogo" disabled={!query.trim() || isThinking}><span>Encontrar</span><Send aria-hidden="true" /></button></form>
       <footer><span>{demo ? "Produtos e preços demonstrativos neste ambiente" : "Preços e disponibilidade vêm do catálogo ativo"}</span><span>Você confirma antes de comprar</span></footer>
     </div>
   </section>;

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, DM_Serif_Display } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import "./quality.css";
 import "./brand.css";
@@ -9,7 +9,6 @@ import { getSession } from "@/lib/auth";
 import { demoMode, store } from "@/lib/config";
 import { RouteTransition } from "@/components/motion-ui";
 
-const display = DM_Serif_Display({ subsets: ["latin"], weight: "400", variable: "--font-display" });
 const body = Geist({ subsets: ["latin"], variable: "--font-body" });
 
 export const metadata: Metadata = {
@@ -22,7 +21,7 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const session = await getSession();
-  return <html lang="pt-BR"><body className={`${display.variable} ${body.variable}`}>
+  return <html lang="pt-BR"><body className={body.variable}>
     <AppProviders>
       <a className="skip" href="#conteudo">Pular para o conteúdo</a>
       {demoMode && <div className="demo-bar"><b>MODO DEMONSTRAÇÃO</b><span>Produtos, preços, pedidos e contas desta versão são dados de teste.</span></div>}

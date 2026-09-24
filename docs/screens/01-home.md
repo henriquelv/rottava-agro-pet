@@ -8,9 +8,9 @@
 - **Ações possíveis:** conversar por texto ou atalhos; consultar resultados derivados do catálogo; escolher variante; adicionar direto ao carrinho; navegar ao produto, catálogo, atendimento e banho e tosa; favoritar produtos da vitrine.
 - **Regras:** dados comerciais demonstrativos só vêm de `demo-catalog.ts`; sem catálogo real é exibido estado vazio.
 - **Estados:** loading é o streaming padrão do Next; empty mostra preparação da vitrine; falha de fonte cai no tratamento do servidor; success mostra até seis produtos.
-- **Desktop:** introdução editorial e console do agente dividem a primeira dobra; resultados aparecem dentro da conversa; vitrine horizontal e composição editorial assimétrica continuam abaixo.
-- **Mobile:** o agente aparece antes da vitrine, com prompts e resultados compactos; trilho de produtos rolável e dock fixo.
-- **Animações/transições:** palavra ROTTAVA entra em sequência, aura acompanha o ponteiro, consulta e resultados trocam por presença/layout; tudo é desativado ou simplificado com `prefers-reduced-motion`.
+- **Desktop:** introdução e console do agente dividem uma superfície clara na primeira dobra; resultados aparecem dentro da conversa; a vitrine usa grade responsiva de três colunas, sem trilho horizontal.
+- **Mobile:** o agente aparece antes da vitrine, com prompts e resultados compactos; a vitrine se adapta em duas colunas sem scroll horizontal e o dock permanece fixo.
+- **Animações/transições:** consulta, resultados, menus de variante e estados do carrinho usam presença/layout discretos; tudo é desativado ou simplificado com `prefers-reduced-motion`.
 - **Permissões:** pública.
 - **Dependências de backend:** catálogo via banco quando configurado.
 - **Integrações externas futuras:** modelo de linguagem via AI SDK/Gateway para interpretação aberta, preservando as mesmas ferramentas de catálogo e carrinho.
