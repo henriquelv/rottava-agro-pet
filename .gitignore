@@ -8,6 +8,8 @@ coverage
 *.log
 Thumbs.db
 .tmp-review/
+test-results/
+Rottava-Documentacao/Rottava-Documentacao/Secreat Key
 next-env.d.ts
 
 .vercel

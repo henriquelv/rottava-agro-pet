@@ -22,6 +22,7 @@ export const demoAccounts = [
 
 export const integrations = {
   database: Boolean(process.env.DATABASE_URL),
+  assistant: Boolean(process.env.OPENAI_API_KEY),
   payment: Boolean(process.env.PAYMENT_PROVIDER && process.env.PAYMENT_WEBHOOK_SECRET),
   legacy: Boolean(process.env.LEGACY_CATALOG_API_URL && process.env.LEGACY_CATALOG_API_KEY),
   maps: Boolean(process.env.MAPS_PROVIDER && process.env.MAPS_API_KEY),

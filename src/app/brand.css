@@ -118,3 +118,129 @@ h1{font-size:clamp(2.7rem,5vw,5.25rem);line-height:1.02}h2{font-size:clamp(2rem,
 @media(max-width:1050px){.commerce-agent-hero{min-height:auto}.home-category-squares>div{grid-template-columns:repeat(2,1fr)}.home-category-squares>div>a,.home-category-squares>div>button{aspect-ratio:1.45}}
 @media(max-width:760px){.commerce-agent-hero:before{background:linear-gradient(180deg,#f7f4ec 0 43%,#e6efea 43%)}.agent-console{min-height:570px}.agent-console>header>div:nth-child(2) b{font-size:.67rem}.agent-console>header>div:nth-child(2) small{font-size:.53rem}.agent-choice-grid{grid-template-columns:1fr;gap:.45rem;padding:.6rem .85rem 1rem}.agent-choice-grid button{min-height:64px}.agent-conversation{padding:.75rem .85rem}.agent-result-stage{min-height:420px}.agent-detail{margin-inline:.85rem}.agent-results article b{max-width:35vw}.agent-next{padding-inline:.85rem}.agent-next>a{padding:.7rem .75rem}.home-category-squares{padding:4rem 1rem}.home-category-squares>header{display:block}.home-category-squares>header>span{display:block;margin-bottom:.7rem}.home-category-squares h2{font-size:2.2rem}.home-category-squares>div>a,.home-category-squares>div>button{aspect-ratio:1.06;padding:1rem}.home-category-squares b{font-size:.9rem}.search-overlay{padding:4vh .65rem}.search-results>button{grid-template-columns:38px minmax(0,1fr) auto}.search-results>button>svg{display:none}.search-results>button strong{font-size:.64rem}.filter-drawer{display:flex}.catalog-grid{gap:1.8rem .7rem}.product-meta h3{font-size:.8rem}.sheet-right{width:100%}}
 @media(prefers-reduced-motion:reduce){.agent-choice-grid button,.home-category-squares>div>a,.home-category-squares>div>button{transition:none}}
+
+/* Guided storefront: restore the photographic portal and add useful depth without changing the brand grammar. */
+.glyph-stage{background:var(--paper)}
+.glyph-word{font-weight:790;color:var(--ink);text-shadow:0 1px 0 rgba(255,255,255,.3)}
+.glyph-intro{pointer-events:none}
+.glyph-intro-note{position:absolute;right:5vw;top:18%;display:flex;flex-direction:column;align-items:flex-start;gap:.55rem;color:var(--ink);pointer-events:auto}
+.glyph-intro-note small{font-size:.5rem;font-weight:800;letter-spacing:.18em;color:var(--teal)}
+.glyph-intro-note b{font-family:var(--font-display),Georgia,serif;font-size:1.7rem;font-weight:400;line-height:.95}
+.glyph-intro-note a{display:flex;align-items:center;gap:.35rem;margin-top:.35rem;border-bottom:1px solid currentColor;padding-bottom:.2rem;font-size:.62rem;font-weight:750}
+.glyph-intro-note svg{width:14px}
+.glyph-copy h1,.category-journal>header h2,.category-photo b,.category-type b{font-family:var(--font-display),Georgia,serif;font-weight:400;letter-spacing:-.045em}
+.glyph-copy h1{max-width:850px}
+.glyph-image-shade{background:linear-gradient(90deg,rgba(8,40,42,.86),rgba(8,40,42,.3) 58%,rgba(8,40,42,.04)),linear-gradient(0deg,rgba(8,40,42,.4),transparent 50%)}
+.commerce-agent-hero{scroll-margin-top:112px}
+.agent-intro h1{font-family:var(--font-display),Georgia,serif;font-weight:400;font-size:clamp(3.5rem,5.4vw,6rem);line-height:.94;letter-spacing:-.05em}
+.agent-console.is-results{min-height:690px}
+.agent-result-tools{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:.8rem 1.4rem 0;font-size:.61rem;color:var(--muted)}
+.agent-result-tools button{border:0;border-bottom:1px solid currentColor;background:transparent;color:var(--ink);padding:.25rem 0;font-size:.61rem;font-weight:750;cursor:pointer}
+.agent-product-copy ul{display:flex;flex-wrap:wrap;gap:.25rem .65rem;margin:.35rem 0;padding:0;list-style:none;color:var(--muted);font-size:.52rem}
+.agent-product-copy li:before{content:"";display:inline-block;width:4px;height:4px;margin-right:.35rem;border-radius:50%;background:var(--sand);vertical-align:middle}
+.agent-product-image img{object-fit:cover}
+.agent-comparison{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin:.65rem 1.4rem 0;background:var(--line);border:1px solid var(--line);overflow:hidden}
+.agent-comparison article{min-width:0;background:#f8faf7;padding:.8rem}
+.agent-comparison article>b{display:block;min-height:2.2em;font-size:.63rem;line-height:1.15}
+.agent-comparison dl{margin:.65rem 0 0}
+.agent-comparison dl>div{display:grid;grid-template-columns:48px 1fr;gap:.35rem;padding:.27rem 0;border-top:1px solid rgba(18,59,60,.08);font-size:.52rem}
+.agent-comparison dt{color:var(--muted)}
+.agent-comparison dd{margin:0;font-weight:650;text-align:right}
+.agent-followups{display:flex;flex-wrap:wrap;gap:.35rem;margin:.65rem 1.4rem 0}
+.agent-followups button{border:1px solid var(--line);border-radius:99px;background:transparent;padding:.42rem .65rem;color:var(--ink);font-size:.56rem;cursor:pointer}
+.agent-followups button:hover{border-color:var(--teal);background:var(--mist)}
+.agent-human-link{display:flex;align-items:center;justify-content:center;gap:.35rem;margin:.7rem 1.4rem 0;padding:.6rem;border-top:1px solid var(--line);color:var(--teal);font-size:.62rem;font-weight:750}
+.agent-human-link svg{width:14px}
+.agent-detail button{display:flex;align-items:center;gap:.35rem}
+.agent-detail button svg{width:14px}
+
+/* The category section is intentionally irregular: image, type and service share one editorial rhythm. */
+.category-journal{background:var(--surface)}
+.category-journal>header h2{font-size:clamp(3rem,5.2vw,5.8rem);line-height:.9}
+.category-journal>header h2 em{font-family:inherit;font-weight:400;color:var(--teal)}
+.category-collage{grid-template-columns:1.35fr .75fr .75fr;grid-template-rows:310px 230px;gap:10px}
+.category-collage>a{border-radius:0}
+.category-photo-pet{grid-row:1/3}
+.category-photo-care{grid-column:2}
+.category-photo-garden{grid-column:3}
+.category-photo b{font-size:clamp(2rem,3vw,3.2rem)}
+.category-photo i{opacity:.9}
+.category-type{background:#d8e8e2}
+.category-type-dark{background:var(--ink)}
+.category-type b{font-size:clamp(2rem,3.1vw,3.5rem);letter-spacing:-.04em}
+
+.partner-ribbon{padding:clamp(3rem,5vw,5rem) 0;background:#dfe9e4;border-block:1px solid rgba(18,59,60,.12);overflow:hidden}
+.partner-ribbon-heading{max-width:1400px;margin:0 auto 2rem;padding:0 5vw;display:flex;justify-content:space-between;gap:2rem;color:var(--muted)}
+.partner-ribbon-heading span{font-size:.58rem;font-weight:800;letter-spacing:.18em;color:var(--ink)}
+.partner-ribbon-heading p{margin:0;font-size:.64rem}
+.partner-ribbon-window{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.partner-ribbon-track{display:flex;width:max-content;animation:partner-loop 32s linear infinite}
+.partner-ribbon:hover .partner-ribbon-track,.partner-ribbon:focus-within .partner-ribbon-track{animation-play-state:paused}
+.partner-ribbon-set{display:flex;align-items:center;gap:clamp(2.5rem,6vw,7rem);padding-right:clamp(2.5rem,6vw,7rem)}
+.partner-ribbon-set a{display:flex;align-items:center;gap:.65rem;white-space:nowrap;font-family:var(--font-display),Georgia,serif;font-size:clamp(2rem,4vw,4.5rem);letter-spacing:-.035em;color:var(--ink);transition:color .2s,transform .2s}
+.partner-ribbon-set a:hover{color:var(--teal);transform:translateY(-2px)}
+.partner-ribbon-set a>span{font-family:var(--font-body);font-size:.8rem}
+@keyframes partner-loop{to{transform:translateX(-50%)}}
+
+/* Search suggestions are grouped by intent and use actual product imagery. */
+.search-result-mark{position:relative;overflow:hidden;border-radius:8px;font-family:var(--font-body);font-size:.68rem;font-weight:800}
+.search-result-mark img{object-fit:cover}
+.search-group-label{margin:.75rem .65rem .2rem;padding-top:.65rem;border-top:1px solid var(--line);font-size:.52rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.search-heading+.search-group-label{border-top:0;margin-top:.1rem;padding-top:0}
+.search-results>button.search-facet-result{grid-template-columns:44px minmax(0,1fr) 18px}
+.search-results>button.search-facet-result>svg{grid-column:3}
+
+/* Atendimento uses the same conversation language as the assistant on the home page. */
+.chat-shell{max-width:900px;min-height:680px;background:var(--surface)}
+.chat-shell>header small{display:flex;align-items:center;gap:.35rem}
+.chat-shell>header small i{width:6px;height:6px;border-radius:50%;background:#31a96b}
+.chat-cart{border:0;background:var(--mist);padding:.55rem .7rem;cursor:pointer}
+.messages{max-height:none;background:linear-gradient(135deg,#e8efea,#f3f0e7)}
+.message.bot{border-left:3px solid var(--teal)}
+.chat-thinking{display:flex;align-items:center;gap:.45rem;color:var(--muted)}
+.chat-thinking svg{width:15px}
+.chat-product-heading{display:flex;align-items:center;justify-content:space-between;background:#fff;padding:.7rem .8rem;border-bottom:1px solid var(--line)}
+.chat-product-heading button{border:0!important;background:transparent!important;color:var(--teal)!important;padding:.2rem!important;text-decoration:underline}
+.chat-products article{gap:1rem;border-bottom:1px solid var(--line)}
+.chat-products article ul{margin:.35rem 0;padding-left:1rem;color:var(--muted);font-size:.62rem}
+.chat-comparison{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.chat-comparison>div{display:flex;flex-direction:column;gap:.3rem;background:#f9faf7;padding:.75rem;font-size:.62rem}
+.chat-comparison>div>b{font-size:.66rem}
+.chat-followups{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.8rem}
+.chat-followups button{border:1px solid var(--line);background:#fff;padding:.5rem .65rem;font-size:.6rem;cursor:pointer}
+
+@media(max-width:760px){
+  .glyph-stage{height:155svh}
+  .glyph-intro-note{display:none}
+  .glyph-copy h1{font-size:3.35rem}
+  .commerce-agent-hero{scroll-margin-top:66px}
+  .agent-intro h1{font-size:3.25rem}
+  .agent-console.is-results{min-height:760px}
+  .agent-result-tools{margin-inline:.85rem}
+  .agent-comparison{grid-template-columns:1fr;margin-inline:.85rem}
+  .agent-comparison article{display:grid;grid-template-columns:minmax(110px,.8fr) 1fr;gap:.7rem}
+  .agent-comparison article>b{min-height:0}
+  .agent-comparison dl{margin:0}
+  .agent-product-copy ul{display:none}
+  .agent-followups,.agent-human-link{margin-inline:.85rem}
+  .agent-detail button span{display:none}
+  .category-journal>header h2{font-size:3.15rem}
+  .category-collage{grid-template-columns:1fr 1fr;grid-template-rows:400px 190px 190px}
+  .category-photo-pet{grid-column:1/3;grid-row:1}
+  .category-photo-care{grid-column:1}
+  .category-photo-garden{grid-column:2}
+  .category-type{grid-column:1}
+  .category-type-dark{grid-column:2}
+  .partner-ribbon-heading{display:block;padding-inline:1rem}
+  .partner-ribbon-heading p{margin-top:.55rem}
+  .partner-ribbon-window{mask-image:none;overflow:auto;scrollbar-width:none}
+  .partner-ribbon-track{animation:none;padding-left:1rem}
+  .partner-ribbon-set:nth-child(2){display:none}
+  .partner-ribbon-set a{font-size:2.2rem}
+  .search-results>button.search-facet-result{grid-template-columns:38px minmax(0,1fr)}
+  .chat-comparison{grid-template-columns:1fr}
+  .quick-actions{flex-wrap:wrap;overflow:visible}
+  .quick-actions button{white-space:normal;min-height:42px}
+}
+
+@media(prefers-reduced-motion:reduce){.partner-ribbon-track{animation:none}.partner-ribbon-window{overflow:auto}.partner-ribbon-set:nth-child(2){display:none}}

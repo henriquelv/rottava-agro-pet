@@ -34,18 +34,19 @@ export function GlyphPortalHero() {
       </motion.div>
       <motion.div className="glyph-intro" style={{ opacity: introOpacity }}>
         <span>Pet · casa · jardim · Caçador</span>
+        <div className="glyph-intro-note"><small>COMPRA ASSISTIDA</small><b>Uma conversa curta.<br />Uma escolha mais clara.</b><Link href="#assistente">Ir direto para a assistente <ArrowRight /></Link></div>
         <p>Role para entrar</p>
       </motion.div>
       <motion.div className="glyph-word" aria-hidden="true" style={{ scale: wordScale, opacity: wordOpacity }}>
         {letters.map((letter, index) => <GlyphLetter key={`${letter}-${index}`} letter={letter} index={index} progress={scrollYProgress} />)}
       </motion.div>
       <motion.div className="glyph-copy" style={{ opacity: copyOpacity, x: copyX }}>
-        <span className="eyebrow">CUIDADO QUE PARTICIPA DA ROTINA</span>
-        <h1>Da primeira tigela<br />ao quintal inteiro.</h1>
-        <p>Produtos para quem divide a casa, o passeio e os pequenos rituais com você.</p>
-        <div className="hero-actions"><Link className="button light" href="/produtos">Ver produtos <ArrowRight aria-hidden="true" /></Link><Link className="button outline-light" href="/banho-e-tosa">Banho & tosa</Link></div>
+        <span className="eyebrow">ROTTAVA · PET · CASA · JARDIM</span>
+        <h1>Tem cuidado que<br />começa na escuta.</h1>
+        <p>Conte o que faz parte da sua rotina e encontre uma escolha possível, comparável e sem pressa.</p>
+        <div className="hero-actions"><Link className="button light" href="#assistente">Comprar com ajuda <ArrowRight aria-hidden="true" /></Link><Link className="button outline-light" href="/produtos">Explorar catálogo</Link></div>
       </motion.div>
-      <motion.a className="glyph-scroll-cue" href="#descobrir" style={{ opacity: introOpacity }}>Descobrir <ArrowDown aria-hidden="true" /></motion.a>
+      <motion.a className="glyph-scroll-cue" href="#assistente" style={{ opacity: introOpacity }}>Descobrir <ArrowDown aria-hidden="true" /></motion.a>
     </div>
   </section>;
 }
