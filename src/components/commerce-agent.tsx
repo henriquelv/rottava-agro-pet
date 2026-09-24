@@ -1,126 +1,126 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { ArrowRight, Check, Send, ShoppingBag } from "@/components/icons";
+import { ArrowBack, ArrowRight, BowlFood, Cat, Check, Dog, Scissors, Search, ShoppingBag } from "@/components/icons";
 import type { Product } from "@/lib/catalog-types";
 import { money } from "@/lib/format";
 import { useCart } from "@/components/cart";
 import { SelectMenu } from "@/components/select-menu";
 
-type Prompt = { label: string; query: string };
+type Pet = "cao" | "gato" | "geral";
+type Answers = { pet?: Pet; lifeStage?: string; size?: string; need?: string; detail?: string };
+type Choice = { value: string; label: string; note?: string };
 
-const prompts: Prompt[] = [
-  { label: "Ração para cachorro", query: "Preciso de ração para um cachorro" },
-  { label: "Cuidados para gatos", query: "Quero opções de cuidados para gatos" },
-  { label: "Casa e jardim", query: "O que vocês têm para casa e jardim?" },
-  { label: "Banho e tosa", query: "Quero agendar banho e tosa" },
+const stages: Choice[] = [
+  { value: "filhote", label: "Filhote", note: "crescimento" },
+  { value: "adulto", label: "Adulto", note: "rotina diária" },
+  { value: "senior", label: "Sênior", note: "idade madura" },
+  { value: "qualquer", label: "Não tenho certeza", note: "mostrar opções amplas" },
+];
+const sizes: Choice[] = [
+  { value: "pequeno", label: "Pequeno", note: "até cerca de 10 kg" },
+  { value: "medio", label: "Médio", note: "aprox. 10 a 25 kg" },
+  { value: "grande", label: "Grande", note: "acima de 25 kg" },
+  { value: "qualquer", label: "Não sei", note: "posso comparar" },
+];
+const needs: Choice[] = [
+  { value: "racao", label: "Alimentação diária", note: "ração seca" },
+  { value: "sache", label: "Alimento úmido", note: "sachês e porções" },
+  { value: "petisco", label: "Petiscos", note: "agrado e treino" },
+  { value: "qualquer", label: "Quero comparar", note: "melhores combinações" },
 ];
 
-function normalize(value: string) {
-  return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-}
+function normalize(value: string) { return value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase(); }
 
-function findProducts(products: Product[], rawQuery: string) {
-  const query = normalize(rawQuery);
-  const terms = query.split(/\s+/).filter((term) => term.length > 2);
-  const expansions = [
-    { match: ["cao", "cachorro", "racao"], terms: ["cao", "cachorro", "racao", "pet"] },
-    { match: ["gato", "felino", "sache"], terms: ["gato", "felino", "sache", "pet"] },
-    { match: ["jardim", "casa", "planta", "horta", "vaso"], terms: ["jardim", "casa", "planta", "horta", "vaso"] },
-    { match: ["cuidado", "banho", "higiene", "escova", "shampoo"], terms: ["cuidado", "banho", "higiene", "escova", "shampoo"] },
-  ];
-  const vocabulary = new Set(terms);
-  expansions.forEach((group) => {
-    if (group.match.some((term) => query.includes(term))) group.terms.forEach((term) => vocabulary.add(term));
-  });
-
-  const ranked = products.map((product) => {
-    const corpus = normalize(`${product.name} ${product.brand || ""} ${product.category_name || ""} ${product.description || ""} ${product.variants.map((variant) => variant.label).join(" ")}`);
-    const score = [...vocabulary].reduce((total, term) => total + (corpus.includes(term) ? (product.name && normalize(product.name).includes(term) ? 4 : 1) : 0), 0);
+function rankProducts(products: Product[], answers: Answers) {
+  return products.map((product) => {
+    const metadata = product.metadata;
+    const corpus = normalize(`${product.name} ${product.brand ?? ""} ${product.description ?? ""} ${metadata?.tags?.join(" ") ?? ""}`);
+    let score = 0;
+    if (answers.pet && metadata?.pet === answers.pet) score += 12;
+    if (answers.lifeStage && answers.lifeStage !== "qualquer" && metadata?.lifeStage === answers.lifeStage) score += 8;
+    if (answers.size && answers.size !== "qualquer" && metadata?.size === answers.size) score += 5;
+    if (answers.need && answers.need !== "qualquer" && metadata?.productType === answers.need) score += 7;
+    if (answers.detail) for (const term of normalize(answers.detail).split(/\s+/).filter((item) => item.length > 2)) if (corpus.includes(term)) score += 3;
     return { product, score };
-  }).sort((a, b) => b.score - a.score || (a.product.min_price_cents || 0) - (b.product.min_price_cents || 0));
-
-  const matched = ranked.filter((item) => item.score > 0).slice(0, 3).map((item) => item.product);
-  return { products: matched.length ? matched : ranked.slice(0, 3).map((item) => item.product), exact: matched.length > 0 };
+  }).filter(({ product }) => !answers.pet || product.metadata?.pet === answers.pet || (answers.pet === "geral" && product.metadata?.pet === "geral"))
+    .sort((a, b) => b.score - a.score || (a.product.min_price_cents ?? Infinity) - (b.product.min_price_cents ?? Infinity))
+    .slice(0, 3).map(({ product }) => product);
 }
 
-export function CommerceAgent({ products, demo }: { products: Product[]; demo: boolean }) {
-  const [query, setQuery] = useState("");
-  const [submittedQuery, setSubmittedQuery] = useState("");
-  const [isThinking, setIsThinking] = useState(false);
+function OptionGrid({ choices, onChoose }: { choices: Choice[]; onChoose: (value: string) => void }) {
+  const reduced = useReducedMotion();
+  return <motion.div className="agent-choice-grid" layout>{choices.map((choice, index) => <motion.button key={choice.value} onClick={() => onChoose(choice.value)} initial={reduced ? false : { opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: reduced ? 0 : index * .045 }} whileTap={reduced ? undefined : { scale: .98 }}><span>{choice.label}</span>{choice.note && <small>{choice.note}</small>}<ArrowRight aria-hidden="true" /></motion.button>)}</motion.div>;
+}
+
+export function CommerceAgent({ products, signedIn = false }: { products: Product[]; signedIn?: boolean }) {
+  const [answers, setAnswers] = useState<Answers>({});
+  const [history, setHistory] = useState<Answers[]>([]);
+  const [detail, setDetail] = useState("");
   const [selection, setSelection] = useState<Record<string, string>>({});
   const [added, setAdded] = useState<string | null>(null);
   const reduced = useReducedMotion();
   const cart = useCart();
-  const answer = useMemo(() => findProducts(products, submittedQuery), [products, submittedQuery]);
-  const visible = submittedQuery ? answer.products : products.slice(0, 3);
-  const serviceIntent = normalize(submittedQuery).includes("banho") || normalize(submittedQuery).includes("tosa");
+  const results = useMemo(() => rankProducts(products, answers), [products, answers]);
+  const step = !answers.pet ? "pet" : !answers.lifeStage && answers.pet !== "geral" ? "stage" : !answers.size && answers.pet === "cao" ? "size" : !answers.need ? "need" : "results";
 
-  function ask(value: string) {
-    const next = value.trim();
-    if (!next) return;
-    setQuery(next);
-    setIsThinking(true);
-    window.setTimeout(() => {
-      setSubmittedQuery(next);
-      setIsThinking(false);
-    }, reduced ? 0 : 420);
-  }
-
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    ask(query);
-  }
-
+  function update(next: Partial<Answers>) { setHistory((current) => [...current, answers]); setAnswers((current) => ({ ...current, ...next })); }
+  function back() { const previous = history.at(-1); if (!previous) return; setAnswers(previous); setHistory((current) => current.slice(0, -1)); }
+  function restart(pet?: Pet) { setHistory([]); setAnswers(pet ? { pet } : {}); setDetail(""); }
+  function submitDetail(event: FormEvent) { event.preventDefault(); if (detail.trim()) setAnswers((current) => ({ ...current, detail: detail.trim() })); }
   function addProduct(product: Product) {
-    const variant = product.variants.find((item) => item.id === selection[product.id]) || product.variants[0];
-    if (!variant || variant.stock_quantity === 0) return;
-    cart.add({ variantId: variant.id, productSlug: product.slug, name: product.name, variant: variant.label, priceCents: variant.price_cents, imageUrl: product.images[0] || product.image_url }, { open: true });
-    setAdded(product.id);
-    window.setTimeout(() => setAdded(null), 1500);
+    const variant = product.variants.find((item) => item.id === selection[product.id]) ?? product.variants[0];
+    if (!variant) return;
+    cart.add({ variantId: variant.id, productSlug: product.slug, name: product.name, variant: variant.label, priceCents: variant.price_cents, imageUrl: product.images[0] || product.image_url });
+    setAdded(product.id); window.setTimeout(() => setAdded(null), 1400);
   }
 
-  return <section className="commerce-agent-hero" aria-labelledby="agent-title">
-    <div className="agent-intro">
-      <span className="agent-kicker"><i aria-hidden="true" /> AGENTE ROTTAVA · COMPRA ASSISTIDA</span>
-      <h1 id="agent-title">Encontre o produto certo conversando.</h1>
-      <p>O agente consulta o catálogo, aproxima as opções e coloca a variante escolhida no seu carrinho. Você revisa tudo antes de confirmar.</p>
-      <div className="agent-facts" aria-label="Como o agente trabalha"><span><b>01</b> Você conta</span><span><b>02</b> Ele encontra</span><span><b>03</b> Você decide</span></div>
-      <Link className="agent-skip" href="/produtos">Prefiro explorar o catálogo <ArrowRight aria-hidden="true" /></Link>
-    </div>
-
-    <div className="agent-console">
-      <header><div className="agent-mark"><span>R</span><i /></div><div><b>Agente de compra</b><small><i /> conectado ao catálogo</small></div><span className="agent-cart-count"><ShoppingBag aria-hidden="true" /> {cart.count}</span></header>
-      <div className="agent-conversation" aria-live="polite">
-        <div className="agent-message"><span>R</span><p>Olá! O que você precisa encontrar hoje?</p></div>
-        <AnimatePresence mode="wait">
-          {isThinking ? <motion.div key="thinking" className="agent-thinking" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><i /><i /><i /><span>Consultando produtos e variantes…</span></motion.div> : submittedQuery ? <motion.div key={submittedQuery} className="agent-response" initial={reduced ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={reduced ? undefined : { opacity: 0, y: -8 }}>
-            <small>VOCÊ PEDIU</small><q>{submittedQuery}</q>
-            <p>{serviceIntent ? "Para serviço, vou levar você à solicitação de horário. Nenhum preço ou agenda será inventado." : answer.exact ? `Encontrei ${answer.products.length} ${answer.products.length === 1 ? "opção próxima" : "opções próximas"} no catálogo.` : "Não achei uma correspondência exata. Separei itens disponíveis para você continuar."}</p>
-          </motion.div> : null}
-        </AnimatePresence>
+  return <div className="agent-home">
+    <section className="commerce-agent-hero" aria-labelledby="agent-title">
+      <div className="agent-intro">
+        <span className="agent-kicker"><i aria-hidden="true" /> COMPRA ASSISTIDA · CATÁLOGO ROTTAVA</span>
+        <h1 id="agent-title">Me conta sobre o seu pet. Eu cuido da busca.</h1>
+        <p>Responda poucas perguntas e compare opções reais do catálogo. Você escolhe, revisa o carrinho e só então segue para o pagamento.</p>
+        <div className="agent-facts" aria-label="Como funciona"><span><b>01</b> Perfil do pet</span><span><b>02</b> Curadoria</span><span><b>03</b> Compra revisável</span></div>
+        <Link className="agent-skip" href="/produtos">Prefiro explorar sozinho <ArrowRight aria-hidden="true" /></Link>
       </div>
 
-      {!submittedQuery && <div className="agent-prompts">{prompts.map((prompt, index) => <motion.button key={prompt.label} onClick={() => ask(prompt.query)} whileHover={reduced ? undefined : { x: 4 }} whileTap={reduced ? undefined : { scale: .98 }}><span>0{index + 1}</span>{prompt.label}<ArrowRight aria-hidden="true" /></motion.button>)}</div>}
+      <div className={`agent-console ${step === "results" ? "is-results" : ""}`}>
+        <header><div className="agent-mark"><span>R</span><i /></div><div><b>Rottava, sua assistente de compra</b><small><i /> usando {products.length} produtos do catálogo</small></div><button className="agent-cart-count" onClick={cart.open} aria-label={`Abrir carrinho com ${cart.count} itens`}><ShoppingBag aria-hidden="true" /> {cart.count}</button></header>
+        <div className="agent-conversation" aria-live="polite">
+          <div className="agent-message"><span>R</span><p>{step === "pet" ? "Para quem vamos escolher hoje?" : step === "stage" ? `Qual é a fase de vida do seu ${answers.pet === "gato" ? "gato" : "cão"}?` : step === "size" ? "Qual é o porte dele?" : step === "need" ? "O que você quer resolver agora?" : `Separei três opções para ${answers.pet === "gato" ? "seu gato" : answers.pet === "cao" ? "seu cão" : "a rotina do seu pet"}.`}</p></div>
+          {history.length > 0 && <button className="agent-back" onClick={back}><ArrowBack aria-hidden="true" /> Voltar uma pergunta</button>}
+        </div>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div key={step} initial={reduced ? false : { opacity: 0, x: 16 }} animate={{ opacity: 1, x: 0 }} exit={reduced ? undefined : { opacity: 0, x: -12 }} transition={{ duration: .22 }}>
+            {step === "pet" && <OptionGrid choices={[{ value: "cao", label: "Cão", note: "ração, petiscos e cuidado" }, { value: "gato", label: "Gato", note: "alimentação e rotina felina" }, { value: "geral", label: "Pet em geral", note: "acessórios e utilidades" }]} onChoose={(value) => update({ pet: value as Pet })} />}
+            {step === "stage" && <OptionGrid choices={stages} onChoose={(value) => update({ lifeStage: value })} />}
+            {step === "size" && <OptionGrid choices={sizes} onChoose={(value) => update({ size: value })} />}
+            {step === "need" && <OptionGrid choices={needs} onChoose={(value) => update({ need: value })} />}
+            {step === "results" && <div className="agent-result-stage">
+              <form className="agent-detail" onSubmit={submitDetail}><Search aria-hidden="true" /><label className="sr-only" htmlFor="agent-detail">Raça, sabor ou detalhe opcional</label><input id="agent-detail" value={detail} onChange={(event) => setDetail(event.target.value)} placeholder="Raça, sabor ou detalhe (opcional)" /><button disabled={!detail.trim()}>Refinar</button></form>
+              <div className="agent-results">{results.map((product, index) => {
+                const variant = product.variants.find((item) => item.id === selection[product.id]) ?? product.variants[0];
+                return <motion.article layout key={product.id} initial={reduced ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: reduced ? 0 : index * .07 }}>
+                  <Link href={`/produto/${product.slug}`} className="agent-product-image"><span>{product.brand?.slice(0, 1) || "R"}</span><small>{product.metadata?.weight || product.category_name}</small></Link>
+                  <div><small>{index === 0 ? "MELHOR COMBINAÇÃO" : product.brand || product.category_name}</small><Link href={`/produto/${product.slug}`}><b>{product.name}</b></Link>{product.variants.length > 1 ? <SelectMenu className="agent-variant-menu" label={`Opção de ${product.name}`} value={variant?.id || ""} onChange={(value) => setSelection((current) => ({ ...current, [product.id]: value }))} options={product.variants.map((option) => ({ value: option.id, label: `${option.label} · ${money(option.price_cents)}` }))} /> : <span>{variant?.label}</span>}</div>
+                  <div className="agent-product-action"><strong>{money(variant?.price_cents)}</strong><button onClick={() => addProduct(product)}>{added === product.id ? <Check aria-hidden="true" /> : <ShoppingBag aria-hidden="true" />}<span>{added === product.id ? "Adicionado" : "Adicionar"}</span></button></div>
+                </motion.article>;
+              })}</div>
+              <div className="agent-next"><button onClick={() => restart()}>Recomeçar</button>{cart.count > 0 && <Link href={signedIn ? "/checkout" : "/entrar?retorno=/checkout"}>Seguir para {signedIn ? "pagamento" : "identificação"} <ArrowRight /></Link>}</div>
+            </div>}
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </section>
 
-      {serviceIntent && !isThinking ? <motion.div className="agent-service-result" initial={reduced ? false : { opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}><div><small>SERVIÇO</small><b>Banho & tosa</b><p>Conte sobre seu pet e envie uma solicitação para a equipe confirmar.</p></div><Link href="/banho-e-tosa">Solicitar horário <ArrowRight aria-hidden="true" /></Link></motion.div> : !isThinking && visible.length > 0 && <motion.div layout className="agent-results">
-        {visible.map((product, index) => {
-          const variant = product.variants.find((item) => item.id === selection[product.id]) || product.variants[0];
-          const image = product.images[0] || product.image_url;
-          return <motion.article layout key={product.id} initial={reduced ? false : { opacity: 0, x: 18 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: reduced ? 0 : index * .07 }}>
-            <Link href={`/produto/${product.slug}`} className="agent-product-image">{image ? <Image src={image} alt={product.name} fill sizes="120px" unoptimized={image.startsWith("http")} /> : <span>R</span>}</Link>
-            <div><small>{product.brand || product.category_name}</small><Link href={`/produto/${product.slug}`}><b>{product.name}</b></Link>{product.variants.length > 1 ? <SelectMenu className="agent-variant-menu" label={`Opção de ${product.name}`} value={variant?.id || ""} onChange={(value) => setSelection((current) => ({ ...current, [product.id]: value }))} options={product.variants.map((option) => ({ value: option.id, label: `${option.label} · ${money(option.price_cents)}`, disabled: option.stock_quantity === 0 }))} /> : <span>{variant?.label}</span>}</div>
-            <div className="agent-product-action"><strong>{money(variant?.price_cents)}</strong><button onClick={() => addProduct(product)} disabled={!variant || variant.stock_quantity === 0}>{added === product.id ? <Check aria-hidden="true" /> : <ShoppingBag aria-hidden="true" />}<span>{added === product.id ? "No carrinho" : "Adicionar"}</span></button></div>
-          </motion.article>;
-        })}
-      </motion.div>}
-      {!isThinking && !serviceIntent && visible.length === 0 && <div className="agent-empty"><small>CATÁLOGO EM SINCRONIZAÇÃO</small><b>Posso chamar a equipe.</b><p>A loja ainda não publicou produtos vendáveis. Não vou sugerir itens, preços ou estoque inexistentes.</p><Link href="/atendimento">Abrir atendimento <ArrowRight aria-hidden="true" /></Link></div>}
-
-      <form className="agent-input" onSubmit={submit}><label className="sr-only" htmlFor="agent-query">O que você procura?</label><input id="agent-query" name="agent-query" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Ex.: ração para um cão adulto…" autoComplete="off" /><button aria-label="Encontrar no catálogo" disabled={!query.trim() || isThinking}><span>Encontrar</span><Send aria-hidden="true" /></button></form>
-      <footer><span>{demo ? "Produtos e preços demonstrativos neste ambiente" : "Preços e disponibilidade vêm do catálogo ativo"}</span><span>Você confirma antes de comprar</span></footer>
-    </div>
-  </section>;
+    <section className="home-category-squares" aria-labelledby="category-title"><header><span>OU COMECE POR UMA CATEGORIA</span><h2 id="category-title">Quatro portas, uma mesma Rottava.</h2></header><div>
+      <button onClick={() => restart("cao")}><Dog weight="light" /><span><b>Cães</b><small>{products.filter((item) => item.metadata?.pet === "cao").length} itens</small></span><ArrowRight /></button>
+      <button onClick={() => restart("gato")}><Cat weight="light" /><span><b>Gatos</b><small>{products.filter((item) => item.metadata?.pet === "gato").length} itens</small></span><ArrowRight /></button>
+      <button onClick={() => restart("geral")}><BowlFood weight="light" /><span><b>Pet em geral</b><small>{products.filter((item) => item.metadata?.pet === "geral").length} itens</small></span><ArrowRight /></button>
+      <Link href="/banho-e-tosa"><Scissors weight="light" /><span><b>Banho & tosa</b><small>solicitar cuidado</small></span><ArrowRight /></Link>
+    </div></section>
+  </div>;
 }

@@ -6,7 +6,7 @@ import "./brand.css";
 import { Header, MobileDock, Footer } from "@/components/chrome";
 import { AppProviders } from "@/components/app-providers";
 import { getSession } from "@/lib/auth";
-import { demoMode, store } from "@/lib/config";
+import { store } from "@/lib/config";
 import { RouteTransition } from "@/components/motion-ui";
 
 const body = Geist({ subsets: ["latin"], variable: "--font-body" });
@@ -24,7 +24,6 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
   return <html lang="pt-BR"><body className={body.variable}>
     <AppProviders>
       <a className="skip" href="#conteudo">Pular para o conteúdo</a>
-      {demoMode && <div className="demo-bar"><b>MODO DEMONSTRAÇÃO</b><span>Produtos, preços, pedidos e contas desta versão são dados de teste.</span></div>}
       <Header session={session} />
       <main id="conteudo"><RouteTransition>{children}</RouteTransition></main>
       <Footer />

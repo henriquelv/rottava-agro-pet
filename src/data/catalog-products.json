@@ -1,0 +1,6147 @@
+[
+  {
+    "id": "00000000-0000-4000-8000-000000002600",
+    "name": "Cama para Cachorro Geracao Animal",
+    "slug": "cama-para-cachorro-geracao-animal-2600",
+    "description": "Cama Para Cachorro Geracao Animal - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GERACAO ANIMAL",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 16999,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002600",
+        "sku": "2600",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 16999,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2600",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002598",
+    "name": "Cama para Cachorro Geracao Animal",
+    "slug": "cama-para-cachorro-geracao-animal-2598",
+    "description": "Cama Para Cachorro Geracao Animal - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GERACAO ANIMAL",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 6999,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002598",
+        "sku": "2598",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 6999,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2598",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002596",
+    "name": "Cama para Cachorro Geracao Animal",
+    "slug": "cama-para-cachorro-geracao-animal-2596",
+    "description": "Cama Para Cachorro Geracao Animal - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GERACAO ANIMAL",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 7999,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002596",
+        "sku": "2596",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 7999,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2596",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003389",
+    "name": "Comedouro Magnus Amarelo",
+    "slug": "comedouro-magnus-amarelo-3389",
+    "description": "Comedouro Magnus Amarelo - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 337,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003389",
+        "sku": "3389",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 337,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3389",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [],
+      "productType": "comedouro-bebedouro",
+      "tags": [
+        "geral",
+        "comedouro-bebedouro"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004131",
+    "name": "Golden Cães Adult Carne 15 kg",
+    "slug": "golden-caes-adult-carne-15-kg-4131",
+    "description": "Golden Caes Adult Carne 15 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 808,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004131",
+        "sku": "4131",
+        "label": "15 kg",
+        "unit": "un",
+        "price_cents": 808,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4131",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "15 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002366",
+    "name": "Golden Cães Adult Carne Mini B",
+    "slug": "golden-caes-adult-carne-mini-b-2366",
+    "description": "Golden Caes Adult Carne Mini B - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1543,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002366",
+        "sku": "2366",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1543,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2366",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002141",
+    "name": "Golden Cães Adult Carne Mini B",
+    "slug": "golden-caes-adult-carne-mini-b-2141",
+    "description": "Golden Caes Adult Carne Mini B - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 791,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002141",
+        "sku": "2141",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 791,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2141",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002359",
+    "name": "Golden Cães Adult Carne Mini B",
+    "slug": "golden-caes-adult-carne-mini-b-2359",
+    "description": "Golden Caes Adult Carne Mini B - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 4009,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002359",
+        "sku": "2359",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4009,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2359",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002618",
+    "name": "Golden Cães Adult Frango 20 K",
+    "slug": "golden-caes-adult-frango-20-k-2618",
+    "description": "Golden Caes Adult Frango 20 K - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 760,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002618",
+        "sku": "2618",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 760,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2618",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002365",
+    "name": "Golden Cães Adult Frango Mini",
+    "slug": "golden-caes-adult-frango-mini-2365",
+    "description": "Golden Caes Adult Frango Mini - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1543,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002365",
+        "sku": "2365",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1543,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2365",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002142",
+    "name": "Golden Cães Adult Frango Mini",
+    "slug": "golden-caes-adult-frango-mini-2142",
+    "description": "Golden Caes Adult Frango Mini - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 808,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002142",
+        "sku": "2142",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 808,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2142",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002358",
+    "name": "Golden Cães Adult Frango Mini",
+    "slug": "golden-caes-adult-frango-mini-2358",
+    "description": "Golden Caes Adult Frango Mini - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 4009,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002358",
+        "sku": "2358",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4009,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2358",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004421",
+    "name": "Golden Cães Adult Light 15 kg",
+    "slug": "golden-caes-adult-light-15-kg-4421",
+    "description": "Golden Caes Adult Light 15 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 12573,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004421",
+        "sku": "4421",
+        "label": "15 kg",
+        "unit": "un",
+        "price_cents": 12573,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4421",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [
+        "controle-de-peso"
+      ],
+      "flavors": [],
+      "weight": "15 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao",
+        "controle-de-peso"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002703",
+    "name": "Golden Cães Adult Light Mini Bi",
+    "slug": "golden-caes-adult-light-mini-bi-2703",
+    "description": "Golden Caes Adult Light Mini Bi - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1613,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002703",
+        "sku": "2703",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1613,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2703",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [
+        "controle-de-peso"
+      ],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "controle-de-peso"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003600",
+    "name": "Golden Cães Adult Light Mini Bi",
+    "slug": "golden-caes-adult-light-mini-bi-3600",
+    "description": "Golden Caes Adult Light Mini Bi - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 9864,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003600",
+        "sku": "3600",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 9864,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3600",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [
+        "controle-de-peso"
+      ],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "controle-de-peso"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002704",
+    "name": "Golden Cães Adult Light Mini Bi",
+    "slug": "golden-caes-adult-light-mini-bi-2704",
+    "description": "Golden Caes Adult Light Mini Bi - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 4661,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002704",
+        "sku": "2704",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4661,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2704",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [
+        "controle-de-peso"
+      ],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "controle-de-peso"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004413",
+    "name": "Golden Cães Adult Peru Mini Bit",
+    "slug": "golden-caes-adult-peru-mini-bit-4413",
+    "description": "Golden Caes Adult Peru Mini Bit - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1613,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004413",
+        "sku": "4413",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1613,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4413",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "peru"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "peru"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004424",
+    "name": "Golden Cães Adult Peru Mini Bit",
+    "slug": "golden-caes-adult-peru-mini-bit-4424",
+    "description": "Golden Caes Adult Peru Mini Bit - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 9731,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004424",
+        "sku": "4424",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 9731,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4424",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "peru"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "peru"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004414",
+    "name": "Golden Cães Adult Peru Mini Bit",
+    "slug": "golden-caes-adult-peru-mini-bit-4414",
+    "description": "Golden Caes Adult Peru Mini Bit - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 4224,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004414",
+        "sku": "4414",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4224,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4414",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "peru"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "peru"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002360",
+    "name": "Golden Cães Adult Salmão Mini",
+    "slug": "golden-caes-adult-salmao-mini-2360",
+    "description": "Golden Caes Adult Salmao Mini - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1642,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002360",
+        "sku": "2360",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1642,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2360",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "salmao"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "salmao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004422",
+    "name": "Golden Cães Adult Salmão Mini",
+    "slug": "golden-caes-adult-salmao-mini-4422",
+    "description": "Golden Caes Adult Salmao Mini - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 12786,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004422",
+        "sku": "4422",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 12786,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4422",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "salmao"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "salmao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002361",
+    "name": "Golden Cães Adult Salmão Mini",
+    "slug": "golden-caes-adult-salmao-mini-2361",
+    "description": "Golden Caes Adult Salmao Mini - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 4296,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002361",
+        "sku": "2361",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4296,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2361",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "salmao"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao",
+        "salmao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004420",
+    "name": "Golden Cães Adult Senior 15 kg",
+    "slug": "golden-caes-adult-senior-15-kg-4420",
+    "description": "Golden Caes Adult Senior 15 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 12574,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004420",
+        "sku": "4420",
+        "label": "15 kg",
+        "unit": "un",
+        "price_cents": 12574,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4420",
+      "pet": "cao",
+      "lifeStage": "senior",
+      "needs": [],
+      "flavors": [],
+      "weight": "15 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "senior",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002352",
+    "name": "Golden Cães Adult Senior Mini",
+    "slug": "golden-caes-adult-senior-mini-2352",
+    "description": "Golden Caes Adult Senior Mini - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 966,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002352",
+        "sku": "2352",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 966,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2352",
+      "pet": "cao",
+      "lifeStage": "senior",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "senior",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002362",
+    "name": "Golden Cães Adult Senior Mini",
+    "slug": "golden-caes-adult-senior-mini-2362",
+    "description": "Golden Caes Adult Senior Mini - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 4081,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002362",
+        "sku": "2362",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4081,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2362",
+      "pet": "cao",
+      "lifeStage": "senior",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "senior",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004423",
+    "name": "Golden Cães Filh Carne 15 kg",
+    "slug": "golden-caes-filh-carne-15-kg-4423",
+    "description": "Golden Caes Filh Carne 15 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 12503,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004423",
+        "sku": "4423",
+        "label": "15 kg",
+        "unit": "un",
+        "price_cents": 12503,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4423",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "15 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002363",
+    "name": "Golden Cães Filh Carne Mini Bit",
+    "slug": "golden-caes-filh-carne-mini-bit-2363",
+    "description": "Golden Caes Filh Carne Mini Bit - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1613,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002363",
+        "sku": "2363",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1613,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2363",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "pequeno",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002143",
+    "name": "Golden Cães Filh Carne Mini Bit",
+    "slug": "golden-caes-filh-carne-mini-bit-2143",
+    "description": "Golden Caes Filh Carne Mini Bit - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 987,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002143",
+        "sku": "2143",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 987,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2143",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "pequeno",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002976",
+    "name": "Golden Cães Filh Carne Mini Bit",
+    "slug": "golden-caes-filh-carne-mini-bit-2976",
+    "description": "Golden Caes Filh Carne Mini Bit - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 4225,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002976",
+        "sku": "2976",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4225,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2976",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "pequeno",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002701",
+    "name": "Golden Cães Filh Frango 15 kg",
+    "slug": "golden-caes-filh-frango-15-kg-2701",
+    "description": "Golden Caes Filh Frango 15 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 869,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002701",
+        "sku": "2701",
+        "label": "15 kg",
+        "unit": "un",
+        "price_cents": 869,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2701",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "weight": "15 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "racao",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002364",
+    "name": "Golden Cães Filh Frango Mini Bi",
+    "slug": "golden-caes-filh-frango-mini-bi-2364",
+    "description": "Golden Caes Filh Frango Mini Bi - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1613,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002364",
+        "sku": "2364",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1613,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2364",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "pequeno",
+        "racao",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002144",
+    "name": "Golden Cães Filh Frango Mini Bi",
+    "slug": "golden-caes-filh-frango-mini-bi-2144",
+    "description": "Golden Caes Filh Frango Mini Bi - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 987,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002144",
+        "sku": "2144",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 987,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2144",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "pequeno",
+        "racao",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004415",
+    "name": "Golden Cães Filh Frango Mini Bi",
+    "slug": "golden-caes-filh-frango-mini-bi-4415",
+    "description": "Golden Caes Filh Frango Mini Bi - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 4225,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004415",
+        "sku": "4415",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4225,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4415",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "pequeno",
+        "racao",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002306",
+    "name": "Golden Cookie Cães Ad Peq Por",
+    "slug": "golden-cookie-caes-ad-peq-por-2306",
+    "description": "Golden Cookie Caes Ad Peq Por - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1138,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002306",
+        "sku": "2306",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1138,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2306",
+      "pet": "cao",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "pequeno",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002307",
+    "name": "Golden Cookie Cães Ad Peq Por",
+    "slug": "golden-cookie-caes-ad-peq-por-2307",
+    "description": "Golden Cookie Caes Ad Peq Por - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1138,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002307",
+        "sku": "2307",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1138,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2307",
+      "pet": "cao",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "pequeno",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002308",
+    "name": "Golden Cookie Cães Adult 350 g",
+    "slug": "golden-cookie-caes-adult-350-g-2308",
+    "description": "Golden Cookie Caes Adult 350 G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1138,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002308",
+        "sku": "2308",
+        "label": "350 g",
+        "unit": "un",
+        "price_cents": 1138,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2308",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "weight": "350 g",
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "adulto",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002309",
+    "name": "Golden Cookie Cães Adult Mini",
+    "slug": "golden-cookie-caes-adult-mini-2309",
+    "description": "Golden Cookie Caes Adult Mini - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 2580,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002309",
+        "sku": "2309",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 2580,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2309",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002310",
+    "name": "Golden Cookie Cães Adult Port",
+    "slug": "golden-cookie-caes-adult-port-2310",
+    "description": "Golden Cookie Caes Adult Port - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1138,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002310",
+        "sku": "2310",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1138,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2310",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "adulto",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002311",
+    "name": "Golden Cookie Cães Banana Rp",
+    "slug": "golden-cookie-caes-banana-rp-2311",
+    "description": "Golden Cookie Caes Banana Rp - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1138,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002311",
+        "sku": "2311",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1138,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2311",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002312",
+    "name": "Golden Cookie Cães Filh 350 g",
+    "slug": "golden-cookie-caes-filh-350-g-2312",
+    "description": "Golden Cookie Caes Filh 350 G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1195,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002312",
+        "sku": "2312",
+        "label": "350 g",
+        "unit": "un",
+        "price_cents": 1195,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2312",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "weight": "350 g",
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "filhote",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002313",
+    "name": "Golden Cookie Cães Filh Maca A",
+    "slug": "golden-cookie-caes-filh-maca-a-2313",
+    "description": "Golden Cookie Caes Filh Maca A - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1138,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002313",
+        "sku": "2313",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1138,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2313",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "filhote",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003544",
+    "name": "Golden Cookie Cães Filh Salma",
+    "slug": "golden-cookie-caes-filh-salma-3544",
+    "description": "Golden Cookie Caes Filh Salma - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1138,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003544",
+        "sku": "3544",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1138,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3544",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "filhote",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003437",
+    "name": "Golden Form Cães Ad Carne Mi",
+    "slug": "golden-form-caes-ad-carne-mi-3437",
+    "description": "Golden Form Caes Ad Carne Mi - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 753,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003437",
+        "sku": "3437",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 753,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3437",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002370",
+    "name": "Golden Form Gatos Adult Cast",
+    "slug": "golden-form-gatos-adult-cast-2370",
+    "description": "Golden Form Gatos Adult Cast - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 2235,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002370",
+        "sku": "2370",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 2235,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2370",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002371",
+    "name": "Golden Form Gatos Adult Cast",
+    "slug": "golden-form-gatos-adult-cast-2371",
+    "description": "Golden Form Gatos Adult Cast - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 4942,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002371",
+        "sku": "2371",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4942,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2371",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002372",
+    "name": "Golden Gatos Adult Carne 1 kg",
+    "slug": "golden-gatos-adult-carne-1-kg-2372",
+    "description": "Golden Gatos Adult Carne 1 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1972,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002372",
+        "sku": "2372",
+        "label": "1 kg",
+        "unit": "un",
+        "price_cents": 1972,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2372",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "1 kg",
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002355",
+    "name": "Golden Gatos Adult Carne 10,1",
+    "slug": "golden-gatos-adult-carne-101-2355",
+    "description": "Golden Gatos Adult Carne 10,1 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1129,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002355",
+        "sku": "2355",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1129,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2355",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002373",
+    "name": "Golden Gatos Adult Carne 3 kg",
+    "slug": "golden-gatos-adult-carne-3-kg-2373",
+    "description": "Golden Gatos Adult Carne 3 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 4511,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002373",
+        "sku": "2373",
+        "label": "3 kg",
+        "unit": "un",
+        "price_cents": 4511,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2373",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "3 kg",
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002374",
+    "name": "Golden Gatos Adult Cast Carne",
+    "slug": "golden-gatos-adult-cast-carne-2374",
+    "description": "Golden Gatos Adult Cast Carne - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 2144,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002374",
+        "sku": "2374",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 2144,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2374",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002619",
+    "name": "Golden Gatos Adult Cast Carne",
+    "slug": "golden-gatos-adult-cast-carne-2619",
+    "description": "Golden Gatos Adult Cast Carne - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1187,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002619",
+        "sku": "2619",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1187,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2619",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002375",
+    "name": "Golden Gatos Adult Cast Carne",
+    "slug": "golden-gatos-adult-cast-carne-2375",
+    "description": "Golden Gatos Adult Cast Carne - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 4942,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002375",
+        "sku": "2375",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4942,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2375",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002368",
+    "name": "Golden Gatos Adult Cast Fran",
+    "slug": "golden-gatos-adult-cast-fran-2368",
+    "description": "Golden Gatos Adult Cast Fran - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 2144,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002368",
+        "sku": "2368",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 2144,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2368",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002977",
+    "name": "Golden Gatos Adult Cast Fran",
+    "slug": "golden-gatos-adult-cast-fran-2977",
+    "description": "Golden Gatos Adult Cast Fran - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1187,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002977",
+        "sku": "2977",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1187,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2977",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002369",
+    "name": "Golden Gatos Adult Cast Fran",
+    "slug": "golden-gatos-adult-cast-fran-2369",
+    "description": "Golden Gatos Adult Cast Fran - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 4942,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002369",
+        "sku": "2369",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4942,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2369",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002376",
+    "name": "Golden Gatos Adult Cast Salm",
+    "slug": "golden-gatos-adult-cast-salm-2376",
+    "description": "Golden Gatos Adult Cast Salm - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 2188,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002376",
+        "sku": "2376",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 2188,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2376",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002356",
+    "name": "Golden Gatos Adult Cast Salm",
+    "slug": "golden-gatos-adult-cast-salm-2356",
+    "description": "Golden Gatos Adult Cast Salm - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1235,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002356",
+        "sku": "2356",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1235,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2356",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002377",
+    "name": "Golden Gatos Adult Cast Salm",
+    "slug": "golden-gatos-adult-cast-salm-2377",
+    "description": "Golden Gatos Adult Cast Salm - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 5013,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002377",
+        "sku": "2377",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 5013,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2377",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002378",
+    "name": "Golden Gatos Adult Cast Senio",
+    "slug": "golden-gatos-adult-cast-senio-2378",
+    "description": "Golden Gatos Adult Cast Senio - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 2327,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002378",
+        "sku": "2378",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 2327,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2378",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004195",
+    "name": "Golden Gatos Adult Cast Senio",
+    "slug": "golden-gatos-adult-cast-senio-4195",
+    "description": "Golden Gatos Adult Cast Senio - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 5013,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004195",
+        "sku": "4195",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 5013,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4195",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002813",
+    "name": "Golden Gatos Adult Frang 10,1",
+    "slug": "golden-gatos-adult-frang-101-2813",
+    "description": "Golden Gatos Adult Frang 10,1 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1083,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002813",
+        "sku": "2813",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1083,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2813",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002367",
+    "name": "Golden Gatos Filh Frang 1 kg",
+    "slug": "golden-gatos-filh-frang-1-kg-2367",
+    "description": "Golden Gatos Filh Frang 1 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 2132,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002367",
+        "sku": "2367",
+        "label": "1 kg",
+        "unit": "un",
+        "price_cents": 2132,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2367",
+      "pet": "gato",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "weight": "1 kg",
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "filhote",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002148",
+    "name": "Golden Gatos Filh Frang 10,1 kg",
+    "slug": "golden-gatos-filh-frang-101-kg-2148",
+    "description": "Golden Gatos Filh Frang 10,1 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1166,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002148",
+        "sku": "2148",
+        "label": "10,1 kg",
+        "unit": "un",
+        "price_cents": 1166,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2148",
+      "pet": "gato",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "weight": "10,1 kg",
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "filhote",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002379",
+    "name": "Golden Gatos Filh Frang 3 kg",
+    "slug": "golden-gatos-filh-frang-3-kg-2379",
+    "description": "Golden Gatos Filh Frang 3 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 4727,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002379",
+        "sku": "2379",
+        "label": "3 kg",
+        "unit": "un",
+        "price_cents": 4727,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2379",
+      "pet": "gato",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "weight": "3 kg",
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "filhote",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002299",
+    "name": "Golden Gourmet Cães Adult Me",
+    "slug": "golden-gourmet-caes-adult-me-2299",
+    "description": "Golden Gourmet Caes Adult Me - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 268,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002299",
+        "sku": "2299",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 268,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2299",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002621",
+    "name": "Golden Gourmet Cães Adult Pe",
+    "slug": "golden-gourmet-caes-adult-pe-2621",
+    "description": "Golden Gourmet Caes Adult Pe - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 268,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002621",
+        "sku": "2621",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 268,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2621",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002622",
+    "name": "Golden Gourmet Cães Adult Pe",
+    "slug": "golden-gourmet-caes-adult-pe-2622",
+    "description": "Golden Gourmet Caes Adult Pe - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 268,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002622",
+        "sku": "2622",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 268,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2622",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002300",
+    "name": "Golden Gourmet Gatos Ad Atu",
+    "slug": "golden-gourmet-gatos-ad-atu-2300",
+    "description": "Golden Gourmet Gatos Ad Atu - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 230,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002300",
+        "sku": "2300",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 230,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2300",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002301",
+    "name": "Golden Gourmet Gatos Ad Cast",
+    "slug": "golden-gourmet-gatos-ad-cast-2301",
+    "description": "Golden Gourmet Gatos Ad Cast - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 230,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002301",
+        "sku": "2301",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 230,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2301",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002302",
+    "name": "Golden Gourmet Gatos Ad Cast",
+    "slug": "golden-gourmet-gatos-ad-cast-2302",
+    "description": "Golden Gourmet Gatos Ad Cast - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 230,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002302",
+        "sku": "2302",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 230,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2302",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002303",
+    "name": "Golden Gourmet Gatos Ad Fra",
+    "slug": "golden-gourmet-gatos-ad-fra-2303",
+    "description": "Golden Gourmet Gatos Ad Fra - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 230,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002303",
+        "sku": "2303",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 230,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2303",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002304",
+    "name": "Golden Gourmet Gatos Fil Fran",
+    "slug": "golden-gourmet-gatos-fil-fran-2304",
+    "description": "Golden Gourmet Gatos Fil Fran - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 230,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002304",
+        "sku": "2304",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 230,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2304",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002305",
+    "name": "Golden Gourmet Power Trainin",
+    "slug": "golden-gourmet-power-trainin-2305",
+    "description": "Golden Gourmet Power Trainin - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 307,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002305",
+        "sku": "2305",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 307,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2305",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002812",
+    "name": "Golden Mega Cães Adult 15 kg",
+    "slug": "golden-mega-caes-adult-15-kg-2812",
+    "description": "Golden Mega Caes Adult 15 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 805,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002812",
+        "sku": "2812",
+        "label": "15 kg",
+        "unit": "un",
+        "price_cents": 805,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2812",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "weight": "15 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002854",
+    "name": "Golden Mega Cães Filh 15 kg",
+    "slug": "golden-mega-caes-filh-15-kg-2854",
+    "description": "Golden Mega Caes Filh 15 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 871,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002854",
+        "sku": "2854",
+        "label": "15 kg",
+        "unit": "un",
+        "price_cents": 871,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2854",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "weight": "15 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002353",
+    "name": "Golden Power Cães Adult Train",
+    "slug": "golden-power-caes-adult-train-2353",
+    "description": "Golden Power Caes Adult Train - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 805,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002353",
+        "sku": "2353",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 805,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2353",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002354",
+    "name": "Golden Power Cães Filh Trainin",
+    "slug": "golden-power-caes-filh-trainin-2354",
+    "description": "Golden Power Caes Filh Trainin - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 852,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002354",
+        "sku": "2354",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 852,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2354",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004416",
+    "name": "Golden Sel Nat Cães Filh Mini Bi",
+    "slug": "golden-sel-nat-caes-filh-mini-bi-4416",
+    "description": "Golden Sel Nat Caes Filh Mini Bi - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1714,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004416",
+        "sku": "4416",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1714,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4416",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003845",
+    "name": "Golden Sel Nat Gatos Ad Cast A",
+    "slug": "golden-sel-nat-gatos-ad-cast-a-3845",
+    "description": "Golden Sel Nat Gatos Ad Cast A - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 2074,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003845",
+        "sku": "3845",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 2074,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3845",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002858",
+    "name": "Golden Sel Nat Gatos Ad Cast A",
+    "slug": "golden-sel-nat-gatos-ad-cast-a-2858",
+    "description": "Golden Sel Nat Gatos Ad Cast A - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 12906,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002858",
+        "sku": "2858",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 12906,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2858",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003846",
+    "name": "Golden Sel Nat Gatos Ad Cast A",
+    "slug": "golden-sel-nat-gatos-ad-cast-a-3846",
+    "description": "Golden Sel Nat Gatos Ad Cast A - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 5601,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003846",
+        "sku": "3846",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 5601,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3846",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002380",
+    "name": "Golden Sel Nat Gatos Ad Cast B",
+    "slug": "golden-sel-nat-gatos-ad-cast-b-2380",
+    "description": "Golden Sel Nat Gatos Ad Cast B - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 2074,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002380",
+        "sku": "2380",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 2074,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2380",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002357",
+    "name": "Golden Sel Nat Gatos Ad Cast B",
+    "slug": "golden-sel-nat-gatos-ad-cast-b-2357",
+    "description": "Golden Sel Nat Gatos Ad Cast B - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1318,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002357",
+        "sku": "2357",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1318,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2357",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002381",
+    "name": "Golden Sel Nat Gatos Ad Cast B",
+    "slug": "golden-sel-nat-gatos-ad-cast-b-2381",
+    "description": "Golden Sel Nat Gatos Ad Cast B - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 5601,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002381",
+        "sku": "2381",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 5601,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2381",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003847",
+    "name": "Golden Sel Nat Gatos Adult 1 K",
+    "slug": "golden-sel-nat-gatos-adult-1-k-3847",
+    "description": "Golden Sel Nat Gatos Adult 1 K - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1930,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003847",
+        "sku": "3847",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1930,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3847",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003427",
+    "name": "Golden Sel Nat Gatos Adult 10,1",
+    "slug": "golden-sel-nat-gatos-adult-101-3427",
+    "description": "Golden Sel Nat Gatos Adult 10,1 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1208,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003427",
+        "sku": "3427",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1208,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3427",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003848",
+    "name": "Golden Sel Nat Gatos Adult 3 K",
+    "slug": "golden-sel-nat-gatos-adult-3-k-3848",
+    "description": "Golden Sel Nat Gatos Adult 3 K - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 5013,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003848",
+        "sku": "3848",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 5013,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3848",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002856",
+    "name": "Golden Sel Nat Gatos Filh 1 kg",
+    "slug": "golden-sel-nat-gatos-filh-1-kg-2856",
+    "description": "Golden Sel Nat Gatos Filh 1 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 2045,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002856",
+        "sku": "2856",
+        "label": "1 kg",
+        "unit": "un",
+        "price_cents": 2045,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2856",
+      "pet": "gato",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "weight": "1 kg",
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "filhote",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004196",
+    "name": "Golden Sel Nat Gatos Filh 10,1 K",
+    "slug": "golden-sel-nat-gatos-filh-101-k-4196",
+    "description": "Golden Sel Nat Gatos Filh 10,1 K - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1277,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004196",
+        "sku": "4196",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1277,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4196",
+      "pet": "gato",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "filhote",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002857",
+    "name": "Golden Sel Nat Gatos Filh 3 kg",
+    "slug": "golden-sel-nat-gatos-filh-3-kg-2857",
+    "description": "Golden Sel Nat Gatos Filh 3 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 5300,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002857",
+        "sku": "2857",
+        "label": "3 kg",
+        "unit": "un",
+        "price_cents": 5300,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2857",
+      "pet": "gato",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "weight": "3 kg",
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "filhote",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002145",
+    "name": "Golden Special Cães Adult 15 kg",
+    "slug": "golden-special-caes-adult-15-kg-2145",
+    "description": "Golden Special Caes Adult 15 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 771,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002145",
+        "sku": "2145",
+        "label": "15 kg",
+        "unit": "un",
+        "price_cents": 771,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2145",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "weight": "15 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002860",
+    "name": "Golden Special Cães Adult 20 kg",
+    "slug": "golden-special-caes-adult-20-kg-2860",
+    "description": "Golden Special Caes Adult 20 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 693,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002860",
+        "sku": "2860",
+        "label": "20 kg",
+        "unit": "un",
+        "price_cents": 693,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2860",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "weight": "20 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002623",
+    "name": "Golden Special Cães Adult Peq P",
+    "slug": "golden-special-caes-adult-peq-p-2623",
+    "description": "Golden Special Caes Adult Peq P - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 710,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002623",
+        "sku": "2623",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 710,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2623",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004419",
+    "name": "Golden Special Cães Adult Peq P",
+    "slug": "golden-special-caes-adult-peq-p-4419",
+    "description": "Golden Special Caes Adult Peq P - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 3580,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004419",
+        "sku": "4419",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 3580,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4419",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002624",
+    "name": "Golden Special Cães Filh Peq Po",
+    "slug": "golden-special-caes-filh-peq-po-2624",
+    "description": "Golden Special Caes Filh Peq Po - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 803,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002624",
+        "sku": "2624",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 803,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2624",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004418",
+    "name": "Golden Special Cães Filh Peq Po",
+    "slug": "golden-special-caes-filh-peq-po-4418",
+    "description": "Golden Special Caes Filh Peq Po - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 3938,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004418",
+        "sku": "4418",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 3938,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4418",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "filhote",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002147",
+    "name": "Golden Special Gatos Adult 10,1",
+    "slug": "golden-special-gatos-adult-101-2147",
+    "description": "Golden Special Gatos Adult 10,1 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1035,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002147",
+        "sku": "2147",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1035,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2147",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002382",
+    "name": "Golden Special Gatos Adult 3 K",
+    "slug": "golden-special-gatos-adult-3-k-2382",
+    "description": "Golden Special Gatos Adult 3 K - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 4009,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002382",
+        "sku": "2382",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 4009,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2382",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002146",
+    "name": "Golden Special Gatos Cast 10,1",
+    "slug": "golden-special-gatos-cast-101-2146",
+    "description": "Golden Special Gatos Cast 10,1 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 1104,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002146",
+        "sku": "2146",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1104,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2146",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002383",
+    "name": "Golden Special Gatos Cast 3 kg",
+    "slug": "golden-special-gatos-cast-3-kg-2383",
+    "description": "Golden Special Gatos Cast 3 Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 4440,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002383",
+        "sku": "2383",
+        "label": "3 kg",
+        "unit": "un",
+        "price_cents": 4440,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2383",
+      "pet": "gato",
+      "needs": [],
+      "flavors": [],
+      "weight": "3 kg",
+      "productType": "racao",
+      "tags": [
+        "gato",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002246",
+    "name": "Magnus Bifinho Carne 20x60g",
+    "slug": "magnus-bifinho-carne-20x60g-2246",
+    "description": "Magnus Bifinho Carne 20X60G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 259,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002246",
+        "sku": "2246",
+        "label": "60 g",
+        "unit": "un",
+        "price_cents": 259,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2246",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "60 g",
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002245",
+    "name": "Magnus Bifinho Carne 6x500g",
+    "slug": "magnus-bifinho-carne-6x500g-2245",
+    "description": "Magnus Bifinho Carne 6X500G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 1688,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002245",
+        "sku": "2245",
+        "label": "500 g",
+        "unit": "un",
+        "price_cents": 1688,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2245",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "500 g",
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002248",
+    "name": "Magnus Bifinho Frango 20x60g",
+    "slug": "magnus-bifinho-frango-20x60g-2248",
+    "description": "Magnus Bifinho Frango 20X60G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 259,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002248",
+        "sku": "2248",
+        "label": "60 g",
+        "unit": "un",
+        "price_cents": 259,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2248",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "weight": "60 g",
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002247",
+    "name": "Magnus Bifinho Frango 6x500g",
+    "slug": "magnus-bifinho-frango-6x500g-2247",
+    "description": "Magnus Bifinho Frango 6X500G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 1688,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002247",
+        "sku": "2247",
+        "label": "500 g",
+        "unit": "un",
+        "price_cents": 1688,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2247",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "weight": "500 g",
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002241",
+    "name": "Magnus Bifinho Frutas 20x60g",
+    "slug": "magnus-bifinho-frutas-20x60g-2241",
+    "description": "Magnus Bifinho Frutas 20X60G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 259,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002241",
+        "sku": "2241",
+        "label": "60 g",
+        "unit": "un",
+        "price_cents": 259,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2241",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [],
+      "weight": "60 g",
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004174",
+    "name": "Magnus Bifinho Frutas 8x250g",
+    "slug": "magnus-bifinho-frutas-8x250g-4174",
+    "description": "Magnus Bifinho Frutas 8X250G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 1000,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004174",
+        "sku": "4174",
+        "label": "250 g",
+        "unit": "un",
+        "price_cents": 1000,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4174",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [],
+      "weight": "250 g",
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002243",
+    "name": "Magnus Bifinho Palito Carn 20",
+    "slug": "magnus-bifinho-palito-carn-20-2243",
+    "description": "Magnus Bifinho Palito Carn 20 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 227,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002243",
+        "sku": "2243",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 227,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2243",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [],
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002242",
+    "name": "Magnus Bifinho Palito Carn 8x",
+    "slug": "magnus-bifinho-palito-carn-8x-2242",
+    "description": "Magnus Bifinho Palito Carn 8X - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 1000,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002242",
+        "sku": "2242",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1000,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2242",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [],
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002244",
+    "name": "Magnus Bifinho Pp Car 20x60g",
+    "slug": "magnus-bifinho-pp-car-20x60g-2244",
+    "description": "Magnus Bifinho Pp Car 20X60G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 227,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002244",
+        "sku": "2244",
+        "label": "60 g",
+        "unit": "un",
+        "price_cents": 227,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2244",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [],
+      "weight": "60 g",
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003392",
+    "name": "Magnus Bifinho Pp Car 6x500g",
+    "slug": "magnus-bifinho-pp-car-6x500g-3392",
+    "description": "Magnus Bifinho Pp Car 6X500G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 10128,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003392",
+        "sku": "3392",
+        "label": "500 g",
+        "unit": "un",
+        "price_cents": 10128,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3392",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [],
+      "weight": "500 g",
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002256",
+    "name": "Magnus Biscoito Filhotes 10x25",
+    "slug": "magnus-biscoito-filhotes-10x25-2256",
+    "description": "Magnus Biscoito Filhotes 10X25 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 681,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002256",
+        "sku": "2256",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 681,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2256",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "filhote",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002258",
+    "name": "Magnus Biscoito Mix 10x500g",
+    "slug": "magnus-biscoito-mix-10x500g-2258",
+    "description": "Magnus Biscoito Mix 10X500G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 994,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002258",
+        "sku": "2258",
+        "label": "500 g",
+        "unit": "un",
+        "price_cents": 994,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2258",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [],
+      "weight": "500 g",
+      "productType": "petisco",
+      "tags": [
+        "geral",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002257",
+    "name": "Magnus Biscoito Original 10x40",
+    "slug": "magnus-biscoito-original-10x40-2257",
+    "description": "Magnus Biscoito Original 10X40 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 869,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002257",
+        "sku": "2257",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 869,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2257",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "geral",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003395",
+    "name": "Magnus Biscoito Original 5x1kg",
+    "slug": "magnus-biscoito-original-5x1kg-3395",
+    "description": "Magnus Biscoito Original 5X1Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 1856,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003395",
+        "sku": "3395",
+        "label": "1 kg",
+        "unit": "un",
+        "price_cents": 1856,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3395",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [],
+      "weight": "1 kg",
+      "productType": "petisco",
+      "tags": [
+        "geral",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003396",
+    "name": "Magnus Biscoito Peq Port 10x4",
+    "slug": "magnus-biscoito-peq-port-10x4-3396",
+    "description": "Magnus Biscoito Peq Port 10X4 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 869,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003396",
+        "sku": "3396",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 869,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3396",
+      "pet": "geral",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "geral",
+        "pequeno",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003672",
+    "name": "Magnus Biscoito Peq Port 5x1k",
+    "slug": "magnus-biscoito-peq-port-5x1k-3672",
+    "description": "Magnus Biscoito Peq Port 5X1K - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 1869,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003672",
+        "sku": "3672",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1869,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3672",
+      "pet": "geral",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "geral",
+        "pequeno",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002255",
+    "name": "Magnus Cat Ad Carne 10,1kg",
+    "slug": "magnus-cat-ad-carne-101kg-2255",
+    "description": "Magnus Cat Ad Carne 10,1Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 920,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002255",
+        "sku": "2255",
+        "label": "10,1 kg",
+        "unit": "un",
+        "price_cents": 920,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2255",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "10,1 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002254",
+    "name": "Magnus Cat Ad Carne 20kg",
+    "slug": "magnus-cat-ad-carne-20kg-2254",
+    "description": "Magnus Cat Ad Carne 20Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 776,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002254",
+        "sku": "2254",
+        "label": "20 kg",
+        "unit": "un",
+        "price_cents": 776,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2254",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "20 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002724",
+    "name": "Magnus Cat Ad Cast Carne 20k",
+    "slug": "magnus-cat-ad-cast-carne-20k-2724",
+    "description": "Magnus Cat Ad Cast Carne 20K - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 910,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002724",
+        "sku": "2724",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 910,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2724",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002249",
+    "name": "Magnus Cat Ad Cast Salmão 10,",
+    "slug": "magnus-cat-ad-cast-salmao-10-2249",
+    "description": "Magnus Cat Ad Cast Salmao 10, - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 894,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002249",
+        "sku": "2249",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 894,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2249",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "salmao"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "salmao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002252",
+    "name": "Magnus Cat Ad Cast Salmão 10",
+    "slug": "magnus-cat-ad-cast-salmao-10-2252",
+    "description": "Magnus Cat Ad Cast Salmao 10 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 1181,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002252",
+        "sku": "2252",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1181,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2252",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "salmao"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "salmao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002238",
+    "name": "Magnus Cat Ad Cast Salmão 20",
+    "slug": "magnus-cat-ad-cast-salmao-20-2238",
+    "description": "Magnus Cat Ad Cast Salmao 20 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 843,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002238",
+        "sku": "2238",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 843,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2238",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "salmao"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "salmao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002253",
+    "name": "Magnus Cat Ad Salmão 10x1kg",
+    "slug": "magnus-cat-ad-salmao-10x1kg-2253",
+    "description": "Magnus Cat Ad Salmao 10X1Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 1125,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002253",
+        "sku": "2253",
+        "label": "1 kg",
+        "unit": "un",
+        "price_cents": 1125,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2253",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "salmao"
+      ],
+      "weight": "1 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "salmao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003391",
+    "name": "Magnus Cat Petisco Cn 2x(10x40",
+    "slug": "magnus-cat-petisco-cn-2x10x40-3391",
+    "description": "Magnus Cat Petisco Cn 2X(10X40 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 263,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003391",
+        "sku": "3391",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 263,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3391",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002240",
+    "name": "Magnus Cat Petisco Fg 2x(10x40",
+    "slug": "magnus-cat-petisco-fg-2x10x40-2240",
+    "description": "Magnus Cat Petisco Fg 2X(10X40 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 263,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002240",
+        "sku": "2240",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 263,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2240",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002239",
+    "name": "Magnus Cat Petisco Sal 2x(10x4",
+    "slug": "magnus-cat-petisco-sal-2x10x4-2239",
+    "description": "Magnus Cat Petisco Sal 2X(10X4 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 263,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002239",
+        "sku": "2239",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 263,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2239",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000003671",
+    "name": "Magnus T D Peq Porte Cn/fg 15k",
+    "slug": "magnus-t-d-peq-porte-cnfg-15k-3671",
+    "description": "Magnus T D Peq Porte Cn/Fg 15K - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 7409,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000003671",
+        "sku": "3671",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 7409,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "3671",
+      "pet": "geral",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "pequeno",
+        "outros"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002250",
+    "name": "Magnus T D Peq Porte Cn/fg 20k",
+    "slug": "magnus-t-d-peq-porte-cnfg-20k-2250",
+    "description": "Magnus T D Peq Porte Cn/Fg 20K - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 494,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002250",
+        "sku": "2250",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 494,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2250",
+      "pet": "geral",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "pequeno",
+        "outros"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002251",
+    "name": "Magnus T D Sabor Carne 20kg",
+    "slug": "magnus-t-d-sabor-carne-20kg-2251",
+    "description": "Magnus T D Sabor Carne 20Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 471,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002251",
+        "sku": "2251",
+        "label": "20 kg",
+        "unit": "un",
+        "price_cents": 471,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2251",
+      "pet": "geral",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "20 kg",
+      "productType": "outros",
+      "tags": [
+        "geral",
+        "outros",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002314",
+    "name": "Premier Cookie Cães Ad Rc Peq F",
+    "slug": "premier-cookie-caes-ad-rc-peq-f-2314",
+    "description": "Premier Cookie Caes Ad Rc Peq F - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "PREMIER",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1250,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002314",
+        "sku": "2314",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1250,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2314",
+      "pet": "cao",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "pequeno",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002323",
+    "name": "Premier Cookie Cães Adult 250 g",
+    "slug": "premier-cookie-caes-adult-250-g-2323",
+    "description": "Premier Cookie Caes Adult 250 G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "PREMIER",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1167,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002323",
+        "sku": "2323",
+        "label": "250 g",
+        "unit": "un",
+        "price_cents": 1167,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2323",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "weight": "250 g",
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "adulto",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002315",
+    "name": "Premier Cookie Cães Adult Fit Fr",
+    "slug": "premier-cookie-caes-adult-fit-fr-2315",
+    "description": "Premier Cookie Caes Adult Fit Fr - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "PREMIER",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1167,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002315",
+        "sku": "2315",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1167,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2315",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "adulto",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002316",
+    "name": "Premier Cookie Cães Adult Rc Pe",
+    "slug": "premier-cookie-caes-adult-rc-pe-2316",
+    "description": "Premier Cookie Caes Adult Rc Pe - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "PREMIER",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1167,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002316",
+        "sku": "2316",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1167,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2316",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "adulto",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002317",
+    "name": "Premier Cookie Cães Adult Rc Pe",
+    "slug": "premier-cookie-caes-adult-rc-pe-2317",
+    "description": "Premier Cookie Caes Adult Rc Pe - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "PREMIER",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1167,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002317",
+        "sku": "2317",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1167,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2317",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "adulto",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002318",
+    "name": "Premier Cookie Cães Adult Seni",
+    "slug": "premier-cookie-caes-adult-seni-2318",
+    "description": "Premier Cookie Caes Adult Seni - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "PREMIER",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1167,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002318",
+        "sku": "2318",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1167,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2318",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "adulto",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002322",
+    "name": "Premier Cookie Cães Filh 250 g",
+    "slug": "premier-cookie-caes-filh-250-g-2322",
+    "description": "Premier Cookie Caes Filh 250 G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "PREMIER",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1167,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002322",
+        "sku": "2322",
+        "label": "250 g",
+        "unit": "un",
+        "price_cents": 1167,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2322",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "weight": "250 g",
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "filhote",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002319",
+    "name": "Premier Cookie Cães Filh Coco A",
+    "slug": "premier-cookie-caes-filh-coco-a-2319",
+    "description": "Premier Cookie Caes Filh Coco A - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "PREMIER",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1167,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002319",
+        "sku": "2319",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1167,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2319",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "filhote",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002320",
+    "name": "Premier Cookie Cães Filhote Fru",
+    "slug": "premier-cookie-caes-filhote-fru-2320",
+    "description": "Premier Cookie Caes Filhote Fru - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "PREMIER",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 1225,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002320",
+        "sku": "2320",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 1225,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2320",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "productType": "petisco",
+      "tags": [
+        "cao",
+        "filhote",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002321",
+    "name": "Premier Cookie Gatos Adult 40 g",
+    "slug": "premier-cookie-gatos-adult-40-g-2321",
+    "description": "Premier Cookie Gatos Adult 40 G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "PREMIER",
+    "image_url": null,
+    "images": [],
+    "category_name": "Gatos",
+    "min_price_cents": 717,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002321",
+        "sku": "2321",
+        "label": "40 g",
+        "unit": "un",
+        "price_cents": 717,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2321",
+      "pet": "gato",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "weight": "40 g",
+      "productType": "petisco",
+      "tags": [
+        "gato",
+        "adulto",
+        "petisco"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000001719",
+    "name": "Ração Biguá Furadinha 14mm S",
+    "slug": "racao-bigua-furadinha-14mm-s-1719",
+    "description": "Racao Biguá Furadinha 14Mm S - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 490,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000001719",
+        "sku": "1719",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 490,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "1719",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000001584",
+    "name": "Ração Furadinha Acquamil Sab",
+    "slug": "racao-furadinha-acquamil-sab-1584",
+    "description": "Racao Furadinha Acquamil Sab - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 490,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000001584",
+        "sku": "1584",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 490,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "1584",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000001581",
+    "name": "Ração Furadinha Acquamil Sab",
+    "slug": "racao-furadinha-acquamil-sab-1581",
+    "description": "Racao Furadinha Acquamil Sab - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 490,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000001581",
+        "sku": "1581",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 490,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "1581",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000001583",
+    "name": "Ração Furadinha Acquamil Sab",
+    "slug": "racao-furadinha-acquamil-sab-1583",
+    "description": "Racao Furadinha Acquamil Sab - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 490,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000001583",
+        "sku": "1583",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 490,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "1583",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000001582",
+    "name": "Ração Furadinha Acquamil Sab",
+    "slug": "racao-furadinha-acquamil-sab-1582",
+    "description": "Racao Furadinha Acquamil Sab - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 490,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000001582",
+        "sku": "1582",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 490,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "1582",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000606",
+    "name": "Ração Furadinha Biguá Bacon",
+    "slug": "racao-furadinha-bigua-bacon-606",
+    "description": "Racao Furadinha Biguá Bacon - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 370,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000000606",
+        "sku": "606",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 370,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "606",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000607",
+    "name": "Ração Furadinha Biguá Banana",
+    "slug": "racao-furadinha-bigua-banana-607",
+    "description": "Racao Furadinha Biguá Banana - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 370,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000000607",
+        "sku": "607",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 370,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "607",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000608",
+    "name": "Ração Furadinha Biguá Maracu",
+    "slug": "racao-furadinha-bigua-maracu-608",
+    "description": "Racao Furadinha Biguá Maracu - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 370,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000000608",
+        "sku": "608",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 370,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "608",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000000740",
+    "name": "Ração Furadinha Goiaba 90g",
+    "slug": "racao-furadinha-goiaba-90g-740",
+    "description": "Racao Furadinha Goiaba 90G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 370,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000000740",
+        "sku": "740",
+        "label": "90 g",
+        "unit": "un",
+        "price_cents": 370,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "740",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "weight": "90 g",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000001338",
+    "name": "Ração Na Pinga Goiaba 120g Ag",
+    "slug": "racao-na-pinga-goiaba-120g-ag-1338",
+    "description": "Racao Na Pinga Goiaba 120G Ag - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 890,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000001338",
+        "sku": "1338",
+        "label": "120 g",
+        "unit": "un",
+        "price_cents": 890,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "1338",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "weight": "120 g",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000001339",
+    "name": "Ração Na Pinga Milho 120g Agu",
+    "slug": "racao-na-pinga-milho-120g-agu-1339",
+    "description": "Racao Na Pinga Milho 120G Agu - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 890,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000001339",
+        "sku": "1339",
+        "label": "120 g",
+        "unit": "un",
+        "price_cents": 890,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "1339",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "weight": "120 g",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000001340",
+    "name": "Ração Na Pinga P-40 120g Aguia",
+    "slug": "racao-na-pinga-p-40-120g-aguia-1340",
+    "description": "Racao Na Pinga P-40 120G Aguia - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 890,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000001340",
+        "sku": "1340",
+        "label": "120 g",
+        "unit": "un",
+        "price_cents": 890,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "1340",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "weight": "120 g",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002779",
+    "name": "Ração para Cães Jack Pet - Adu",
+    "slug": "racao-para-caes-jack-pet---adu-2779",
+    "description": "Racao Para Caes Jack Pet - Adu - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MARCA NÃO IDENTIFICADA",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 2990,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002779",
+        "sku": "2779",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 2990,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2779",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002811",
+    "name": "Sache Magnus Cat Filh Cn 18x85",
+    "slug": "sache-magnus-cat-filh-cn-18x85-2811",
+    "description": "Sache Magnus Cat Filh Cn 18X85 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 164,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002811",
+        "sku": "2811",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 164,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2811",
+      "pet": "cao",
+      "lifeStage": "filhote",
+      "needs": [],
+      "flavors": [],
+      "productType": "sache",
+      "tags": [
+        "cao",
+        "filhote",
+        "sache"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002810",
+    "name": "Sache Magnus Cat Salmão 18x8",
+    "slug": "sache-magnus-cat-salmao-18x8-2810",
+    "description": "Sache Magnus Cat Salmao 18X8 - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "MAGNUS",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 164,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002810",
+        "sku": "2810",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 164,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2810",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "salmao"
+      ],
+      "productType": "sache",
+      "tags": [
+        "cao",
+        "sache",
+        "salmao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002129",
+    "name": "Special Dog Ultralife Rac. Peq.",
+    "slug": "special-dog-ultralife-rac-peq-2129",
+    "description": "Special Dog Ultralife Rac. Peq. - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 8618,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002129",
+        "sku": "2129",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 8618,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2129",
+      "pet": "cao",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002950",
+    "name": "Special Dog Adultos Pequeno P",
+    "slug": "special-dog-adultos-pequeno-p-2950",
+    "description": "Special Dog Adultos Pequeno P - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 659,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002950",
+        "sku": "2950",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 659,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2950",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002120",
+    "name": "Special Dog Carne 15kg - 2g",
+    "slug": "special-dog-carne-15kg---2g-2120",
+    "description": "Special Dog Carne 15Kg - 2G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 395,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002120",
+        "sku": "2120",
+        "label": "15 kg",
+        "unit": "un",
+        "price_cents": 395,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2120",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "15 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002119",
+    "name": "Special Dog Carne 20kg - 2g",
+    "slug": "special-dog-carne-20kg---2g-2119",
+    "description": "Special Dog Carne 20Kg - 2G - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 525,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002119",
+        "sku": "2119",
+        "label": "20 kg",
+        "unit": "un",
+        "price_cents": 525,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2119",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "20 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002128",
+    "name": "Special Dog Gold Life Adultos C",
+    "slug": "special-dog-gold-life-adultos-c-2128",
+    "description": "Special Dog Gold Life Adultos C - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 10018,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002128",
+        "sku": "2128",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 10018,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2128",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002121",
+    "name": "Special Dog Junior Carne 20kg",
+    "slug": "special-dog-junior-carne-20kg-2121",
+    "description": "Special Dog Junior Carne 20Kg - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 809,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002121",
+        "sku": "2121",
+        "label": "20 kg",
+        "unit": "un",
+        "price_cents": 809,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2121",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "weight": "20 kg",
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002963",
+    "name": "Special Dog Pate Adulto Carne",
+    "slug": "special-dog-pate-adulto-carne-2963",
+    "description": "Special Dog Pate Adulto Carne - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 501,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002963",
+        "sku": "2963",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 501,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2963",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [
+        "carne"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao",
+        "carne"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002964",
+    "name": "Special Dog Pate Adulto Frango",
+    "slug": "special-dog-pate-adulto-frango-2964",
+    "description": "Special Dog Pate Adulto Frango - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 501,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002964",
+        "sku": "2964",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 501,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2964",
+      "pet": "cao",
+      "lifeStage": "adulto",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "adulto",
+        "racao",
+        "frango"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002122",
+    "name": "Special Dog Prime Racas Medias",
+    "slug": "special-dog-prime-racas-medias-2122",
+    "description": "Special Dog Prime Racas Medias - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 16329,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002122",
+        "sku": "2122",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 16329,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2122",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002124",
+    "name": "Special Dog Prime Racas Peq. Ad",
+    "slug": "special-dog-prime-racas-peq-ad-2124",
+    "description": "Special Dog Prime Racas Peq. Ad - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 17071,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002124",
+        "sku": "2124",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 17071,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2124",
+      "pet": "cao",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002123",
+    "name": "Special Dog Prime Racas Peq. Jr",
+    "slug": "special-dog-prime-racas-peq-jr-2123",
+    "description": "Special Dog Prime Racas Peq. Jr - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 16849,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002123",
+        "sku": "2123",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 16849,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2123",
+      "pet": "cao",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002125",
+    "name": "Special Dog Prime Racas Peq. Se",
+    "slug": "special-dog-prime-racas-peq-se-2125",
+    "description": "Special Dog Prime Racas Peq. Se - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 17071,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002125",
+        "sku": "2125",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 17071,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2125",
+      "pet": "cao",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002130",
+    "name": "Special Dog Ultralife Rac. Peq. A",
+    "slug": "special-dog-ultralife-rac-peq-a-2130",
+    "description": "Special Dog Ultralife Rac. Peq. A - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 11950,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002130",
+        "sku": "2130",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 11950,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2130",
+      "pet": "cao",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002131",
+    "name": "Special Dog Ultralife Rac. Peq. J",
+    "slug": "special-dog-ultralife-rac-peq-j-2131",
+    "description": "Special Dog Ultralife Rac. Peq. J - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 830,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002131",
+        "sku": "2131",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 830,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2131",
+      "pet": "cao",
+      "size": "pequeno",
+      "needs": [],
+      "flavors": [],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "pequeno",
+        "racao"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002957",
+    "name": "Special Dog Ultralife Sache Adu",
+    "slug": "special-dog-ultralife-sache-adu-2957",
+    "description": "Special Dog Ultralife Sache Adu - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 221,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002957",
+        "sku": "2957",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 221,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2957",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "sache",
+      "tags": [
+        "cao",
+        "sache"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002958",
+    "name": "Special Dog Ultralife Sache Adu",
+    "slug": "special-dog-ultralife-sache-adu-2958",
+    "description": "Special Dog Ultralife Sache Adu - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 221,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002958",
+        "sku": "2958",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 221,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2958",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "sache",
+      "tags": [
+        "cao",
+        "sache"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002959",
+    "name": "Special Dog Ultralife Sache Rac",
+    "slug": "special-dog-ultralife-sache-rac-2959",
+    "description": "Special Dog Ultralife Sache Rac - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 221,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002959",
+        "sku": "2959",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 221,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2959",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "sache",
+      "tags": [
+        "cao",
+        "sache"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000002960",
+    "name": "Special Dog Ultralife Sache Rac",
+    "slug": "special-dog-ultralife-sache-rac-2960",
+    "description": "Special Dog Ultralife Sache Rac - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "SPECIAL DOG",
+    "image_url": null,
+    "images": [],
+    "category_name": "Pet em geral",
+    "min_price_cents": 221,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000002960",
+        "sku": "2960",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 221,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "2960",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [],
+      "productType": "sache",
+      "tags": [
+        "cao",
+        "sache"
+      ]
+    }
+  },
+  {
+    "id": "00000000-0000-4000-8000-000000004417",
+    "name": "Vgolden Form Cães Ad Frango",
+    "slug": "vgolden-form-caes-ad-frango-4417",
+    "description": "Vgolden Form Caes Ad Frango - produto indicado para cuidados, diversão ou alimentação animal. Ideal para uso doméstico ou profissional em pet shops, clínicas veterinárias e lares com animais de estimação.",
+    "brand": "GOLDEN",
+    "image_url": null,
+    "images": [],
+    "category_name": "Cães",
+    "min_price_cents": 11067,
+    "variants": [
+      {
+        "id": "00000000-0000-4001-8000-000000004417",
+        "sku": "4417",
+        "label": "Unidade",
+        "unit": "un",
+        "price_cents": 11067,
+        "stock_quantity": null
+      }
+    ],
+    "metadata": {
+      "source": "spreadsheet",
+      "sourceCode": "4417",
+      "pet": "cao",
+      "needs": [],
+      "flavors": [
+        "frango"
+      ],
+      "productType": "racao",
+      "tags": [
+        "cao",
+        "racao",
+        "frango"
+      ]
+    }
+  }
+]

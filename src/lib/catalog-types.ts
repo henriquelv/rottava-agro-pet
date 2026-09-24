@@ -14,6 +14,19 @@ export type DemoMerchandising = {
   reviewsCount?: number;
 };
 
+export type ProductMetadata = {
+  source?: "spreadsheet" | "database";
+  sourceCode?: string;
+  pet?: "cao" | "gato" | "geral";
+  lifeStage?: "filhote" | "adulto" | "senior";
+  size?: "pequeno" | "medio" | "grande";
+  needs?: string[];
+  flavors?: string[];
+  weight?: string;
+  productType?: string;
+  tags?: string[];
+};
+
 export type Product = {
   id: string;
   name: string;
@@ -25,6 +38,6 @@ export type Product = {
   category_name: string | null;
   min_price_cents: number | null;
   variants: ProductVariant[];
+  metadata?: ProductMetadata;
   demo?: DemoMerchandising;
 };
-

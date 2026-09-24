@@ -18,12 +18,19 @@ export function db() {
   return client;
 }
 
-type ProductFilters = { category?: string; brand?: string; sort?: string; minPrice?: number; maxPrice?: number; available?: boolean };
+export type ProductFilters = { category?: string; brand?: string; sort?: string; minPrice?: number; maxPrice?: number; available?: boolean; productType?: string; lifeStage?: string; size?: string; need?: string };
+
+const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+const facetValue = (value: string) => normalize(value).replaceAll(" & ", "-").replaceAll(" ", "-");
 
 function applyProductFilters(products: Product[], filters: ProductFilters) {
   let result = products;
-  if (filters.category) result = result.filter((product) => product.category_name?.toLowerCase().replaceAll(" & ", "-").replaceAll(" ", "-") === filters.category);
+  if (filters.category) result = result.filter((product) => product.category_name && facetValue(product.category_name) === filters.category);
   if (filters.brand) result = result.filter((product) => product.brand === filters.brand);
+  if (filters.productType) result = result.filter((product) => product.metadata?.productType === filters.productType);
+  if (filters.lifeStage) result = result.filter((product) => product.metadata?.lifeStage === filters.lifeStage);
+  if (filters.size) result = result.filter((product) => product.metadata?.size === filters.size);
+  if (filters.need) result = result.filter((product) => product.metadata?.needs?.includes(filters.need!));
   if (filters.minPrice != null) result = result.filter((product) => (product.min_price_cents ?? 0) >= filters.minPrice! * 100);
   if (filters.maxPrice != null) result = result.filter((product) => (product.min_price_cents ?? Infinity) <= filters.maxPrice! * 100);
   if (filters.available) result = result.filter((product) => product.variants.some((variant) => variant.stock_quantity == null || variant.stock_quantity > 0));
@@ -33,10 +40,8 @@ function applyProductFilters(products: Product[], filters: ProductFilters) {
 }
 
 export async function listProducts(search = "", filters: ProductFilters = {}): Promise<Product[]> {
-  if (!hasDatabase()) {
-    if (!demoMode) return [];
-    const normalize = (value: string) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-    const result = demoProducts.filter((p) => !search || normalize(`${p.name} ${p.brand}`).includes(normalize(search)));
+  if (!hasDatabase() || process.env.CATALOG_SOURCE === "spreadsheet" || (demoMode && process.env.CATALOG_SOURCE !== "database")) {
+    const result = demoProducts.filter((p) => !search || normalize(`${p.name} ${p.brand} ${p.category_name} ${p.description} ${p.metadata?.tags?.join(" ")}`).includes(normalize(search)));
     return applyProductFilters(result, filters);
   }
   const sql = db();
@@ -56,7 +61,7 @@ export async function listProducts(search = "", filters: ProductFilters = {}): P
 }
 
 export async function getProduct(slug: string): Promise<Product | null> {
-  if (!hasDatabase() && demoMode) return demoProducts.find((p) => p.slug === slug) ?? null;
+  if (!hasDatabase() || process.env.CATALOG_SOURCE === "spreadsheet" || (demoMode && process.env.CATALOG_SOURCE !== "database")) return demoProducts.find((p) => p.slug === slug) ?? null;
   const products = await listProducts();
   return products.find((p) => p.slug === slug) ?? null;
 }
