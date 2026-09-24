@@ -5,7 +5,7 @@
 - **Público/perfil:** público.
 - **Componentes usados:** `ProductGallery`, `ProductBuy`, `ProductDetails`, `ProductCard` relacionados.
 - **Dados necessários:** produto, imagens, variantes, preço, disponibilidade e relacionados da mesma categoria.
-- **Ações possíveis:** trocar imagem/variante, ajustar quantidade, favoritar, adicionar e continuar no carrinho.
+- **Ações possíveis:** trocar imagem/variante, ajustar quantidade, favoritar, adicionar ao minicarrinho ou comprar agora e revisar o carrinho.
 - **Regras:** sem preço a compra é bloqueada; estoque é revalidado no pedido; rating/desconto/badge só existem em fixture demo.
 - **Estados:** slug ausente retorna 404; imagem ausente usa arte neutra; variação sem estoque desabilita compra; success renderiza JSON-LD.
 - **Desktop:** galeria grande à esquerda e compra sticky à direita.

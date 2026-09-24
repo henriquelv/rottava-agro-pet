@@ -5,7 +5,7 @@
 - **Público/perfil:** público; login é solicitado ao avançar.
 - **Componentes usados:** `CartView`, contexto `CartProvider`, `EmptyState`.
 - **Dados necessários:** itens persistidos no navegador com preço snapshot de exibição.
-- **Ações possíveis:** alterar quantidade, remover, abrir produto e ir ao checkout/login.
+- **Ações possíveis:** alterar quantidade, remover com opção de desfazer, abrir produto e ir ao checkout/login.
 - **Regras:** carrinho não reserva estoque nem fixa preço; servidor revalida no pedido.
 - **Estados:** hidratação; empty direciona ao catálogo; erro final pertence ao checkout; success mostra resumo.
 - **Desktop:** lista e resumo em duas colunas.

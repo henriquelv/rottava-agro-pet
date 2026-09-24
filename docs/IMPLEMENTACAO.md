@@ -7,6 +7,7 @@
 - Autorização por papel e separação entre estados operacional e financeiro.
 - Estados honestos para integrações ainda não homologadas.
 - Modo de demonstração isolado, com catálogo mock, filtros, chatbot transacional, checkout sem cobrança e perfis por papel.
+- Interface editorial própria com SVGs autorais; nenhum kit visual ou pacote de ícones é usado. Motion, cmdk, Vaul, Sonner e nuqs permanecem restritos a comportamento, acessibilidade e estado.
 
 ## Integrações configuráveis
 

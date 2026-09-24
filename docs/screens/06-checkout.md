@@ -3,7 +3,7 @@
 - **Rota:** `/checkout`
 - **Objetivo:** coletar forma de atendimento e criar um pedido idempotente.
 - **Público/perfil:** cliente autenticado.
-- **Componentes usados:** `CheckoutView`, resumo do carrinho e formulário.
+- **Componentes usados:** `CheckoutView`, etapas Identificação/Recebimento/Pagamento/Revisão e resumo sticky.
 - **Dados necessários:** sessão, carrinho, modo de entrega e pagamento habilitado.
 - **Ações possíveis:** escolher retirada/entrega disponível, forma de pagamento e confirmar.
 - **Regras:** visitante é redirecionado ao login; chave idempotente evita duplicidade; servidor recalcula itens; demo não cobra.
