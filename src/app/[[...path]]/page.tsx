@@ -14,7 +14,7 @@ import { AdminShell } from "@/components/admin-shell";
 import { ConfigNotice, EmptyState, PageHero, Status } from "@/components/ui";
 import { CatalogFilters, type CatalogFacet } from "@/components/catalog-filters";
 import { Reveal } from "@/components/motion-ui";
-import { GlyphPortalHero } from "@/components/glyph-portal-hero";
+import { CommerceAgent } from "@/components/commerce-agent";
 import { ProductDetails, ProductGallery } from "@/components/product-experience";
 
 type Props = { params: Promise<{ path?: string[] }>; searchParams: Promise<Record<string, string | string[] | undefined>> };
@@ -58,9 +58,8 @@ function SimplePage({ eyebrow, title, text, children }: { eyebrow: string; title
 async function Home() {
   const products = await listProducts();
   return <>
-    <GlyphPortalHero />
-    <section className="trust-strip"><span>Compra identificada e protegida</span><span>Retirada após confirmação</span><span>Atendimento humano quando precisar</span></section>
-    <section id="descobrir" className="featured home-products"><div className="section-heading"><div><span className="eyebrow">VITRINE DA SEMANA</span><h2>Produtos que resolvem a rotina.</h2></div><Link className="text-link" href="/produtos">Ver todos <ArrowRight aria-hidden="true" /></Link></div>{products.length ? <div className="product-rail">{products.slice(0, 6).map((p) => <ProductCard key={p.id} product={p} />)}</div> : <EmptyState title="A vitrine está sendo preparada" text="O catálogo real ainda não foi conectado ou publicado." action={{ href: "/atendimento", label: "Falar com a loja" }} />}</section>
+    <CommerceAgent products={products} demo={demoMode} />
+    <section id="descobrir" className="featured home-products"><div className="section-heading"><div><span className="eyebrow">DISPONÍVEL NO CATÁLOGO</span><h2>{demoMode ? "Itens preparados para testar a compra." : "Uma seleção do catálogo ativo."}</h2></div><Link className="text-link" href="/produtos">Abrir catálogo <ArrowRight aria-hidden="true" /></Link></div>{products.length ? <div className="product-rail">{products.slice(0, 6).map((p) => <ProductCard key={p.id} product={p} />)}</div> : <EmptyState title="A vitrine está sendo preparada" text="O catálogo real ainda não foi conectado ou publicado." action={{ href: "/atendimento", label: "Falar com a loja" }} />}</section>
     <Reveal><section className="category-journal"><header><span className="eyebrow">ESCOLHA PELO UNIVERSO</span><h2>Uma casa viva tem<br /><em>muitas rotinas.</em></h2><p>Entre pelo contexto e encontre somente o que faz sentido para o seu dia.</p></header><div className="category-collage">
       <Link className="category-photo category-photo-pet" href="/produtos?categoria=pet"><Image src="/images/hero-rottava.png" fill sizes="(max-width: 760px) 100vw, 50vw" alt="Cão e gato em uma casa com plantas" /><span><small>01 · COMPANHEIROS</small><b>Pet</b><i>Alimentação, passeio e conforto</i></span></Link>
       <Link className="category-photo category-photo-care" href="/produtos?categoria=cuidados"><Image src="/images/demo/cama-editorial.webp" fill sizes="(max-width: 760px) 50vw, 25vw" alt="Conforto para animais" /><span><small>02 · BEM-ESTAR</small><b>Cuidados</b></span></Link>
@@ -69,9 +68,7 @@ async function Home() {
       <Link className="category-type category-type-dark" href="/produtos"><small>05 · CAMPO</small><b>Agro</b><span>Categoria preparada para receber o catálogo real.</span><ArrowRight aria-hidden="true" /></Link>
     </div></section></Reveal>
     {products.some((product) => product.brand) && <section className="brand-marquee" aria-label="Marcas no catálogo"><span>{demoMode ? "MARCAS DEMONSTRATIVAS" : "MARCAS NO CATÁLOGO"}</span><div>{[...new Set(products.map((product) => product.brand).filter(Boolean))].map((brand) => <Link key={brand} href={`/produtos?marca=${encodeURIComponent(brand!)}`}>{brand}</Link>)}</div></section>}
-    <Reveal><section className="editorial-story"><div className="story-image"><Image src="/images/hero-rottava.png" fill sizes="(max-width: 760px) 100vw, 55vw" alt="Cão e gato descansando juntos em casa" /></div><div><span className="eyebrow">A LOJA PARTICIPA DA ROTINA</span><h2>Escolher bem também é uma forma de cuidar.</h2><p>O catálogo organiza o essencial sem transformar cuidado em excesso. A equipe confirma disponibilidade e ajuda quando a escolha pede conversa.</p><Link className="text-link" href="/loja">Conheça a Rottava <ArrowRight aria-hidden="true" /></Link></div></section></Reveal>
-    <section className="service-notes"><div><span>01</span><b>Preço claro</b><p>O valor exibido é revalidado antes do pedido.</p></div><div><span>02</span><b>Retirada combinada</b><p>A loja confirma quando tudo estiver pronto.</p></div><div><span>03</span><b>Ajuda de verdade</b><p>O atendimento assume quando o bot não resolve.</p></div></section>
-    <section className="service-banner"><div><span className="eyebrow">BANHO & TOSA</span><h2>Cuidado que se percebe na volta para casa.</h2><p>Solicite atendimento sem promessas artificiais de preço ou horário.</p><Link className="button light" href="/banho-e-tosa">Conhecer o serviço <ArrowRight aria-hidden="true" /></Link></div><div className="service-word" aria-hidden="true">CUIDAR</div></section>
+    <Reveal><section className="editorial-story"><div className="story-image"><Image src="/images/hero-rottava.png" fill sizes="(max-width: 760px) 100vw, 55vw" alt="Cão e gato descansando juntos em casa" /></div><div><span className="eyebrow">ATENDIMENTO DE LOJA, NO DIGITAL</span><h2>Quando o catálogo não basta, a conversa continua.</h2><p>O agente resolve a escolha inicial e a equipe pode assumir os casos que pedem contexto, confirmação ou cuidado presencial.</p><div className="editorial-actions"><Link className="text-link" href="/atendimento">Abrir atendimento <ArrowRight aria-hidden="true" /></Link><Link className="text-link" href="/banho-e-tosa">Solicitar banho e tosa <ArrowRight aria-hidden="true" /></Link></div></div></section></Reveal>
   </>;
 }
 
