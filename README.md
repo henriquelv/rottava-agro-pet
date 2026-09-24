@@ -2,7 +2,7 @@
 
 Aplicação full-stack do e-commerce da Rottava, construída a partir do pacote funcional em `Rottava-Documentacao/`. O projeto usa Next.js App Router, PostgreSQL e sessões assinadas, com separação entre vitrine pública, conta, administração e entregador.
 
-A interface usa um design system próprio, CSS autoral, Motion para microinterações e um conjunto local de ícones SVG. Não depende de Lucide React nem de kits visuais como shadcn, Material UI ou Bootstrap.
+A interface usa um design system próprio, CSS autoral, Motion para microinterações e uma única família de ícones Phosphor. Não depende de Lucide React nem de kits visuais como shadcn, Material UI ou Bootstrap.
 
 ## Rodar localmente
 
@@ -11,7 +11,7 @@ A interface usa um design system próprio, CSS autoral, Motion para microintera�
 3. Execute `npm run db:migrate`.
 4. Execute `npm run dev`.
 
-Sem banco configurado, a vitrine continua acessível em modo seguro e exibe estados de configuração em vez de dados fictícios. Pagamento, WhatsApp, mapas e legado só são marcados como ativos quando suas variáveis e contratos forem homologados.
+Sem banco configurado, a vitrine usa o catálogo versionado importado da planilha da loja. Pagamento, WhatsApp, mapas e legado só são marcados como ativos quando suas variáveis e contratos forem homologados. O agente usa orientação determinística do catálogo como fallback quando a OpenAI não está configurada.
 
 ## Modo de demonstração
 
