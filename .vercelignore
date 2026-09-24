@@ -1,0 +1,4 @@
+.tmp-review/
+test-results/
+coverage/
+*.log
